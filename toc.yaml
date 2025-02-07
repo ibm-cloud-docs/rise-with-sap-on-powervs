@@ -1,0 +1,27 @@
+#  Name your file `toc.yaml`
+#  Make sure you include all nav file coding requirements, as defined in https://test.cloud.ibm.com/docs-internal/writing?topic=writing-code-nav
+#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
+---
+toc:
+  properties:
+    subcollection: rise-with-sap-on-powervs
+    href: /docs/rise-with-sap-on-powervs
+    path: rise-with-sap-on-powervs
+    audience: solution
+    category: solution_docs
+    content-type: solution
+    use-case: BusinessProcessAutomation
+    compliance: SAPCertified
+    description: RISE with SAP on Power Virtual Sever, replaces your on-premises Enterprise Resource Planning (ERP) so you can modernize business processes and become more agile.
+    label: RISE with SAP on Power Virtual Sever
+  entries:
+  - navgroup:
+      id: overview
+      topics:
+      - overview/getting-started.md
+      - overview/overview.md
+      - overview/release-notes.md
+  - navgroup:
+      id: architecture
+      topics:
+      - reference-architecture.md
