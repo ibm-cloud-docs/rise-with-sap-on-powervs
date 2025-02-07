@@ -12,21 +12,15 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Overview
 {: #overview}
 
 This document provides an overview of the following:
 
-* [RISE with SAP](/docs/rise-with-sap-on-powervs?topic=overview#overview-rise-with-sap)
-* [RISE with SAP on IBM Power Virtual Server](/docs/rise-with-sap-on-powervs?topic=overview#overview-rise-with-sap-power-vs)
-* [Surround workloads](/docs/rise-with-sap-on-powervs?topic=overview#overview-surround-workloads)
-    * [Tightly coupled surround workloads](/docs/rise-with-sap-on-powervs?topic=overview#overview-tightly-coupled-surround-workloads)
-    * [Loosely coupled surround workloads](/docs/rise-with-sap-on-powervs?topic=overview#overview-looslely-coupled-surround-workloads)
-* [Surround workload migration](/docs/rise-with-sap-on-powervs?topic=overview#overview-surround-workload-migration)
-    * [Migration strategy](/docs/rise-with-sap-on-powervs?topic=overview#overview-migration-strategy)
-    * [Migration program](/docs/rise-with-sap-on-powervs?topic=overview#overview-migration-program)
-    * [Post migration](/docs/rise-with-sap-on-powervs?topic=overview#overview-post-migration)
+* RISE with SAP - The SAP® managed cloud service that helps organizations to migrate to the SAP Cloud, securely and smoothly.
+* RISE with SAP on {{site.data.keyword.powerSysFull}} - The SAP managed cloud service hosted on the cloud-based version of IBM Power server platform.
+* Surround workloads - Workloads that communicate and interact with the SAP systems that will be migrated to RISE with SAP on IBM Power Virtual Server. These surround workloads can be migrated to your IBM Cloud Account and peered with the SAP Systems hosted in the RISE with SAP on IBM Power Virtual Server Cloud Account.
+* Surround workload migration - High-level advice and guidance on the approach to migrating surround workloads.
 
 ## RISE with SAP
 {: #overview-rise-with-sap}
@@ -89,7 +83,8 @@ Additionally, it is imperative to understand how the non-RISE SAP and non-RISE n
 * Tightly coupled - Tightly coupled workloads require low latency connections to your SAP systems or require high bandwidth connections.
 * Loosely coupled - Loosely coupled workloads do not need high bandwidth connectivity or low latency between the surround workload and the SAP system.
   
-![Surround Workloads](images/surround.svg "Surround Workloads")
+![Figure 1. Surround Workloads](../images/surround.svg "Surround Workloads")
+{: caption="Surround workloads" caption-side="bottom"}
 
 ### Tightly coupled surround workloads
 {: #overview-tightly-coupled-surround-workloads}
@@ -153,7 +148,8 @@ The move of the surround workload is supported by your migration program. An exa
 
 The diagram below illustrates the post-migration state of your SAP systems and surround workloads after adopting the migration strategy and migration program described above.
 
-![Post Migration Surround Workloads](images/surround_post.svg "Post Migration Surround Workloads")
+![Figure 2. Post Migration Surround Workloads](../images/surround_post.svg "Post Migration Surround Workloads")
+{: caption="Post Migration Surround workloads" caption-side="bottom"}
 
 * Your SAP systems have migrated to RISE for SAP on Power Virtual Server.
 * Your non-RISE SAP surround workloads have migrated to IBM Cloud and hosted in your own IBM Cloud Account.

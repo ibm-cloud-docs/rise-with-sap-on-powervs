@@ -63,7 +63,7 @@ SAP S/4HANA is the ERP designed to run solely on SAP HANA and does not run on an
 
 SAP NetWeaver Process Integration (SAP PI) is SAP's enterprise application integration (EAI) software, a component of the NetWeaver product group used to facilitate the exchange of information among a company's internal software and systems and those of external parties.
 
-# SAP Process Orchestration
+### SAP Process Orchestration
 {: #get-started-sap-po}
 
 SAP Process Orchestration (PO) is a tool that makes it easy to synchronize data between different systems to automate and optimize business processes. PO has all the functionality of SAP PI in a single Java stack plus unified features such as Business Rule Management (BRM), Business Process Management (BPM), Enterprise Service Repository (ESR), B2B Collaboration and cloud integration, and for application integration.
