@@ -48,7 +48,12 @@ Using {{site.data.keyword.powerSysFull}}, the cloud-based version of the mission
 ## Surround workloads
 {: #overview-surround-workloads}
 
-When considering moving your on-premise IBM Power SAP systems to the RISE with SAP on IBM Power Virtual Server service, you also need to consider the surround workloads. The surround workloads communicate and interact with your SAP systems. These surround workloads can be categorized as:
+When considering moving your on-premise IBM Power SAP systems to the RISE with SAP on IBM Power Virtual Server service, you also need to consider the surround workloads. The surround workloads communicate and interact with your SAP systems. 
+
+![Figure 1. Surround Workloads](../images/surround.svg "Surround Workloads")
+{: caption="Surround workloads" caption-side="bottom"}
+
+These surround workloads can be categorized as:
 
 * non-RISE SAP - These SAP workloads are not suitable to be migrated to RISE with SAP Power Virtual Server. Examples include the following:
     * SAP ECC - SAP SAP ECC (ERP Central Component) is the previous generation of ERP and has been replaced with SAP S/4HANA. It is also known as SAP ECC with AnyDB. SAP ECC is the core business product inside SAP Business Suite.
@@ -83,8 +88,8 @@ Additionally, it is imperative to understand how the non-RISE SAP and non-RISE n
 * Tightly coupled - Tightly coupled workloads require low latency connections to your SAP systems or require high bandwidth connections.
 * Loosely coupled - Loosely coupled workloads do not need high bandwidth connectivity or low latency between the surround workload and the SAP system.
   
-![Figure 1. Surround Workloads](../images/surround.svg "Surround Workloads")
-{: caption="Surround workloads" caption-side="bottom"}
+![Figure 2. Coupled Surround Workloads](../images/coupled-surround.svg "Coupled Surround Workloads")
+{: caption="Coupled Surround workloads" caption-side="bottom"}
 
 ### Tightly coupled surround workloads
 {: #overview-tightly-coupled-surround-workloads}
@@ -148,7 +153,7 @@ The move of the surround workload is supported by your migration program. An exa
 
 The diagram below illustrates the post-migration state of your SAP systems and surround workloads after adopting the migration strategy and migration program described above.
 
-![Figure 2. Post Migration Surround Workloads](../images/surround_post.svg "Post Migration Surround Workloads")
+![Figure 3. Post Migration Surround Workloads](..images/surround-post.svg "Post Migration Surround Workloads")
 {: caption="Post Migration Surround workloads" caption-side="bottom"}
 
 * Your SAP systems have migrated to RISE for SAP on Power Virtual Server.
