@@ -29,3 +29,8 @@ toc:
           label: Surround Workloads
           topics:
           - surround/non-rise-sap.md
+          - surround/non-rise-non-sap.md
+       - topicgroup:
+          label: Surround Workloads
+          topics:
+          - integration/overview.md
