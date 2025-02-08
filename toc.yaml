@@ -25,4 +25,7 @@ toc:
   - navgroup:
       id: reference
       topics:
-      - surround/non-rise-sap.md
+       - topicgroup:
+          label: Surround Workloads
+          topics:
+          - surround/non-rise-sap.md
