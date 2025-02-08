@@ -22,6 +22,6 @@ toc:
       - overview/overview.md
       - overview/release-notes.md
   - navgroup:
-      id: architecture
+      id: reference
       topics:
-      - reference-architecture.md
+      - non-rise-sap.md

@@ -12,7 +12,6 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Get started
 {: #get-started}
 
