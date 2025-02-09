@@ -11,8 +11,12 @@
         "href": "/overview/getting-started.md"
       },
       {
-        "title": "Topic title",
-        "href": "/docs/overview?topic=overview-get-started-checklist"
+        "title": "Integration Overview",
+        "href": "/integration/overview.md"
+      },
+      {
+        "title": "Non-RISE SAP",
+        "href": "/surround/non-rise-sap.md"
       }
     ]
   },
