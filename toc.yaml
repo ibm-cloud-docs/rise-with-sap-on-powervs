@@ -34,5 +34,9 @@ toc:
           label: Integration
           topics:
           - integration/overview.md
+          - integration/communications.md
           - integration/internet.md
           - integration/ibm-cloud.md
+          - integration/hybrid.md
+          - integration.hybrid-enterprise.md
+          - integration/service-provider.md

@@ -46,6 +46,29 @@ It is important to understand that connectivity to your SAP systems in Power Vir
 
 When you request the RISE with SAP on IBM Power Virtual Server service, you supply to SAP an IP address schema that will be used within their IBM Cloud Enterprise Account. This IP address schema must not overlap with any IP addresses used elsewhere in your organization or in IBM Cloud.
 
+## Virtual Private Cloud
+{: #integration-overview-arch-vpc}
+
+A Virtual Private Cloud (VPC) provides network isolation and security in the IBM Cloud. See [Virtual Private Cloud Overview]( /docs/vpc?topic=vpc-about-vpc). A VPC can be a logical container for an enterprise division's resources e.g. marketing, development, or accounting or a collection of resources operated by an enterprise team. VPCs can be connected to an enterprise's locations, to each other and VPCS in other IBM Cloud accounts.
+
+With IBM Cloud Transit Gateway, you can define and control communication between resources hosted in the IBM Cloud infrastructure environments and/or on-premise networks. See [Getting started with IBM Cloud Transit Gateway](/docs/transit-gateway?topic=transit-gateway-getting-started). The IBM Cloud infrastructure environments are:
+
+* IBM Cloud VPC.
+* IBM Cloud Classic infrastructure.
+* Power Virtual Server workspaces.
+
+## Transit Gateway
+{: #integration-overview-arch-tgw}
+
+With an IBM Cloud Transit Gateway, you can connect:
+
+* VPCs in your account or a different account.
+* IBM Cloud classic infrastructure in your account or a different account.
+* Direct Link in your account or a different account.
+* IBM PowerVS in IBM data center in your account or a different account.
+* Unbound Generic Routing Encapsulation (GRE) tunnels allow a connection between a zone and an endpoint in IBM Cloud Classic in your account or a different account.
+* Redundant Generic Routing Encapsulation (GRE) tunnels allow a connection between two zones and an endpoint in IBM Cloud Classic or a VPC in your account or a different account.
+
 ## RISE with SAP on IBM Power Virtual Server inter-connectivity
 {: #integration-overview-arch-connectivity}
 

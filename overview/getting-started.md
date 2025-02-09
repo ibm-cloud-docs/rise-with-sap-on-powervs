@@ -93,7 +93,19 @@ SAP offers ERP SaaS solutions for companies of all sizes with the following:
 * GROW with SAP - A complete offering of solutions, adoption acceleration services, community, and learning so companies of all sizes can implement SAP S/4HANA Cloud Public Edition.
 * RISE with SAP - A comprehensive package that includes an AI-enabled SAP S/4HANA Cloud Private Edition that’s managed and optimized by SAP. It provides services and tools so you can migrate on-premise systems, transform business processes, drive continuous innovation, and unlock cloud agility.
 
+## SAP Cloud Peering
+{: #get-started-sap-cloud-peering}
+
+SAP Cloud Peering is a reliable and secure connectivity option for customer to SAP Cloud Services leveraging SAP’s global interconnection provider ecosystem. SAP Cloud Peering is a highly secure connectivity option, because the traffic goes through the Telco supplier's network and never comes across the public Internet. It combines the advantages of a fast deploying solution as well as the security and reliability of dedicated channels. It perfectly fits for the customers who already use network solutions by one of the global interconnection providers (e.g. Verizon, Equinix etc).
+
 ## Next steps
 {: #get-started-next-steps}
 
 Review the documentation on this site starting with the [Overview](/docs/rise-with-sap-on-powervs?topic=overview)
+
+Review the following documentation:
+
+* [RISE with SAP](https://www.sap.com/products/erp/rise.html){: external}
+* [Investment program for RISE with SAP on IBM Power Virtual Server](https://www.ibm.com/downloads/documents/us-en/115dcc7c17b63643){: external}
+* [RISE with SAP cloud operations](https://www.sap.com/products/erp/rise/managed-cloud-services.html){: external}
+* [RISE with SAP on IBM Power Virtual Server](https://www.ibm.com/cloud/rise-with-sap){: external}
