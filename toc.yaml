@@ -34,3 +34,5 @@ toc:
           label: Integration
           topics:
           - integration/overview.md
+          - integration/internet.md
+          - integration/ibm-cloud.md

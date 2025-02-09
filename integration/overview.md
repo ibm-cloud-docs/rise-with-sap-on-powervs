@@ -12,15 +12,26 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Integrating IBM Cloud with RISE with SAP on IBM Power Virtual Server
+# Integrating with RISE with SAP on IBM Power Virtual Server
 {: #integration-overview}
 
-This document explains the concepts and best practices to follow for a performant and secure solution to connect your {{site.data.keyword.ibm_cloud}} workloads with your workloads hosted in RISE with SAP on IBM Power Virtual Server.
+With RISE with SAP on {{site.data.keyword.powerSysFull}}, the SAP® Enterprise Cloud Services (ECS) team manages the SAP systems, however, it is your responsibility to establish network connectivity to RISE with SAP on Power Virtual Server. IBM recommends that you spend time with your SAP representative to understand the available options on how to connect your on-premises networks and your IBM Cloud Account networks to the RISE with SAP on Power Virtual Server networks.
+
+This document explains the concepts and best practices to follow for a performant and secure solution to connect your networks with the RISE with SAP on IBM Power Virtual Server networks.
+
+In this document the term **surround workloads** is used to define a workload that integrates with your SAP system hosted in RISE with SAP on Power Virtual Server. These surround workloads can be non-RISE SAP or non-RISE non-SAP workloads. These surround workloads can be hosted:
+
+* On-premises - These surround workloads are typically loosely coupled workloads that do not require high bandwidth or low latency connections.
+* Internet - Typically SaaS based services.
+* On another cloud - Your workloads or SaaS based services.
+* IBM Cloud - your IBM Cloud workloads, hosted in one of the three IBM Cloud infrastructure environments; IBM Cloud Classic, IBM Cloud VPC or IBM Power Virtual Server in IBM data center.
+
+While your RISE with SAP on IBM Power Virtual Server workloads are running in the SAP IBM Cloud Account, your IBM Cloud surround workloads run in your own IBM Cloud Account.
 
 ## RISE with SAP on IBM Power Virtual Server architecture
 {: #integration-overview-arch}
 
-SAP® creates and manages the entire RISE with SAP on IBM Power Virtual Server architecture running in an IBM Cloud Enterprise Account owned by SAP. SAP defines, validates and deploys all technical resources deployed in this IBM Cloud Enterprise Account. 
+SAP creates and manages the entire RISE with SAP on IBM Power Virtual Server architecture running in an IBM Cloud Enterprise Account owned by SAP. SAP defines, validates and deploys all technical resources deployed in this IBM Cloud Enterprise Account. 
 
 Clients of RISE with SAP on IBM Power Virtual Server do not get access to the SAP IBM Cloud Enterprise Account. The SAP IBM Cloud Enterprise Account and all the resources within it are visible to and managed by SAP only.
 
