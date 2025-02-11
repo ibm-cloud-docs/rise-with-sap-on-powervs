@@ -38,5 +38,6 @@ toc:
           - integration/internet.md
           - integration/ibm-cloud.md
           - integration/hybrid.md
-          - integration.hybrid-enterprise.md
+          - integration/hybrid-enterprise.md
+          - integration/multi-cloud.md
           - integration/service-provider.md
