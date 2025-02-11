@@ -45,12 +45,27 @@ See [RISE with SAP](https://www.sap.com/uk/products/erp/rise.html?gclsrc=aw.ds&g
 
 Using {{site.data.keyword.powerSysFull}}, the cloud-based version of the mission-critical IBM Power server platform used for on-premises Enterprise Resource Planning (ERP), you can rapidly transform on-premises SAP ERP systems, modernize business processes and become more agile. Known for its high security, scalability and reliability, IBM Power servers are engineered for fewer disruptions and faster migration, supported by the highly resilient and secured IBM Cloud platform.
 
+SAP S/4HANA Cloud Private Edition is the software in the RISE with SAP on IBM Power Virtual Server service that holds the client’s mission critical data and business processes. SAP Enterprise Cloud Services (ECS) provides a managed private environment with multi-layer defense in depth architecture handling infrastructure and technical managed services in line with their Service Level Agreement (SLA).
+
+SAP S/4HANA Cloud Private Edition is a single-tenant managed private environment for clients where SAP creates a separate account IBM Cloud Account in their IBM Cloud Enterprise Account for each customer. The application and database virtual server instances are solely dedicated to a single client.
+
+It is the client's responsibility to ensure secure connectivity to RISE with SAP on IBM Power Virtual Server. There are essentially four different ways to connect to the service and the client can select the connections based on their specific requirements on security, compliance, bandwidth, and cost:
+
+1. IPsec VPN - The client and SAP will configure the encryption parameters and authentication details for the VPN gateways to establish a secure IPsec tunnel.
+2. Dedicated Private Connection - While many clients rely on Internet services, some clients may prefer a dedicated private connection to the RISE with SAP on IBM Power Virtual Server environment for added security and compliance when accessing their business processes and applications. IBM Cloud Direct Link and Direct Link Connect facilitate these dedicated private connections. Direct Link Connect in association with a Cloud Exchange Provider, provides access to other cloud providers, on-premise connections and SAP Cloud peering. SAP Cloud Peering is a reliable and secure connectivity option for client to SAP Cloud Services leveraging SAP’s global interconnection provider ecosystem. SAP Cloud Peering provides a secure connectivity option, because the traffic traverses the Cloud Exchange Provider's network, to connect to SAP SuccessFactors, SAP Ariba, SAP BTP, SAP Concur and more SAP solutions.
+3. Peering - Many clients using RISE with SAP on IBM Power Virtual Server may have an existing IBM Cloud Account, where they are hosting their own applications. As a part of integration, a secure connection is needed between the client IBM Cloud Account and the RISE with SAP on IBM Power Virtual Server IBM Cloud Account managed by SAP ECS. In IBM Cloud peering is facilitated by Transit Gateway cross-account connections.
+4. Internet - Some clients may want to access RISE with SAP on IBM Power Virtual Server via via the Internet directly. This can be allowed via traffic traversing via the IBM Cloud Internet Services (CIS) Web Application Firewall (WAF). For inbound Internet connection, only HTTPS/TLS1.2 is allowed. 
+
+The high-level RISE with SAP on IBM Power Virtual Server is shown in the diagram below along with the connectivity options.
+
+![Figure 1. RISE with SAP on IBM Power Virtual Server Overview](../images/overview.svg "RISE with SAP on IBM Power Virtual Server Overview"){: caption="RISE with SAP on IBM Power Virtual Server Overview" caption-side="bottom"}
+
 ## Surround workloads
 {: #overview-surround-workloads}
 
 When considering moving your on-premise IBM Power SAP systems to the RISE with SAP on IBM Power Virtual Server service, you also need to consider the surround workloads. The surround workloads communicate and interact with your SAP core systems. The diagram below shows a high-level view of an enterprise.
 
-![Figure 1. Enterprise](../images/enterprise.svg "Enterprise"){: caption="Enterprise" caption-side="bottom"}
+![Figure 2. Enterprise](../images/enterprise.svg "Enterprise"){: caption="Enterprise" caption-side="bottom"}
 
 The SAP Core systems are the candidates for the RISE with SAP on IBM Power Virtual Server, and the surround workloads are  
 These surround workloads can be categorized as follows:
@@ -91,7 +106,7 @@ Additionally, it is imperative to understand how the non-RISE SAP and non-RISE n
 * Tightly coupled - Tightly coupled workloads require low latency connections to your SAP systems or require high bandwidth connections.
 * Loosely coupled - Loosely coupled workloads do not need high bandwidth connectivity or low latency between the surround workload and the SAP system.
 
-![Figure 2. Coupled Surround Workloads](../images/coupled-surround.svg "Coupled Surround Workloads"){: caption="Coupled Surround workloads" caption-side="bottom"}
+![Figure 3. Coupled Surround Workloads](../images/coupled-surround.svg "Coupled Surround Workloads"){: caption="Coupled Surround workloads" caption-side="bottom"}
 
 ### Tightly coupled surround workloads
 {: #overview-tightly-coupled-surround-workloads}
@@ -155,7 +170,7 @@ The move of the surround workload is supported by your migration program. An exa
 
 The diagram below illustrates the post-migration state of your SAP systems and surround workloads after adopting the migration strategy and migration program described above.
 
-![Figure 3. Post Migration Surround Workloads](../images/surround-post.svg "Post Migration Surround Workloads"){: caption="Post Migration Surround workloads" caption-side="bottom"}
+![Figure 4. Post Migration Surround Workloads](../images/surround-post.svg "Post Migration Surround Workloads"){: caption="Post Migration Surround workloads" caption-side="bottom"}
 
 * Your SAP systems have migrated to RISE for SAP on Power Virtual Server.
 * Your non-RISE SAP surround workloads have migrated to IBM Cloud and hosted in your own IBM Cloud Account.

@@ -1,7 +1,7 @@
 {
   "version": 2,
   "title": "RISE with SAP on Power Virtual Server",
-  "introduction": "This documentation provides considerations and guidance for RISE with SAP on {{site.data.keyword.powerSysFull}}. For over half a century, enterprises have used IBM's infrastructure to host their mission-critical SAP® systems for round-the-clock operations and safeguarding sensitive business data. As the next step to help accelerate their move to Cloud Enterprise Resource Planning (ERP), SAP will offer IBM Power Virtual Server as the hyperscaler cloud infrastructure for RISE with SAP.",
+  "introduction": "This documentation provides considerations and guidance for RISE with SAP on IBM® Power Virtual Server. For over half a century, enterprises have used IBM's infrastructure to host their mission-critical SAP® systems for round-the-clock operations and safeguarding sensitive business data. As the next step to help accelerate their move to Cloud Enterprise Resource Planning (ERP), SAP will offer IBM Power Virtual Server as the hyperscaler cloud infrastructure for RISE with SAP.",
   "product_page": "https://www.ibm.com/cloud/rise-with-sap",
   "deployment_url": "https://cloud.ibm.com/catalog#deployable_architecture_tab",
   "section_topics": {
