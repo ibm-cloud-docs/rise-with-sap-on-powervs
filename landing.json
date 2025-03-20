@@ -22,9 +22,9 @@
   },
   "section_highlights": [
     {
-      "title": "Surround Workloads By Platform",
-      "description": "Lists the available solution guides, reference architectures or deployable architectures by IBM Cloud platform.",
-      "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-platform",
+      "title": "RISE with SAP",
+      "description": "Modernize your SAP ERP and unlock business value by leveraging the full potential of SAP Business Suite.",
+      "href": "https://www.sap.com/products/erp/rise.html",
       "type": "blog"
     },
     {
