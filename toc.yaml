@@ -19,25 +19,30 @@ toc:
   - navgroup:
       id: overview
       topics:
-      - overview/getting-started.md
-      - overview/overview.md
-      - overview/release-notes.md
+      - overview/get-started.md
+      - overview/products.md
+      - overview/reference-architecture.md
   - navgroup:
       id: reference
       topics:
        - topicgroup:
-          label: Surround Workloads
+          label: Overview
           topics:
-          - surround/non-rise-sap.md
-          - surround/non-rise-non-sap.md
+          - surround/overview.md
        - topicgroup:
           label: Integration
           topics:
-          - integration/overview.md
-          - integration/communications.md
-          - integration/internet.md
-          - integration/ibm-cloud.md
-          - integration/hybrid.md
-          - integration/hybrid-enterprise.md
-          - integration/multi-cloud.md
-          - integration/service-provider.md
+          - surround/integration-overview.md
+          - surround/integration-ibm-cloud.md
+          - surround/integration-hybrid.md
+          - surround/integration-multi-cloud.md
+       - topicgroup:
+          label: Solution Guides
+          topics:
+          - surround/surround-solution-guides-by-platform.md
+          - surround/surround-solution-guides-by-use-cases.md
+       - topicgroup:
+          label: Migration
+          topics:
+          - surround/migration-considerations.md
+          - surround/migration-tooling.md

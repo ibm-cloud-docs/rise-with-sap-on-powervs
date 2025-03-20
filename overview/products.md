@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-02-07
+lastupdated: 2025-03-17
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -12,27 +12,13 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Get started
-{: #get-started}
+# SAP offerings and products
+{: #sap-offerings-and-products}
 
-The following documentation provides considerations and guidance for RISE with SAP on {{site.data.keyword.powerSysFull}}. For over half a century, enterprises have used IBM's infrastructure to host their mission-critical SAP® systems for round-the-clock operations and safeguarding sensitive business data. As the next step to help accelerate their move to Cloud Enterprise Resource Planning (ERP), SAP will offer IBM Power Virtual Server as the hyperscaler cloud infrastructure for RISE with SAP.  
-
-RISE with SAP brings together outcome-driven services, Cloud ERP with SAP S/4HANA®, and additional platforms to rethink the enterprise operating model. IBM Power Virtual Server offers a unique advantage to the enterprises that run SAP landscape on IBM Power servers: It is designed for a faster and non-disruptive move to RISE with SAP. See [RISE with SAP on IBM Power Virtual Server](https://www.ibm.com/cloud/rise-with-sap){: external}. 
-{: shortdesc}
-
-## Before you begin
-{: #get-started-before-you-begin}
-
-Review the documentation at the following locations:
-
-* [RISE with SAP](https://www.sap.com/uk/products/erp/rise.html){: external}
-* [RISE with SAP on IBM Power Virtual Server](https://www.ibm.com/cloud/rise-with-sap){: external}
-* [Overview of IBM Cloud for SAP](/docs/sap?topic=sap-overview-sap-offerings-overview)
-
-It is helpful that you have an understanding of SAP terminology. The following sections provides a short description
+It is helpful that you have an understanding of SAP offerings and products. The following sections provides a short description
 
 ### SAP ERP
-{: #get-started-sap-erp}
+{: #sap-offerings-and-products-sap-erp}
 
 SAP Enterprise Resource Planning (ERP) made its first appearance in 1972 and known as SAP R/2, an early mainframe-based ERP software system. In the 1990s, SAP R/3 brought ERP technology to the client-server environment. SAP R/3 was superseded by SAP ECC SAP introduced SAP S/4HANA, an ERP suite that used the power of in-memory computing to deliver faster processing and real-time analytics. Later, SAP expanded this vision with SAP S/4HANA Cloud, a cloud ERP system that offered the benefits of enterprise resource planning with the cost-effectiveness and scalability of the cloud.
 
@@ -45,12 +31,12 @@ In large organizations, many of the business functions use their own proprietary
 Additionally, in these large organizations, SAP ERP does not consist of a single system but several integrated systems i.e. CRM, SRM and FICO etc. SAP PI to provide a single point of integration for all systems to provide end to end integration between SAP and non-SAP applications inside and outside the organization boundary.
 
 ### SAP ECC
-{: #get-started-sap-ecc}
+{: #sap-offerings-and-products-sap-ecc}
 
 SAP ERP Central Component (ECC) is the previous generation of ERP and has been replaced with SAP S/4HANA. It is also known as SAP ECC with AnyDB. SAP ECC is the core business product inside SAP Business Suite, and provides an integrated and updated overview of an organization’s core business processes–from financial to human resources.
 
 ### SAP S/4HANA
-{: #get-started-sap-s4hana}
+{: #sap-offerings-and-products-sap-s4hana}
 
 SAP S/4HANA is the ERP designed to run solely on SAP HANA and does not run on any other database. It was launched in 2015, and users can choose between a cloud solution, an on-premise solution, or a combination of both. Many companies are planning the migration over to S/4HANA using SAP's Activate framework due to SAP ending support for ECC and previous versions in 2027.
 
@@ -58,22 +44,22 @@ SAP S/4HANA is the ERP designed to run solely on SAP HANA and does not run on an
 * SAP S/4HANA Cloud Private Edition - This private managed cloud offering is a more tailored solution to meet specific business needs. In a private managed cloud, each business has its own dedicated, infrastructure and software instance. This means the company has full control over its environment, allowing for greater customization and flexibility. SAP S/4HANA Cloud Private Edition is used in RISE with SAP on Power Virtual Server.
 
 ### SAP NetWeaver Process Integration
-{: #get-started-sap-pi}
+{: #sap-offerings-and-products-sap-pi}
 
 SAP NetWeaver Process Integration (SAP PI) is SAP's enterprise application integration (EAI) software, a component of the NetWeaver product group used to facilitate the exchange of information among a company's internal software and systems and those of external parties.
 
 ### SAP Process Orchestration
-{: #get-started-sap-po}
+{: #sap-offerings-and-products-sap-po}
 
 SAP Process Orchestration (PO) is a tool that makes it easy to synchronize data between different systems to automate and optimize business processes. PO has all the functionality of SAP PI in a single Java stack plus unified features such as Business Rule Management (BRM), Business Process Management (BPM), Enterprise Service Repository (ESR), B2B Collaboration and cloud integration, and for application integration.
 
 ### SAP Global Trade Services
-{: #get-started-sap-gts}
+{: #sap-offerings-and-products-sap-gts}
 
 SAP Global Trade Services (GTS) is software that allows organizations to support and define import and export trade processes in SAP ERP. GTS reduces the time and costs of complying with global trade regulations and provides visibility into the supply chain while goods are in transit.
 
 ### SAP Business Technology Platform
-{: #get-started-sap-btp}
+{: #sap-offerings-and-products-sap-btp}
 
 SAP Business Technology Platform (BTP) is a SaaS product that runs in the SAP Cloud. The SAP Cloud is a global network of data centers that include SAP’s data centers as well as public cloud providers such as Amazon Web Services (AWS) and Microsoft Azure, Google Cloud Platform (GCP) and Alibaba Cloud. The SAP Cloud provides lot of flexibility for those enterprises that want to co-locate SAP BTP along with their existing workloads. Once a customer subscribes to SAP BTP, they can create sub-accounts for extension and integration scenarios on any of the available regions/IaaS providers. 
 
@@ -86,7 +72,7 @@ To provide access to the SAP BTP SaaS from their SAP systems, SAP Cloud Connecto
 SAP Private Link Service in SAP BTP allows private connectivity between the SAP BTP services to the SAP systems in their own Cloud accounts. The SAP Private Link Service leverages the cloud providers underlying service. For example, in AWS SAP Private Link Service leverages AWS PrivateLink and allows access to selected AWS services including; Amazon Simple Storage Service (S3) and Amazon Simple Notification Service (SNS).
 
 ### GROW and RISE with SAP
-{: #get-started-sap-grow-and-rise}
+{: #sap-offerings-and-products-sap-grow-and-rise}
 
 SAP offers ERP SaaS solutions for companies of all sizes with the following:
 
@@ -94,18 +80,15 @@ SAP offers ERP SaaS solutions for companies of all sizes with the following:
 * RISE with SAP - A comprehensive package that includes an AI-enabled SAP S/4HANA Cloud Private Edition that’s managed and optimized by SAP. It provides services and tools so you can migrate on-premise systems, transform business processes, drive continuous innovation, and unlock cloud agility.
 
 ## SAP Cloud Peering
-{: #get-started-sap-cloud-peering}
+{: #sap-offerings-and-products-sap-cloud-peering}
 
 SAP Cloud Peering is a reliable and secure connectivity option for customer to SAP Cloud Services leveraging SAP’s global interconnection provider ecosystem. SAP Cloud Peering is a highly secure connectivity option, because the traffic goes through the Telco supplier's network and never comes across the public Internet. It combines the advantages of a fast deploying solution as well as the security and reliability of dedicated channels. It perfectly fits for the customers who already use network solutions by one of the global interconnection providers (e.g. Verizon, Equinix etc).
 
 ## Next steps
-{: #get-started-next-steps}
-
-Review the documentation on this site starting with the [Overview](/docs/rise-with-sap-on-powervs?topic=overview)
+{: #sap-offerings-and-products-next-steps}
 
 Review the following documentation:
 
-* [RISE with SAP](https://www.sap.com/products/erp/rise.html){: external}
-* [Investment program for RISE with SAP on IBM Power Virtual Server](https://www.ibm.com/downloads/documents/us-en/115dcc7c17b63643){: external}
-* [RISE with SAP cloud operations](https://www.sap.com/products/erp/rise/managed-cloud-services.html){: external}
-* [RISE with SAP on IBM Power Virtual Server](https://www.ibm.com/cloud/rise-with-sap){: external}
+* [SAP Products A-Z](https://www.sap.com/uk/products/a-z.html){: external}
+* [What Is SAP?](https://learning.sap-press.com/what-is-sap){: external}
+* [List of SAP products](https://en.wikipedia.org/wiki/List_of_SAP_products){: external}

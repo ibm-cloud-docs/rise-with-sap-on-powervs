@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-02-08
+lastupdated: 2025-03-17
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -27,24 +27,6 @@ In this document the term **surround workloads** is used to define a workload th
 * IBM Cloud - your IBM Cloud workloads, hosted in one of the three IBM Cloud infrastructure environments; IBM Cloud Classic, IBM Cloud VPC or IBM Power Virtual Server in IBM data center.
 
 While your RISE with SAP on IBM Power Virtual Server workloads are running in the SAP IBM Cloud Account, your IBM Cloud surround workloads run in your own IBM Cloud Account.
-
-## RISE with SAP on IBM Power Virtual Server architecture
-{: #integration-overview-arch}
-
-SAP creates and manages the entire RISE with SAP on IBM Power Virtual Server architecture running in an IBM Cloud Enterprise Account owned by SAP. SAP defines, validates and deploys all technical resources deployed in this IBM Cloud Enterprise Account. 
-
-Clients of RISE with SAP on IBM Power Virtual Server do not get access to the SAP IBM Cloud Enterprise Account. The SAP IBM Cloud Enterprise Account and all the resources within it are visible to and managed by SAP only.
-
-The details of the RISE with SAP on IBM Power Virtual Server architecture architecture, is the intellectual property of SAP. Clients work with SAP on configuration and customization of the deployed RISE landscape, to fit their organization's requirements.
-
-It is important to understand that connectivity to your SAP systems in Power Virtual Server in IBM data center is via Application Load Balancers (ALB) hosted in the SAP managed IBM Cloud VPC. Therefore, all traffic to and from your SAP systems is routed via the ALBs (Direct Server Return is not used in ALB). The ALBs do source network address translation, so that all traffic to the SAP Power Virtual Servers is sourced from the ALBs and not directly from the client.
-
-![Figure 1. Load Balancer](../images/lb.svg "Load Balancer"){: caption="Load Balancer" caption-side="bottom"}
-
-### RISE with SAP on IBM Power Virtual Server IP schema
-{: #integration-overview-arch-ip}
-
-When you request the RISE with SAP on IBM Power Virtual Server service, you supply to SAP an IP address schema that will be used within their IBM Cloud Enterprise Account. This IP address schema must not overlap with any IP addresses used elsewhere in your organization or in IBM Cloud.
 
 ## Virtual Private Cloud
 {: #integration-overview-arch-vpc}
@@ -74,7 +56,7 @@ With an IBM Cloud Transit Gateway, you can connect:
 
 The diagram below shows the inter-connectivity options provided by RISE with SAP on IBM Power Virtual Server.
 
-![Figure 2. Inter-connectivity](../images/interconnectivity.svg "Inter-connectivity"){: caption="Inter-connectivity" caption-side="bottom"}
+![Figure 1. Inter-connectivity](../images/interconnectivity.svg "Inter-connectivity"){: caption="Inter-connectivity" caption-side="bottom"}
 
 The connections to RISE with SAP on IBM Power Virtual Server are defined as follows:
 

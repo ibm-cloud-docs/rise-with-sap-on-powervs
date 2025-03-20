@@ -11,20 +11,20 @@
         "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-get-started"
       },
       {
-        "title": "Integration Overview",
-        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-integration-overview"
+        "title": "Surround Workloads",
+        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-overview"
       },
       {
-        "title": "Non-RISE SAP",
-        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-non-rise-sap-surround-workloads"
+        "title": "Surround Workloads By Use-case",
+        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-use-case"
       }
     ]
   },
   "section_highlights": [
     {
-      "title": "Non-RISE SAP",
-      "description": "Non-RISE SAP® surround workloads are those workloads that currently reside alongside your on-premise SAP systems hosted on {{site.data.keyword.IBM}} Power that you intend to migrate to RISE with SAP on {{site.data.keyword.powerSysFull}}.",
-      "href": "https://test.cloud.ibm.com/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-non-rise-sap-surround-workloads",
+      "title": "Surround Workloads By Platform",
+      "description": "Lists the available solution guides, reference architectures or deployable architectures by IBM Cloud platform.",
+      "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-platform",
       "type": "blog"
     },
     {
@@ -58,7 +58,7 @@
     }
   ],
   "section_updates": {
-    "view_more": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-release-notes",
+    "view_more": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-overview",
     "tiles": [
       {
         "date": "07 February 2025",
