@@ -12,7 +12,7 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Integrating on-premises and IBM Cloud with RISE with SAP on IBM Power Virtual Server
+# Hybrid
 {: #integration-hybrid}
 
 This hybrid use case illustrates a desire to connect on-premise or external locations to your {{site.data.keyword.cloud}} Account and then connect your IBM Cloud Account to the RISE with SAP on {{site.data.keyword.powerSysFull}} as shown in the diagram below:
@@ -35,7 +35,7 @@ When connecting to RISE with SAP discuss with your SAP representative on the tra
 
 The documentation [Extending your enterprise network to IBM Cloud](https://cloud.ibm.com/docs/pattern-classic-edge-gateway?topic=pattern-classic-edge-gateway-extending-enterprise-network) takes a different approach and defines a reference architecture used to direct all network traffic to flow through an IBM Cloud Classic firewall or gateway appliance for inspection before going to the downstream workloads within IBM Cloud.
 
-# The Enterprise hybrid pattern
+## The Enterprise hybrid pattern
 {: #integration-hybrid-enterprise}
 
 Larger enterprises that have adopted {{site.data.keyword.cloud}} have additional requirements, see [Enterprise architecture](/docs/enterprise-account-architecture?topic=enterprise-account-architecture-about) and [Adopting the Enterprise Architecture](/docs/adopt-enterprise-architecture?topic=adopt-enterprise-architecture-intro).

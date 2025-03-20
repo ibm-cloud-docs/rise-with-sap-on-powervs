@@ -12,7 +12,7 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Integrating IBM Cloud with RISE with SAP on IBM Power Virtual Server
+# IBM Cloud
 {: #integration-ibm-cloud}
 
 While your RISE with SAP on {{site.data.keyword.powerSysFull}} workloads are running in the SAP® IBM Cloud Account, your IBM Cloud surround workloads run in your own IBM Cloud Account.

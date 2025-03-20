@@ -12,7 +12,7 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Integrating multi-cloud with RISE with SAP on IBM Power Virtual Server
+# Multi-cloud
 {: #integration-multi-cloud}
 
 Multi-cloud is a cloud computing strategy where enterprises can utilize the services of multiple public cloud services concurrently. Multi-cloud integrates cloud services into a single environment through a combination of APIs, networking, and management tools. This allows enterprises to manage their cloud services centrally and to move workloads seamlessly between different cloud providers as and when they need to. See [What is multicloud?](https://www.ibm.com/think/topics/multicloud){: external}

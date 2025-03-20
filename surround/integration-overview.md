@@ -12,7 +12,7 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Integrating with RISE with SAP on IBM Power Virtual Server
+# Overview
 {: #integration-overview}
 
 With RISE with SAP on {{site.data.keyword.powerSysFull}}, the SAP® Enterprise Cloud Services (ECS) team manages the SAP systems, however, it is your responsibility to establish network connectivity to RISE with SAP on Power Virtual Server. IBM recommends that you spend time with your SAP representative to understand the available options on how to connect your on-premises networks and your IBM Cloud Account networks to the RISE with SAP on Power Virtual Server networks.

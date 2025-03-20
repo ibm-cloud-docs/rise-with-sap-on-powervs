@@ -44,7 +44,7 @@ The high-level RISE with SAP on IBM Power Virtual Server is shown in the diagram
 
 ![Figure 2. RISE with SAP on IBM Power Virtual Server Overview](../images/overview.svg "RISE with SAP on IBM Power Virtual Server Overview"){: caption="RISE with SAP on IBM Power Virtual Server Overview" caption-side="bottom"}
 
-# System communication with RISE with SAP Power Virtual Server
+## System communication with RISE with SAP Power Virtual Server
 {: #reference-architecture-system-communication}
 
 Your RISE with SAP {{site.data.keyword.powerSysFull}} systems allow the following system communications:
