@@ -15,7 +15,103 @@ subcollection: rise-with-sap-on-powervs
 # SAP offerings and products
 {: #sap-offerings-and-products}
 
-It is helpful that you have an understanding of SAP offerings and products. The following sections provides a short description
+It is helpful that you have an understanding of both the IBM and SAP offerings and products. The following sections provides a short description of these products.
+
+## IBM offerings and products
+{: #sap-offerings-and-products-ibm}
+
+### IBM ManagePlus
+{: #sap-offerings-and-products-ibm-manageplus}
+
+IBM ManagePlus is a service offered by IBM Consulting and can be layered onto RISE with SAP or RISE with SAP – Premium Supplier, where it offers:
+
+* An assurance service which reduces the risk in delivering implementation services.
+* Built on the RISE RACI roles and responsibilities providing complete transparency. 
+* Provides a wrapper service complimenting the RISE Standard Services.
+* Based on pre-packaged options, tailored packages also available based client’s custom requirements.
+* Integrated into the RISE Adoption Framework.
+
+The following table describes how IBM ManagePlus layers onto RISE with SAP or RISE with SAP – Premium Supplier:
+
+| Area | Responsible |
+|:---------|:----------|
+| 1-Service Delivery | IBM ManagePlus |
+| 2-Systems Analysis (Health Check, EWA..) | IBM ManagePlus |
+| 3-Systems Optimization study | IBM ManagePlus |
+| 4-Data Management life cycle | IBM ManagePlus |
+| 5-Technical Maintenance | RISE with SAP or RISE with SAP – Premium Supplier |
+| 6-Technical Software Upgrades | RISE with SAP or RISE with SAP – Premium Supplier |
+| 7-Operating System (OS) Maintenance | RISE with SAP or RISE with SAP – Premium Supplier | 
+| 8-Cloud Technical Maintenance | RISE with SAP or RISE with SAP – Premium Supplier |
+| 9-Software & Support | RISE with SAP or RISE with SAP – Premium Supplier |
+| 10-Cloud BoM | RISE with SAP or RISE with SAP – Premium Supplier |
+{: caption="IBM ManagePlus layers onto RISE with SAP or RISE with SAP – Premium Supplier" caption-side="bottom"}
+
+IBM ManagePlus can cover non-RISE SAP and non-SAP services based on the client requirements to deliver a seamless, comprehensive and end-to-end service. The following table describes how IBM ManagePlus delivers for non-RISE SAP and non-SAP services:
+
+| Area | Responsible |
+|:---------|:----------|
+| 1-Service Delivery | IBM ManagePlus |
+| 2-Systems Analysis (Health Check, EWA..) | IBM ManagePlus |
+| 3-Systems Optimization study | IBM ManagePlus |
+| 4-Data Management life cycle | IBM ManagePlus |
+| 5-Technical Maintenance | IBM ManagePlus |
+| 6-Technical Software Upgrades | IBM ManagePlus |
+| 7-Operating System (OS) Maintenance | IBM ManagePlus | 
+| 8-Cloud Technical Maintenance | IBM ManagePlus |
+| 9-Software & Support | Client's contract with software vendors |
+| 10-Cloud BoM | Client's contract with Cloud provider |
+{: caption="IBM ManagePlus layers onto RISE with SAP or RISE with SAP – Premium Supplier" caption-side="bottom"}
+
+IBM ManagePlus increases client ved Customer value, due to the following:
+
+* Multi-cloud / hybrid cloud orchestration.
+* IBM built control plane that allows organizations to adopt IT operational management best practices based on AI and automation.
+* Ability to address customer unique requirements such as tailored security standards.
+
+### RISE with SAP – Premium Supplier
+{: #sap-offerings-and-products-ibm-premium}
+
+Premium Suppliers are SAP partners who have demonstrated expertise in RISE with SAP and offer a wide range of services. Premium Suppliers include 
+IBM, T-Systems and Fujitsu. The IBM RISE with SAP – Premium Supplier is a service offered by IBM Consulting that: 
+
+* Delivers Premium Supplier Services to SAP under the same Service Level Agreement as Standard RISE.
+* Uses the IBM’s HA clustered solution allowing for 99.9% SLA around system availability under the extended Service level Agreement option from SAP.
+* Aere built on the same Technical Architecture as Standard RISE
+* IBM’s Well Architected Digital Operations Management Plane built on IBM’s own Cloud Tenant, giving clients more control. 
+* Enables better TCO efficiency with incremental scalability.
+
+The following table shows a comparison between RISE with SAP – Premium Supplier and RISE with SAP on IBM Power Virtual Server:
+
+| Area | RISE with SAP Responsible | RISE with SAP – Premium Supplier Responsible |
+|:---------|:----------|:----------|
+| Application Management | Application Management Provider (IBM/Other SI) | Application Management Provider (IBM/Other SI) |
+| Development & Extensions | Application Management Provider (IBM/Other SI) | Application Management Provider (IBM/Other SI) |
+| Implementation | System Integrator (IBM/Other SI) | System Integrator (IBM/Other SI) |
+| Integration | System Integrator (IBM/Other SI) | System Integrator (IBM/Other SI) |
+| Upgrade / Migration | System Integrator (IBM/Other SI) | System Integrator (IBM/Other SI) |
+| Security Management | SAP | IBM Security |
+| Software Maintenance | SAP | BASIS Services (SAP) |
+| NetWeaver Stack (SAP Basis) | SAP | BASIS Services (SAP) |
+| Database Management | SAP | BASIS Services (SAP) |
+| Data Backup and Restore | SAP | IBM Platform Engineering (PES) |
+| System Governance | SAP | IBM Platform Engineering (PES) |
+| Operating System / SDN / SDS / SDC | SAP | IBM Platform Engineering (PES) |
+| Virtualization | SAP | IBM Cloud / Azure / AWS |
+| Servers | SAP | IBM Cloud / Azure / AWS |
+| Storage | SAP | IBM Cloud / Azure / AWS |
+| DC and Networking | SAP | IBM Cloud / Azure / AWS |
+| Licenses | SAP | SAP |
+| Tools & Services for Migration & Readiness Check | SAP | SAP |
+| SAP Business Technology Platform | SAP | SAP |
+| SAP Business Network | SAP | SAP |
+| SAP Business Process Intelligence | SAP | SAP |
+{: caption="RISE with SAP on IBM Power Virtual Server and RISE with SAP – Premium Supplier comparison" caption-side="bottom"}
+
+Typically client's select RISE with SAP – Premium Supplier over RISE with SAP as they require a single provider across the landscape and direct relationship with the support teams.
+
+## SAP offerings and products
+{: #sap-offerings-and-products-sap}
 
 ### SAP ERP
 {: #sap-offerings-and-products-sap-erp}
@@ -79,7 +175,7 @@ SAP offers ERP SaaS solutions for companies of all sizes with the following:
 * GROW with SAP - A complete offering of solutions, adoption acceleration services, community, and learning so companies of all sizes can implement SAP S/4HANA Cloud Public Edition.
 * RISE with SAP - A comprehensive package that includes an AI-enabled SAP S/4HANA Cloud Private Edition that’s managed and optimized by SAP. It provides services and tools so you can migrate on-premise systems, transform business processes, drive continuous innovation, and unlock cloud agility.
 
-## SAP Cloud Peering
+### SAP Cloud Peering
 {: #sap-offerings-and-products-sap-cloud-peering}
 
 SAP Cloud Peering is a reliable and secure connectivity option for customer to SAP Cloud Services leveraging SAP’s global interconnection provider ecosystem. SAP Cloud Peering is a highly secure connectivity option, because the traffic goes through the Telco supplier's network and never comes across the public Internet. It combines the advantages of a fast deploying solution as well as the security and reliability of dedicated channels. It perfectly fits for the customers who already use network solutions by one of the global interconnection providers (e.g. Verizon, Equinix etc).

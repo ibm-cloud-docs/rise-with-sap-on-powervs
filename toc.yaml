@@ -39,8 +39,8 @@ toc:
        - topicgroup:
           label: Solution Guides
           topics:
-          - surround/surround-solution-guides-by-platform.md
-          - surround/surround-solution-guides-by-use-cases.md
+          - surround/solution-guides-by-platform.md
+          - surround/solution-guides-by-use-cases.md
        - topicgroup:
           label: Migration
           topics:

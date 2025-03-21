@@ -51,8 +51,8 @@ The following table describes the high-level responsibilities for RISE with SAP 
 
 | Area | Responsible |
 |:---------|:----------|
-| | Application Management | Application Management Provider (IBM/Other SI) |
-Development & Extensions | Application Management Provider (IBM/Other SI) |
+| Application Management | Application Management Provider (IBM/Other SI) |
+| Development & Extensions | Application Management Provider (IBM/Other SI) |
 | Implementation | System Integrator (IBM/Other SI) |
 | Integration | System Integrator (IBM/Other SI) |
 | Upgrade / Migration | System Integrator (IBM/Other SI) |
@@ -63,7 +63,6 @@ Development & Extensions | Application Management Provider (IBM/Other SI) |
 | Data Backup and Restore | SAP |
 | System Governance | SAP |
 | Operating System / SDN / SDS / SDC | SAP |
-| SAP Scope | SAP |
 | Virtualization | SAP |
 | Servers | SAP |
 | Storage | SAP |
