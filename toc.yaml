@@ -29,6 +29,8 @@ toc:
           label: Surround Workloads
           topics:
           - surround/overview.md
+          - surround/migration-considerations.md
+          - surround/migration-tooling.md
        - topicgroup:
           label: Integration
           topics:
@@ -41,8 +43,3 @@ toc:
           topics:
           - surround/solution-guides-by-platform.md
           - surround/solution-guides-by-use-cases.md
-       - topicgroup:
-          label: Migration
-          topics:
-          - surround/migration-considerations.md
-          - surround/migration-tooling.md

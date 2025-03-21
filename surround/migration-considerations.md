@@ -12,7 +12,7 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Considerations
+# Migration considerations
 {: #migration-considerations}
 
 When approaching the migration of your surrounding workloads, it is helpful to understand the migration timeline and classify each of the surround workloads as a tactical or strategic migration:

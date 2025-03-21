@@ -15,6 +15,9 @@ subcollection: rise-with-sap-on-powervs
 # Reference Architecture
 {: #reference-architecture}
 
+## Overview
+{: #reference-architecture-overview}
+
 Using {{site.data.keyword.powerSysFull}}, the cloud-based version of the mission-critical IBM Power server platform used for on-premises Enterprise Resource Planning (ERP), you can rapidly transform on-premises SAP ERP systems, modernize business processes and become more agile. Known for its high security, scalability and reliability, IBM Power servers are engineered for fewer disruptions and faster migration, supported by the highly resilient and secured IBM Cloud platform.
 
 SAP S/4HANA Cloud Private Edition is the software in the RISE with SAP on IBM Power Virtual Server service that holds the client’s mission critical data and business processes. SAP Enterprise Cloud Services (ECS) provides a managed private environment with multi-layer defense in depth architecture handling infrastructure and technical managed services in line with their Service Level Agreement (SLA).
@@ -26,12 +29,22 @@ SAP creates and manages the entire RISE with SAP on IBM Power Virtual Server arc
 Clients of RISE with SAP on IBM Power Virtual Server do not get access to the SAP IBM Cloud Enterprise Account. The SAP IBM Cloud Enterprise Account and all the resources within it are visible to and managed by SAP only.
 
 The details of the RISE with SAP on IBM Power Virtual Server architecture architecture, is the intellectual property of SAP. Clients work with SAP on configuration and customization of the deployed RISE landscape, to fit their organization's requirements.
+{: note}
+
+## Application load balancers
+{: #reference-architecture-alb}
 
 It is important to understand that connectivity to your SAP systems in Power Virtual Server in IBM data center is via Application Load Balancers (ALB) hosted in the SAP managed IBM Cloud VPC. Therefore, all traffic to and from your SAP systems is routed via the ALBs (Direct Server Return is not used in ALB). The ALBs do source network address translation, so that all traffic to the SAP Power Virtual Servers is sourced from the ALBs and not directly from the client.
 
 ![Figure 1. Load Balancer](../images/lb.svg "Load Balancer"){: caption="Load Balancer" caption-side="bottom"}
 
+## IP address schema
+{: #reference-architecture-ip}
+
 When you request the RISE with SAP on IBM Power Virtual Server service, you supply to SAP an IP address schema that will be used within their IBM Cloud Enterprise Account. This IP address schema must not overlap with any IP addresses used elsewhere in your organization or in IBM Cloud.
+
+## Connectivity to RISE with SAP on IBM Power Virtual Server
+{: #reference-architecture-connectivity}
 
 It is the client's responsibility to ensure secure connectivity to RISE with SAP on IBM Power Virtual Server. There are essentially four different ways to connect to the service and the client can select the connections based on their specific requirements on security, compliance, bandwidth, and cost:
 
@@ -62,3 +75,80 @@ The diagram below, shows how the data connectors within your self-hosted integra
 You are responsible for deployment and operation of the self-hosted integration runtime within your IBM Cloud Account. RISE with SAP Power Virtual Server exposes the communication ports for your applications to use but has no knowledge or support for the connected application or service.
 
 Contact SAP for details on communication paths available to you with RISE with SAP Power Virtual Server and the necessary steps to open them. SAP must also be contacted for any SAP license details for any implications accessing SAP data through any external applications.
+{: note}
+
+## DNS Considerations
+{: #reference-architecture-dns}
+
+When you request the RISE with SAP on {{site.data.keyword.powerSysFull}}, you supply your domain name e.g. `<customer>.com`. SAP® create a sub-domain e.g. `sap.<customer>.com` on the DNS servers in their {{site.data.keyword.cloud}} Enterprise Account that hosts the fully qualified domain names and IP addresses for the services they host for you. SAP allow a zone transfer from their SAP DNS servers to your DNS servers, so that name resolution on your network can occur.
+
+In some circumstances SAP will allow DNS forwarding of requests from your DNS servers to SAP's DNS servers. You must request this non-preferred method from your SAP representative.
+
+### IBM Cloud Transit Gateway in the SAP account
+{: #reference-architecture-dns-sap-tgw}
+
+The diagram below illustrates the SAP preferred method of DNS zone transfer to your DNS service provisioned from the IBM catalog in your IBM Cloud Account. A secondary zone is a read-only copy of the primary DNS zone, communicated via a process known as a zone transfer. In this use case SAP own the primary DNS zone. See [Understanding secondary zones](/docs/dns-svcs?topic=dns-svcs-sec-zones-about).
+
+![Figure 4. IBM Cloud DNS with the Transit Gateway in the SAP account](../images/dns-sap-tgw.svg "IBM Cloud DNS with the Transit Gateway in the SAP account"){: caption="IBM Cloud DNS with the Transit Gateway in the SAP account" caption-side="bottom"}
+
+The process steps to achieve this use case include the following:
+
+1. Request the service from SAP, providing the IP addresses of your DNS customer resolvers.
+2. SAP provide the IP addresses of their SAP DNS servers.
+3. Create a DNS secondary zone, see [Creating a secondary zone from the CLI](/docs/dns-svcs?topic=dns-svcs-create-secondary-zone&interface=cli), using the IP addresses supplied by SAP in the `--transfer-from` value parameter. You can use the IBM Cloud UI or API if preferred.
+
+You may host your own DNS software on IBM Cloud VSIs, as shown in the diagram below:
+
+![Figure 5. Client DNS with the Transit Gateway in the SAP account](../images/client-dns-sap-tgw.svg "Client DNS with the Transit Gateway in the SAP account"){: caption="Client DNS with the Transit Gateway in the SAP account" caption-side="bottom"}
+
+The process steps to achieve this use case include the following:
+
+1. Request the service from SAP, providing the IP addresses of your DNS servers.
+2. SAP provide the IP addresses of their SAP DNS servers.
+3. Follow the instructions for your DNS software to enable the zone transfer.
+
+### IBM Cloud Transit Gateway in the client account
+{: #reference-architecture-dns-client-tgw}
+
+The diagram below illustrates the SAP preferred method of DNS zone transfer to your DNS service provisioned from the IBM catalog in your IBM Cloud Account. A secondary zone is a read-only copy of the primary DNS zone, communicated via a process known as a zone transfer. In this use case SAP own the primary DNS zone. See [Understanding secondary zones](/docs/dns-svcs?topic=dns-svcs-sec-zones-about).
+
+![Figure 6. IBM DNS with the Transit Gateway in the Client account](../images/dns-client-tgw.svg "IBM DNS with the Transit Gateway in the Client account"){: caption="IBM DNS with the Transit Gateway in the Client account" caption-side="bottom"}
+
+The process steps to achieve this use case include the following:
+
+1. Request the service from SAP, providing the IP addresses of your DNS customer resolvers.
+2. SAP provide the IP addresses of their SAP DNS servers.
+3. Create a DNS secondary zone, see [Creating a secondary zone from the CLI](/docs/dns-svcs?topic=dns-svcs-create-secondary-zone&interface=cli), using the IP addresses supplied by SAP in the `--transfer-from` value parameter. You can use the IBM Cloud UI or API if preferred.
+
+You may host your own DNS software on IBM Cloud VSIs, as shown in the diagram below:
+
+![Figure 7. Client DNS with the Transit Gateway in the Client account](../images/client-dns-client-tgw.svg "Client DNS with the Transit Gateway in the Client account"){: caption="Client DNS with the Transit Gateway in the SAP account" caption-side="bottom"}
+
+The process steps to achieve this use case include the following:
+
+1. Request the service from SAP, providing the IP addresses of your DNS servers.
+2. SAP provide the IP addresses of their SAP DNS servers.
+3. Follow the instructions for your DNS software to enable the zone transfer.
+
+### IBM Cloud Site-to-Site VPN pattern
+{: #reference-architecture-dns-vpn}
+
+The diagram below illustrates the SAP preferred method of DNS zone transfer to your DNS service provisioned from the IBM catalog in your IBM Cloud Account. A secondary zone is a read-only copy of the primary DNS zone, communicated via a process known as a zone transfer. In this use case SAP own the primary DNS zone. See [Understanding secondary zones](/docs/dns-svcs?topic=dns-svcs-sec-zones-about).
+
+![Figure 8. IBM DNS with VPN](../images/dns-vpn.svg "IBM DNS with VPN"){: caption="IBM DNS with VPN" caption-side="bottom"}
+
+The process steps to achieve this use case include the following:
+
+1. Request the service from SAP, providing the IP addresses of your DNS customer resolvers.
+2. SAP provide the IP addresses of their SAP DNS servers.
+3. Create a DNS secondary zone, see [Creating a secondary zone from the CLI](/docs/dns-svcs?topic=dns-svcs-create-secondary-zone&interface=cli), using the IP addresses supplied by SAP in the `--transfer-from` value parameter. You can use the IBM Cloud UI or API if preferred.
+
+You may host your own DNS software on IBM Cloud VSIs, as shown in the diagram below:
+
+![Figure 9. Client DNS with VPN](../images/client-dns-vpn.svg "Client DNS with VPN"){: caption="Client DNS with VPN" caption-side="bottom"}
+
+The process steps to achieve this use case include the following:
+
+1. Request the service from SAP, providing the IP addresses of your DNS servers.
+2. SAP provide the IP addresses of their SAP DNS servers.
+3. Follow the instructions for your DNS software to enable the zone transfer.

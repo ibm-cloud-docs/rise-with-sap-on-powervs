@@ -12,10 +12,10 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Tooling and services
+# Migration tooling and services
 {: #migration-tooling}
 
-This section high-lights some tooling and services to enable the migration of you surround workloads to IBM Cloud.
+This section high-lights some tooling and services to enable the migration of your surround workloads to IBM Cloud.
 
 ## RackWare RMM Server
 {: #migration-tooling-rmm}
