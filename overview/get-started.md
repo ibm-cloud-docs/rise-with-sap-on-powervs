@@ -23,9 +23,9 @@ RISE with SAP brings together outcome-driven services, Cloud ERP with SAP S/4HAN
 ## RISE with SAP
 {: #get-started-rise-with-sap}
 
-The RISE with SAP offering is a SAP® managed cloud service that helps organizations using on-premise ERP software, that includes including SAP ERP, SAP ECC, and SAP S/4HANA, to migrate to the SAP Cloud, securely and smoothly. RISE with SAP is tailored to help larger enterprises migrate their existing ERP data, processes, and capabilities to SAP S/4HANA Cloud Private Edition.
+The RISE with SAP offering is a SAP® managed cloud service that helps organizations using on-premise ERP software, that includes SAP ERP, SAP ECC, and SAP S/4HANA, to migrate to the SAP Cloud, securely and smoothly. RISE with SAP is tailored to help larger enterprises migrate their existing ERP data, processes, and capabilities to SAP S/4HANA Cloud Private Edition.
 
-RISE with SAP is a fully accredited cloud infrastructure with managed services that include technical system operations, software support, and security services based on best-practice cloud architecture, and includes management of the operating system, SAP HANA database, and SAP S/4HANA Cloud Private Edition application.
+RISE with SAP is a fully accredited cloud infrastructure managed service that includes technical system operations, software support, and security services based on best-practice cloud architecture, and includes management of the operating system, SAP HANA database, and SAP S/4HANA Cloud Private Edition application.
 
 RISE with SAP:
 
@@ -41,7 +41,7 @@ See [RISE with SAP](https://www.sap.com/uk/products/erp/rise.html?gclsrc=aw.ds&g
 ## RISE with SAP on IBM Power Virtual Server
 {: #get-started-rise-with-sap-power-vs}
 
-Using {{site.data.keyword.powerSysFull}}, the cloud-based version of the mission-critical IBM Power server platform used for on-premises Enterprise Resource Planning (ERP), you can rapidly transform on-premises SAP ERP systems, modernize business processes and become more agile. Known for its high security, scalability and reliability, IBM Power servers are engineered for fewer disruptions and faster migration, supported by the highly resilient and secured IBM Cloud platform.
+Using {{site.data.keyword.powerSysFull}}, the cloud-based version of the mission-critical IBM Power server platform used for on-premises Enterprise Resource Planning (ERP), you can rapidly transform on-premises SAP ERP systems, modernize business processes and become more agile. Known for its high security, scalability and reliability, IBM Power servers are engineered for fewer disruptions and facilitates faster migration, supported by the highly resilient and secured IBM Cloud platform.
 
 SAP S/4HANA Cloud Private Edition is the software in the RISE with SAP on IBM Power Virtual Server service that holds the client’s mission critical data and business processes. SAP Enterprise Cloud Services (ECS) provides a managed private environment with multi-layer defense in depth architecture handling infrastructure and technical managed services in line with their Service Level Agreement (SLA).
 

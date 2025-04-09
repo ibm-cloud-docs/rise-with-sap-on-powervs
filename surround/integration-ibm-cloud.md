@@ -41,8 +41,8 @@ The IBM Cloud Transit Gateway pattern has two sub-patterns:
 * IBM Cloud Transit Gateway in the SAP account.
 * IBM Cloud Transit Gateway in the client account.
 
-{: note}
 When connecting to RISE with SAP discuss with your SAP representative on the transit gateway connection they provide to enable peering between your IBM Cloud Account and the RISE with SAP IBM Cloud Account.
+{: note}
 
 ### IBM Cloud Transit Gateway in the SAP account
 {: #integration-ibm-cloud-tgw-sap}
@@ -56,14 +56,14 @@ This pattern uses the IBM Cloud Transit Gateway in the RISE with SAP on IBM Powe
    2. Classic: Account ID.
    3. PowerVS: Power Systems Virtual Server CRN.
 2. SAP adds a new connection to their existing gateway to your designated VPC, Classic or PowerVS environment.
-3. You approve the connection request.
+3. You review and approve the connection request.
 
 The diagram below illustrates traffic flow between a Client's VPC and SAP resources in RISE with SAP on Power Virtual Server.
 
 ![Figure 3. IBM Cloud Transit Gateway in the SAP account traffic flow](../images/lb-sap-tgw.svg "IBM Cloud Transit Gateway in the SAP account traffic flow"){: caption="IBM Cloud Transit Gateway in the SAP account traffic flow" caption-side="bottom"}
 
-{: note}
 While the diagram shows the IBM Cloud surround workload in a VPC, they can be hosted in the Classic or Power Virtual Server infrastructure environments.
+{: note}
 
 ### IBM Cloud Transit Gateway in the client account
 {: #integration-ibm-cloud-tgw-client}
@@ -76,7 +76,7 @@ You can select either a IBM Cloud Transit Gateway with local or global routing o
 
 1. Request SAP for the their VPC CRN.
 2. On a new or existing TGW add a connection to a VPC in a different account and enter the VPC CRN supplied to you from SAP.
-3. SAP will approve the request.
+3. SAP will review and approve the request.
 
 The diagram below illustrates traffic flow between a Client's VPC and SAP resources in RISE with SAP on Power Virtual Server.
 

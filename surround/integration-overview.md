@@ -15,7 +15,7 @@ subcollection: rise-with-sap-on-powervs
 # Overview
 {: #integration-overview}
 
-With RISE with SAP on {{site.data.keyword.powerSysFull}}, the SAP® Enterprise Cloud Services (ECS) team manages the SAP systems, however, it is your responsibility to establish network connectivity to RISE with SAP on Power Virtual Server. IBM recommends that you spend time with your SAP representative to understand the available options on how to connect your on-premises networks and your IBM Cloud Account networks to the RISE with SAP on Power Virtual Server networks.
+With RISE with SAP on {{site.data.keyword.powerSysFull}}, the SAP® Enterprise Cloud Services (ECS) team manages the SAP systems, however, it is your responsibility to establish network connectivity to RISE with SAP on Power Virtual Server. IBM recommends that you consult with your SAP representative to understand the available options on how to connect your on-premises networks and your IBM Cloud Account networks to the RISE with SAP on Power Virtual Server networks.
 
 This document explains the concepts and best practices to follow for a performant and secure solution to connect your networks with the RISE with SAP on IBM Power Virtual Server networks.
 
@@ -31,7 +31,7 @@ While your RISE with SAP on IBM Power Virtual Server workloads are running in th
 ## Virtual Private Cloud
 {: #integration-overview-arch-vpc}
 
-A Virtual Private Cloud (VPC) provides network isolation and security in the IBM Cloud. See [Virtual Private Cloud Overview]( /docs/vpc?topic=vpc-about-vpc). A VPC can be a logical container for an enterprise division's resources e.g. marketing, development, or accounting or a collection of resources operated by an enterprise team. VPCs can be connected to an enterprise's locations, to each other and VPCS in other IBM Cloud accounts.
+A Virtual Private Cloud (VPC) provides network isolation and security in the IBM Cloud. See [Virtual Private Cloud Overview]( /docs/vpc?topic=vpc-about-vpc). A VPC can be a logical container for an enterprise division's resources e.g. marketing, development, or accounting or a collection of resources operated by an enterprise team. VPCs can be connected to an enterprise's locations, to each other and VPCs in other IBM Cloud accounts.
 
 With IBM Cloud Transit Gateway, you can define and control communication between resources hosted in the IBM Cloud infrastructure environments and/or on-premise networks. See [Getting started with IBM Cloud Transit Gateway](/docs/transit-gateway?topic=transit-gateway-getting-started). The IBM Cloud infrastructure environments are:
 
@@ -60,15 +60,14 @@ The diagram below shows the inter-connectivity options provided by RISE with SAP
 
 The connections to RISE with SAP on IBM Power Virtual Server are defined as follows:
 
-* On-premises to RISE with SAP on IBM Power Virtual Server - This connection connects your user/workloads on-premises or other non-IBM Cloud locations to the RISE with SAP on IBM Power Virtual Server service. This connectivity is defined by you and SAP and can can be one of the following types:
+* On-premises to RISE with SAP on IBM Power Virtual Server - This connection connects your user/workloads on-premises or other non-IBM Cloud locations to the RISE with SAP on IBM Power Virtual Server service. This connectivity is defined by you and SAP and can be one of the following types:
     * Site-to-site IPsec VPN.
     * Direct Link.
-* Internet to RISE with SAP on IBM Power Virtual Server - This connectivity provides application access from the Internet
-* Peering - IBM Cloud to RISE with SAP on IBM Power Virtual Server - This connectivity provides access between resources in your IBM Cloud account and your resources in RISE with SAP on IBM Power Virtual Server. There is also a variant of this connectivity type where your IBM Cloud account is a hub that connects to your on-premise or external locations and your IBM Cloud resources to RISE with SAP on IBM Power Virtual Server.
+* Internet to RISE with SAP on IBM Power Virtual Server - This connectivity provides application access from the Internet.
+* Peering - IBM Cloud to RISE with SAP on IBM Power Virtual Server - This connectivity provides access between resources in your IBM Cloud account and your resources in RISE with SAP on IBM Power Virtual Server. There is also a variant of this connectivity type where your IBM Cloud account is a hub that connects to your on-premise or external locations and your IBM Cloud resources, including your surround workloads, to RISE with SAP on IBM Power Virtual Server.
 
-These documents defines the following three integration patterns:
+These documents defines the following integration patterns:
 
-* Internet integration - Integrating RISE with SAP on IBM Power Virtual Server with resources on the Internet such as SaaS and 3rd party providers.
-* IBM cloud integration - Integrating RISE with SAP on IBM Power Virtual Server with your non-RISE SAP and non-RISE non-SAP workloads in IBM Cloud.
-* Hybrid cloud integration - Integrating RISE with SAP on IBM Power Virtual Server with your non-RISE SAP and non-RISE non-SAP on-premises workloads.
-* Multi-cloud integration - Integrating RISE with SAP on IBM Power Virtual Server with your non-RISE SAP and non-RISE non-SAP workloads hosted with other cloud providers.
+* [IBM Cloud integration](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-integration-ibm-cloud) - Integrating RISE with SAP on IBM Power Virtual Server with your non-RISE SAP and non-RISE non-SAP workloads in IBM Cloud.
+* [Hybrid cloud integration](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-integration-hybrid) - Integrating RISE with SAP on IBM Power Virtual Server with your non-RISE SAP and non-RISE non-SAP on-premises workloads.
+* [Multi-cloud integration](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-integration-multi-cloud) - Integrating RISE with SAP on IBM Power Virtual Server with your non-RISE SAP and non-RISE non-SAP workloads hosted with other cloud providers.

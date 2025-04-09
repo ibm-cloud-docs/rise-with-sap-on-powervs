@@ -30,8 +30,8 @@ This use case is useful if a client already has an IBM Cloud presence linked to 
 
 The diagram does not show the use of a Virtual Network Functions (VNFs) appliance. VNF appliances, are packaged 3rd party firewall offerings available on the IBM Catalog. See [About virtual network functions over VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vnf) and [Available IBM Cloud VNF catalog offerings](https://cloud.ibm.com/docs/vpc?topic=vpc-deploy-vnf#available-vnf-offerings). See the enterprise scale hybrid integration for the use of a VNF in the architecture.
 
-{: note}
 When connecting to RISE with SAP discuss with your SAP representative on the transit gateway connection they provide to enable peering between your IBM Cloud Account and the RISE with SAP IBM Cloud Account.
+{: note}
 
 The documentation [Extending your enterprise network to IBM Cloud](https://cloud.ibm.com/docs/pattern-classic-edge-gateway?topic=pattern-classic-edge-gateway-extending-enterprise-network) takes a different approach and defines a reference architecture used to direct all network traffic to flow through an IBM Cloud Classic firewall or gateway appliance for inspection before going to the downstream workloads within IBM Cloud.
 
@@ -92,13 +92,13 @@ This architecture can be modified to match additional use-case:
 * If dynamic routing is required between the enterprise and the VNFs, then GRE and BGP can be used linking the routers in your enterprise and the VNFs.
 * Direct Link supports BGP routing, however, If the Direct Link is connected to a transit gateway this can also support BGP via GRE.
 * If route prefix filtering is required then the DirectLink can be connected to a transit gateway that connects to the transit hub VPC. Transit gateway connections allow route prefix filtering. See [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=ui).
-* Additional transit gateways can be added to assist in separtaion, however, be aware of the [Service Limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#service-limits).
-* To add disaster recovery to the reference architecture, connect another mult-izone region using a global transit gateway.
+* Additional transit gateways can be added to assist in separation, however, be aware of the [Service Limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#service-limits).
+* To add disaster recovery to the reference architecture, connect another multi-zone region using a global transit gateway.
 
-{: note}
-1. When creating VPCs that are also intended to be interconnected with your IBM Cloud classic infrastructure, do not use prefixes in your VPCs that overlap with the 10.0.0.0/14, 10.200.0.0/14, and 10.198.0.0/15 blocks. Also, don't use addresses from your classic infrastructure subnets.
+1. When creating VPCs that are also intended to be interconnected with your IBM Cloud classic infrastructure, do not use prefixes in your VPCs that overlap with the 10.0.0.0/14, 10.200.0.0/14, 10.198.0.0/15 and 10.254.0.0/16 blocks. Also, don't use addresses from your classic infrastructure subnets.
 2. You can connect a VPC, Direct Link, or classic infrastructure to multiple local gateways and a single global gateway.
 3. A classic connection allows you to communicate with all of your global classic infrastructure resources across MZRs, even if it is connected to a transit gateway provisioned with local routing.
+{: note}
 
 ## Routing
 {: #integration-hybrid-enterprise-routing}
