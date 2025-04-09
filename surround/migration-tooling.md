@@ -17,6 +17,19 @@ subcollection: rise-with-sap-on-powervs
 
 This section high-lights some tooling and services to enable the migration of your surround workloads to IBM Cloud.
 
+## IBM Transformation Suite for SAP Applications
+{: #migration-tooling-transformation-suite}
+
+To further accelerate Cloud ERP migration, IBM Transformation Suite for SAP Applications brings software and services from IBM and partners such as SNP that automates essential migration tasks, including technical assessments, data and code migration, code analysis, and automated testing.
+
+With the IBM Transformation Suite for SAP Applications, organizations can:
+
+* Accelerate the transition to SAP S/4HANA.
+* Unlock the potential of RISE with SAP.
+* Simplify their IT landscape while driving innovation.
+
+For more information on IBM Transformation Suite for SAP Applications, see [Accelerate your SAP S/4HANA journey with IBM Transformation Suite for SAP Applications](https://www.ibm.com/new/announcements/accelerate-your-sap-s-4hana-journey-with-ibm-transformation-suite-for-sap-applications).
+
 ## RackWare RMM Server
 {: #migration-tooling-rmm}
 

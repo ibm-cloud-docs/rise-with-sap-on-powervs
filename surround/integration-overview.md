@@ -66,7 +66,7 @@ The connections to RISE with SAP on IBM Power Virtual Server are defined as foll
 * Internet to RISE with SAP on IBM Power Virtual Server - This connectivity provides application access from the Internet.
 * Peering - IBM Cloud to RISE with SAP on IBM Power Virtual Server - This connectivity provides access between resources in your IBM Cloud account and your resources in RISE with SAP on IBM Power Virtual Server. There is also a variant of this connectivity type where your IBM Cloud account is a hub that connects to your on-premise or external locations and your IBM Cloud resources, including your surround workloads, to RISE with SAP on IBM Power Virtual Server.
 
-These documents defines the following integration patterns:
+These documents define the following integration patterns:
 
 * [IBM Cloud integration](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-integration-ibm-cloud) - Integrating RISE with SAP on IBM Power Virtual Server with your non-RISE SAP and non-RISE non-SAP workloads in IBM Cloud.
 * [Hybrid cloud integration](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-integration-hybrid) - Integrating RISE with SAP on IBM Power Virtual Server with your non-RISE SAP and non-RISE non-SAP on-premises workloads.

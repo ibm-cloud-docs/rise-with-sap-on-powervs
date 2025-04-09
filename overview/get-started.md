@@ -33,7 +33,7 @@ RISE with SAP:
 * includes ongoing support and maintenance for the entire solution stack, including infrastructure, platform, and application layers using certified subject-matter experts who handle operating system management tasks, such as patches, monitoring, and maintenance.
 * has the ability to scale up or down as needed with flexible pricing based on usage and consumption.
 * has enhanced security and compliance features with built-in controls and monitoring to help protect data and meet regulatory requirements.
-* enables integration with SAP Business Technology Platform, which provides advanced analytics, AI, and machine learning capabilities to help businesses make data-driven decisions and improve operational efficiency
+* enables integration with SAP Business Technology Platform, which provides advanced analytics, AI, and machine learning capabilities to help businesses make data-driven decisions and improve operational efficiency.
 * encompasses partners and developers that provide a wide range of complementary solutions and services that enhance the RISE with SAP offering.
 
 See [RISE with SAP](https://www.sap.com/uk/products/erp/rise.html?gclsrc=aw.ds&gad_source=1&gbraid=0AAAAAoV5MAX5yS4NBq8up4zvuErMQIF-Z&gclid=Cj0KCQiA4-y8BhC3ARIsAHmjC_HSyZuyRqHhIBD6sHB0YK_splrNwnJxGbHB_82swpzRbvCCVq3pAxwaAmOtEALw_wcB){: external}.
@@ -45,7 +45,7 @@ Using {{site.data.keyword.powerSysFull}}, the cloud-based version of the mission
 
 SAP S/4HANA Cloud Private Edition is the software in the RISE with SAP on IBM Power Virtual Server service that holds the client’s mission critical data and business processes. SAP Enterprise Cloud Services (ECS) provides a managed private environment with multi-layer defense in depth architecture handling infrastructure and technical managed services in line with their Service Level Agreement (SLA).
 
-SAP S/4HANA Cloud Private Edition is a single-tenant managed private environment for clients where SAP creates a separate account IBM Cloud Account in their IBM Cloud Enterprise Account for each customer. The application and database virtual server instances are solely dedicated to a single client.
+SAP S/4HANA Cloud Private Edition is a single-tenant managed private environment for clients where SAP creates a separate IBM Cloud Account in their IBM Cloud Enterprise Account for each customer. The application and database virtual server instances are solely dedicated to a single client.
 
 The following table describes the high-level responsibilities for RISE with SAP on IBM Power Virtual Server:
 

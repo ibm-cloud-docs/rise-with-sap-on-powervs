@@ -18,17 +18,17 @@ subcollection: rise-with-sap-on-powervs
 When approaching the migration of your surrounding workloads, it is helpful to understand the migration timeline and classify each of the surround workloads as a tactical or strategic migration:
 
 * Tactical - In the tactical approach, the surround workload needs to be migrated in the same time frame as your SAP systems in RISE with SAP on IBM Power Virtual Server.
-* Strategic - In the strategic approach, the surround workload does not need to be migrated in the same time frame as your SAP systems in RISE with SAP on IBM Power Virtual Server. The timeline is then governed by you business needs and requirements rather than the migration of your SAP systems.
+* Strategic - In the strategic approach, the surround workload does not need to be migrated in the same time frame as your SAP systems in RISE with SAP on IBM Power Virtual Server. The timeline is then governed by your business needs and requirements rather than the migration of your SAP systems.
 
 In addition, classify the workloads into:
 
-* Non-RISE SAP - These workloads are SAP systems that cannot be migrated to RISE with SAP Power Virtual Server because the are not SAP ERP, SAP ECC, or SAP S/4HANA. Many of these workloads can move to IBM Cloud and be hosted in your IBM Cloud Account. See [IBM Cloud for SAP and IBM Power Virtual Servers for SAP](https://cloud.ibm.com/docs/sap).
+* Non-RISE SAP - These workloads are SAP systems that cannot be migrated to RISE with SAP Power Virtual Server because they are not SAP ERP, SAP ECC, or SAP S/4HANA. Many of these workloads can move to IBM Cloud and be hosted in your IBM Cloud Account. See [IBM Cloud for SAP and IBM Power Virtual Servers for SAP](https://cloud.ibm.com/docs/sap).
 * Non-RISE non-SAP - These workloads are not SAP systems and cannot move to RISE with SAP. Many of these workloads can move to IBM Cloud and be hosted in your IBM Cloud Account. See [IBM Cloud Solution Library](https://cloud.ibm.com/docs?tab=solutions).
 
 ## Migration strategy
 {: #migration-migration-strategy}
 
-If the surround workload has been classified as tactical then it important to consider the strategy of achieving the migration in the timeline. These cloud migration strategies include re-hosting, re-platforming, refactoring, repurchasing and retiring.
+If the surround workload has been classified as tactical then it is important to consider the strategy of achieving the migration in the timeline. These cloud migration strategies include re-hosting, re-platforming, refactoring, repurchasing and retiring.
 
 * Re-hosting - Re-hosting, also known as Lift and Shift, involves moving applications from your on-premises environment to the cloud without making significant changes. Examples include:
     * Moving VMware from on-premises to IBM Cloud for VMware Solutions. For information on the offering, benefits and use cases see [IBM cloud for VMware Solutions](https://www.ibm.com/products/vmware). For information on migration see [Lift and shift VMware on-premises to IBM Cloud](/docs/pattern-migration-options-vmware-workloads?topic=pattern-migration-options-vmware-workloads-whitepaper). 

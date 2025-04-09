@@ -63,7 +63,7 @@ IBM ManagePlus can cover non-RISE SAP and non-SAP services based on the client r
 | 10-Cloud BoM | Client's contract with Cloud provider |
 {: caption="IBM ManagePlus layers onto RISE with SAP or RISE with SAP – Premium Supplier" caption-side="bottom"}
 
-IBM ManagePlus increases client ved Customer value, due to the following:
+IBM ManagePlus increases client value, due to the following:
 
 * Multi-cloud / hybrid cloud orchestration.
 * IBM built control plane that allows organizations to adopt IT operational management best practices based on AI and automation.
@@ -77,7 +77,7 @@ IBM, T-Systems and Fujitsu. The IBM RISE with SAP – Premium Supplier is a serv
 
 * Delivers Premium Supplier Services to SAP under the same Service Level Agreement as Standard RISE.
 * Uses the IBM’s HA clustered solution allowing for 99.9% SLA around system availability under the extended Service level Agreement option from SAP.
-* Aere built on the same Technical Architecture as Standard RISE
+* Are built on the same Technical Architecture as Standard RISE.
 * IBM’s Well Architected Digital Operations Management Plane built on IBM’s own Cloud Tenant, giving clients more control. 
 * Enables better TCO efficiency with incremental scalability.
 

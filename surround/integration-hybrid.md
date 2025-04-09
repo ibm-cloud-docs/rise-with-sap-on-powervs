@@ -64,7 +64,7 @@ You will need to discuss your requirements with your SAP representative on which
 ## The Enterprise hybrid pattern in detail
 {: #integration-hybrid-enterprise-detail}
 
-The diagram below shows an enterprise scale hybrid integration scenario with a number of surround workloads hosted in the IBM Cloud infrastructure environments in your own IBM Cloud Account. The IBM Cloud Account for Client is peered with the IBM Cloud Account for RISE with SAP on iBM Power Virtual Server using a cross-account transit gateway connection. See [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui). The diagram shows a scenario where SAP® own the transit gateway and when you request SAP to peer they issue a connection request to your VPC.
+The diagram below shows an enterprise scale hybrid integration scenario with a number of surround workloads hosted in the IBM Cloud infrastructure environments in your own IBM Cloud Account. The IBM Cloud Account for Client is peered with the IBM Cloud Account for RISE with SAP on IBM Power Virtual Server using a cross-account transit gateway connection. See [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui). The diagram shows a scenario where SAP® own the transit gateway and when you request SAP to peer they issue a connection request to your VPC.
 
 ![Figure 5. The Enterprise hybrid pattern](../images/hybrid-enterprise.svg "The Enterprise hybrid pattern"){: caption="The Enterprise hybrid pattern" caption-side="bottom"}
 
