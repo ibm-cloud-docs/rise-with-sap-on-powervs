@@ -87,16 +87,6 @@ See [Give new life to legacy AIX and IBM i Operating Systems](https://www.fnts.c
 
 See [Komprise](https://www.komprise.com/support/){: external}.
 
-## VMware Cloud Migration Services
-{: #migration-tooling-primaryio}
-
-[VMware Cloud Migration Services](https://cloud.ibm.com/catalog/services/vmware-cloud-migration-services) is a selection of services for VMware customers seeking to modernize and embrace various IBM cloud options as either a production or disaster recovery target site. Offered by PrimaryIO, this collection is comprised of advisory services and optionally professional services. See [PrimaryIO](https://hdm.primaryio.com/lp/vmwaas){: external}.
-
-## ConvertIO VMware Workload Migration and Conversion
-{: #migration-tooling-convertio}
-
-[ConvertIO VMware Workload Migration and Conversion](https://cloud.ibm.com/catalog/services/convertio-vmware-workload-migration-and-conversion#about) uses the ConvertIO product, wrapped in services, to enable VMware customers to modernize and embrace IBM cloud-native Virtual Server Instances (VSI) workloads running in IBM Cloud VPC, reducing their VMware VCF estate and become more cloud-native. Each project is fully detailed with project plan, associated cost and transparency to the project status with focus on rapid achievement of critical path objectives. See [ConvertIO Solution Brief](https://www.primaryio.com/wp-content/uploads/2025/01/ConvertIO-Solution-Brief.pdf){: external}.
-
 ## Power i Migrate 23 Services
 {: #migration-tooling-poweri-migrate23}
 
@@ -133,6 +123,16 @@ See [IBM Technology Expert Labs – Cloud](https://www.ibm.com/cloud/expert-labs
 * [Partner with IBM Technology Expert Labs](https://cloud.ibm.com/catalog/services/partner-with-technology-expert-labs)
 * [Build SAP HANA Starter Edition on IBM Power](https://cloud.ibm.com/catalog/services/partner-with-technology-expert-labs?id=3e39e603-fb69-45ff-9a3d-9494c6786f41)
 * [Build IBM Storage Protect Solution for Power Virtual Server](https://cloud.ibm.com/catalog/services/partner-with-technology-expert-labs?id=69e6b868-27ef-4137-900b-93d8a3ceb5e6&catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPW1pZ3JhdGlvbiNzZWFyY2hfcmVzdWx0cw%3D%3D)
+
+## VMware Cloud Migration Services
+{: #migration-tooling-primaryio}
+
+[VMware Cloud Migration Services](https://cloud.ibm.com/catalog/services/vmware-cloud-migration-services) is a selection of services for VMware customers seeking to modernize and embrace various IBM cloud options as either a production or disaster recovery target site. Offered by PrimaryIO, this collection is comprised of advisory services and optionally professional services. See [PrimaryIO](https://hdm.primaryio.com/lp/vmwaas){: external}.
+
+## ConvertIO VMware Workload Migration and Conversion
+{: #migration-tooling-convertio}
+
+[ConvertIO VMware Workload Migration and Conversion](https://cloud.ibm.com/catalog/services/convertio-vmware-workload-migration-and-conversion#about) uses the ConvertIO product, wrapped in services, to enable VMware customers to modernize and embrace IBM cloud-native Virtual Server Instances (VSI) workloads running in IBM Cloud VPC, reducing their VMware VCF estate and become more cloud-native. Each project is fully detailed with project plan, associated cost and transparency to the project status with focus on rapid achievement of critical path objectives. See [ConvertIO Solution Brief](https://www.primaryio.com/wp-content/uploads/2025/01/ConvertIO-Solution-Brief.pdf){: external}.
 
 ## Veeam
 {: #migration-tooling-veeam}
