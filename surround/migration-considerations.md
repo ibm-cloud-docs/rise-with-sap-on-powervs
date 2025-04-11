@@ -22,7 +22,7 @@ When approaching the migration of your surrounding workloads, it is helpful to u
 
 In addition, classify the workloads into:
 
-* Non-RISE SAP - These workloads are SAP systems that cannot be migrated to RISE with SAP Power Virtual Server because they are not SAP ERP, SAP ECC, or SAP S/4HANA. Many of these workloads can move to IBM Cloud and be hosted in your IBM Cloud Account. See [IBM Cloud for SAP and IBM Power Virtual Servers for SAP](https://cloud.ibm.com/docs/sap).
+* Non-RISE SAP - These workloads are SAP systems that are not being migrated to RISE with SAP Power Virtual Server. Many of these workloads can move to IBM Cloud and be hosted in your IBM Cloud Account. See [IBM Cloud for SAP and IBM Power Virtual Servers for SAP](https://cloud.ibm.com/docs/sap).
 * Non-RISE non-SAP - These workloads are not SAP systems and cannot move to RISE with SAP. Many of these workloads can move to IBM Cloud and be hosted in your IBM Cloud Account. See [IBM Cloud Solution Library](https://cloud.ibm.com/docs?tab=solutions).
 
 ## Migration strategy

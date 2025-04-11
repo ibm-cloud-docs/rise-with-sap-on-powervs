@@ -21,7 +21,7 @@ When considering moving your on-premise IBM Power SAP systems to the RISE with S
 
 The SAP Core systems are the candidates for the RISE with SAP on IBM Power Virtual Server, while the surround workloads can be categorized as follows:
 
-* non-RISE SAP - These SAP Surround workloads are not suitable to be migrated to RISE with SAP Power Virtual Server. Examples include the following:
+* non-RISE SAP - These SAP surround workloads are not being migrated to RISE with SAP Power Virtual Server. Examples include the following:
     * SAP CRM - SAP CRM (Customer Relationship Management) is considered as legacy and replaced by the SaaS service Customer Experience.
     * SAP SRM - SAP SRM (Supplier Relationship Management) is considered as legacy and replaced by the SaaS service Ariba.
     * SAP ECC - SAP ECC (ERP Central Component) systems that are not being migrated to RISE with SAP Power Virtual Server.
@@ -66,7 +66,7 @@ As these surround workloads cannot be hosted in the SAP owned RISE with SAP on I
 * Power Virtual Server - IBM Power Virtual Server is a family of configurable, multi-tenant, virtual IBM Power servers with access to IBM Cloud services. See [IBM Power Virtual Server](https://www.ibm.com/products/power-virtual-server) and [IBM Power Systems Infrastructure environment introduction](/docs/sap?topic=sap-power-env-introduction).
 * Classic Infrastructure - The classic infrastructure IaaS platform leverages a traditional network architecture, best suited for lift and shift workloads so you can move applications quickly and keep the same architecture. See [IBM Cloud Bare Metal Servers on Classic Infrastructure](https://www.ibm.com/products/bare-metal-servers/classic?mhsrc=ibmsearch_a&mhq=classic%20infrastructure%20-%20ibm%20cloud), [IBM Cloud Virtual Servers on IBM Cloud Classic Infrastructure](https://www.ibm.com/products/virtual-servers-classic) and [Classic Infrastructure environment introduction](/docs/sap?topic=sap-classic-env-introduction).
 
-![Figure 3. Peering](../images/peering.svg "Peering"){: caption="peering" caption-side="bottom"}
+![Figure 4. Peering](../images/peering.svg "Peering"){: caption="peering" caption-side="bottom"}
 
 ### Loosely coupled surround workloads
 {: #surround-overview-loosely-coupled-surround-workloads}

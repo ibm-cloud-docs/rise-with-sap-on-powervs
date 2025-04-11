@@ -28,7 +28,7 @@ IBM ManagePlus is a service offered by IBM Consulting and can be layered onto RI
 * An assurance service which reduces the risk in delivering implementation services.
 * Built on the RISE RACI roles and responsibilities providing complete transparency. 
 * Provides a wrapper service complimenting the RISE Standard Services.
-* Based on pre-packaged options, tailored packages also available based client’s custom requirements.
+* Based on pre-packaged options, tailored packages also available based on client’s custom requirements.
 * Integrated into the RISE Adoption Framework.
 
 The following table describes how IBM ManagePlus layers onto RISE with SAP or RISE with SAP – Premium Supplier:
@@ -116,7 +116,7 @@ Typically client's select RISE with SAP – Premium Supplier over RISE with SAP 
 ### SAP ERP
 {: #sap-offerings-and-products-sap-erp}
 
-SAP Enterprise Resource Planning (ERP) made its first appearance in 1972 and known as SAP R/2, an early mainframe-based ERP software system. In the 1990s, SAP R/3 brought ERP technology to the client-server environment. SAP R/3 was superseded by SAP ECC SAP introduced SAP S/4HANA, an ERP suite that used the power of in-memory computing to deliver faster processing and real-time analytics. Later, SAP expanded this vision with SAP S/4HANA Cloud, a cloud ERP system that offered the benefits of enterprise resource planning with the cost-effectiveness and scalability of the cloud.
+SAP Enterprise Resource Planning (ERP) made its first appearance in 1972 and known as SAP R/2, an early mainframe-based ERP software system. In the 1990s, SAP R/3 brought ERP technology to the client-server environment. SAP R/3 was superseded by SAP ECC when SAP introduced SAP S/4HANA, an ERP suite that used the power of in-memory computing to deliver faster processing and real-time analytics. Later, SAP expanded this vision with SAP S/4HANA Cloud, a cloud ERP system that offered the benefits of enterprise resource planning with the cost-effectiveness and scalability of the cloud.
 
 SAP ERP is an integrated software solution that incorporates the key business functions of the organization i.e. Material Management, Sales and Distribution, Finance, Human Resources etc. SAP incorporates these functions as business modules. These business modules are developed in Advanced Business Application Programming (ABAP) while the Enterprise Portal (EP) and Process Integration (PI) modules are developed mostly in Java. These modules are deployed on application Servers i.e. ABAP Web Application Server for ABAP modules and Java Web Application Servers for Java modules.
 
@@ -134,7 +134,7 @@ SAP ERP Central Component (ECC) is the previous generation of ERP and has been r
 ### SAP S/4HANA
 {: #sap-offerings-and-products-sap-s4hana}
 
-SAP S/4HANA is the ERP designed to run solely on SAP HANA and does not run on any other database. It was launched in 2015, and users can choose between a cloud solution, an on-premise solution, or a combination of both. Many companies are planning the migration over to S/4HANA using SAP's Activate framework due to SAP ending support for ECC and previous versions in 2027.
+SAP S/4HANA is the ERP designed to run solely on SAP HANA DB and does not run on any other database. It was launched in 2015, and users can choose between a cloud solution, an on-premise solution, or a combination of both. Many companies are planning the migration over to S/4HANA using SAP's Activate framework due to SAP ending support for ECC and previous versions in 2027.
 
 * SAP S/4HANA Cloud Public Edition - This multi-tenanted software-as-a-service (SaaS) solution allows businesses to share the same cloud infrastructure and software instance, however, each business’s data is securely separated, helping ensure privacy and security. The benefit of this model is that it’s cost-effective, as resources are shared among many users, with updates or maintenance automatically applied across all tenants. However, customization options are typically more limited due to the shared infrastructure.
 * SAP S/4HANA Cloud Private Edition - This private managed cloud offering is a more tailored solution to meet specific business needs. In a private managed cloud, each business has its own dedicated, infrastructure and software instance. This means the company has full control over its environment, allowing for greater customization and flexibility. SAP S/4HANA Cloud Private Edition is used in RISE with SAP on Power Virtual Server.
@@ -157,7 +157,7 @@ SAP Global Trade Services (GTS) is software that allows organizations to support
 ### SAP Business Technology Platform
 {: #sap-offerings-and-products-sap-btp}
 
-SAP Business Technology Platform (BTP) is a SaaS product that runs in the SAP Cloud. The SAP Cloud is a global network of data centers that include SAP’s data centers as well as public cloud providers such as Amazon Web Services (AWS) and Microsoft Azure, Google Cloud Platform (GCP) and Alibaba Cloud. The SAP Cloud provides lot of flexibility for those enterprises that want to co-locate SAP BTP along with their existing workloads. Once a customer subscribes to SAP BTP, they can create sub-accounts for extension and integration scenarios on any of the available regions/IaaS providers. 
+SAP Business Technology Platform (BTP) is a SaaS product that runs in the SAP Cloud. The SAP Cloud is a global network of data centers that include SAP’s data centers as well as public cloud providers such as Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP) and Alibaba Cloud. The SAP Cloud provides lot of flexibility for those enterprises that want to co-locate SAP BTP along with their existing workloads. Once a customer subscribes to SAP BTP, they can create sub-accounts for extension and integration scenarios on any of the available regions/IaaS providers. 
 
 SAP BTP is a flexible and scalable cloud-based platform that provides enterprises with the tools and services to build, deploy, and manage their custom applications securely and efficiently.
 

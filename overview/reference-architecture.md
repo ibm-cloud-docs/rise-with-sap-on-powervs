@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-03-17
+lastupdated: 2025-04-11
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -84,10 +84,12 @@ When you request the RISE with SAP on {{site.data.keyword.powerSysFull}}, you su
 
 In some circumstances SAP will allow DNS forwarding of requests from your DNS servers to SAP's DNS servers. You must request this non-preferred method from your SAP representative.
 
+SAP have documented DNS considerations for AWS, Azure and GCP at [DNS integration with SAP RISE in multi-cloud environment series guide](https://community.sap.com/t5/enterprise-resource-planning-blogs-by-sap/dns-integration-with-sap-rise-in-multi-cloud-environment-series-guide-gcp/ba-p/13557022){: external}. These guides can be referred to, as the majority of the information is common with RISE with SAP on Power Virtual Server. Further IBM specific clarification is described in the sections below.
+
 ### IBM Cloud Transit Gateway in the SAP account
 {: #reference-architecture-dns-sap-tgw}
 
-The diagram below illustrates the SAP preferred method of DNS zone transfer to your DNS service provisioned from the IBM catalog in your IBM Cloud Account. A secondary zone is a read-only copy of the primary DNS zone, communicated via a process known as a zone transfer. In this use case SAP own the primary DNS zone. See [Understanding secondary zones](/docs/dns-svcs?topic=dns-svcs-sec-zones-about).
+SAP may decide that to achieve your connectivity requirements, they will use the transit gateway in their IBM Cloud account to connect to your IBM Cloud account. The diagram below illustrates the SAP preferred method of DNS zone transfer to your DNS service provisioned from the IBM catalog in your IBM Cloud Account. A secondary zone is a read-only copy of the primary DNS zone, communicated via a process known as a zone transfer. In this use case SAP own the primary DNS zone. See [Understanding secondary zones](/docs/dns-svcs?topic=dns-svcs-sec-zones-about).
 
 ![Figure 4. IBM Cloud DNS with the Transit Gateway in the SAP account](../images/dns-sap-tgw.svg "IBM Cloud DNS with the Transit Gateway in the SAP account"){: caption="IBM Cloud DNS with the Transit Gateway in the SAP account" caption-side="bottom"}
 
@@ -110,7 +112,7 @@ The process steps to achieve this use case include the following:
 ### IBM Cloud Transit Gateway in the client account
 {: #reference-architecture-dns-client-tgw}
 
-The diagram below illustrates the SAP preferred method of DNS zone transfer to your DNS service provisioned from the IBM catalog in your IBM Cloud Account. A secondary zone is a read-only copy of the primary DNS zone, communicated via a process known as a zone transfer. In this use case SAP own the primary DNS zone. See [Understanding secondary zones](/docs/dns-svcs?topic=dns-svcs-sec-zones-about).
+SAP may decide that to achieve your connectivity requirements, they will use the transit gateway in your IBM Cloud account to connect to the RISE with SAP IBM Cloud account. The diagram below illustrates the SAP preferred method of DNS zone transfer to your DNS service provisioned from the IBM catalog in your IBM Cloud Account. A secondary zone is a read-only copy of the primary DNS zone, communicated via a process known as a zone transfer. In this use case SAP own the primary DNS zone. See [Understanding secondary zones](/docs/dns-svcs?topic=dns-svcs-sec-zones-about).
 
 ![Figure 6. IBM DNS with the Transit Gateway in the Client account](../images/dns-client-tgw.svg "IBM DNS with the Transit Gateway in the Client account"){: caption="IBM DNS with the Transit Gateway in the Client account" caption-side="bottom"}
 
