@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-02-07
+lastupdated: 2025-04-11
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -71,4 +71,14 @@ As these surround workloads cannot be hosted in the SAP owned RISE with SAP on I
 ### Loosely coupled surround workloads
 {: #surround-overview-loosely-coupled-surround-workloads}
 
-As loosely coupled workloads do not need high bandwidth connectivity or low latency between the surround workload and your SAP systems, then these workloads may already be delivered from a cloud provider using IaaS, PaaS or SaaS delivery models. These loosely coupled workloads may also continue to be hosted in your data centers, a colocation facility or in a service provider's data center. Alternatively, if feasible you may consider transitioning these workloads to IBM cloud as well. 
+As loosely coupled workloads do not need high bandwidth connectivity or low latency between the surround workload and your SAP systems, then these workloads may already be delivered from a cloud provider using IaaS, PaaS or SaaS delivery models. These loosely coupled workloads may also continue to be hosted in your data centers, a colocation facility or in a service provider's data center. Alternatively, if feasible you may consider transitioning these workloads to IBM cloud as well.
+
+
+## IBM Cloud platform
+{: #surround-overview-ibm-cloud-platform}
+
+The IBM Cloud platform combines platform as a service (PaaS) with infrastructure as a service (IaaS) to provide an integrated experience and is globally deployed across data centers around the world, enabling you to migrate or create your surround workloads quickly and and that perform securely and reliably.
+
+IBM Cloud provides solutions that enable higher levels of compliance, security, and management, with proven architecture patterns and methods for rapid delivery for running your surround workloads. See [Surround workloads by platform](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-platform) and [Surround workloads by use-case](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-use-case). Available in data centers worldwide, with multi-zone regions in North and South America, Europe, Asia, and Australia.
+
+IBM Cloud offers the most open and secure public cloud for business with a next-generation hybrid cloud platform, advanced data and AI capabilities, and deep enterprise expertise. See [What is the IBM Cloud platform?](/docs/overview?topic=overview-whatis-platform) and [Running secure enterprise workloads on IBM Cloud](/docs/overview?topic=overview-secure-enterprise). For an understanding of compliance in IBM Cloud see [Understanding compliance in IBM Cloud](/docs/overview?topic=overview-compliance) and [IBM Cloud compliance programs](https://www.ibm.com/cloud/compliance). With our expertise gained by working with enterprise clients in industries such as financial services, government, healthcare and telco, we saw the need for a cloud platform designed with the unique needs of these heavily regulated industries in mind, see [IBM Cloud delivers enterprise sovereign cloud capabilities](https://www.ibm.com/products/blog/ibm-cloud-delivers-enterprise-sovereign-cloud-capabilities).

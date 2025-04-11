@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-03-17
+lastupdated: 2025-04-11
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -15,9 +15,13 @@ subcollection: rise-with-sap-on-powervs
 # Get started
 {: #get-started}
 
-The following documentation provides considerations and guidance for RISE with SAP on {{site.data.keyword.powerSysFull}}. For over half a century, enterprises have used IBM's infrastructure to host their mission-critical SAP® systems for round-the-clock operations and safeguarding sensitive business data. As the next step to help accelerate their move to Cloud Enterprise Resource Planning (ERP), SAP will offer IBM Power Virtual Server as the hyperscaler cloud infrastructure for RISE with SAP.  
+The following documentation provides considerations and guidance for integrating surround workloads with RISE with SAP on {{site.data.keyword.powerSysFull}}. For over half a century, enterprises have used IBM's infrastructure to host their mission-critical SAP® systems for round-the-clock operations and safeguarding sensitive business data. As the next step to help accelerate their move to Cloud Enterprise Resource Planning (ERP), SAP will offer IBM Power Virtual Server as the hyperscaler cloud infrastructure for RISE with SAP.
 
-RISE with SAP brings together outcome-driven services, Cloud ERP with SAP S/4HANA®, and additional platforms to rethink the enterprise operating model. IBM Power Virtual Server offers a unique advantage to the enterprises that run SAP landscape on IBM Power servers: It is designed for a faster and non-disruptive move to RISE with SAP. See [RISE with SAP on IBM Power Virtual Server](https://www.ibm.com/cloud/rise-with-sap){: external}. 
+IBM Power Virtual Server is a family of configurable, multi-tenant, virtual IBM Power servers with access to IBM Cloud services. You can provision flexible, secure, and scalable compute capacity for Power enterprise workloads. See [IBM Power Virtual Server](https://www.ibm.com/products/power-virtual-server) and [Getting started with IBM Power Virtual Server](/docs/power-iaas?topic=power-iaas-getting-started).
+
+RISE with SAP brings together outcome-driven services, Cloud ERP with SAP S/4HANA®, and additional platforms to rethink the enterprise operating model. IBM Power Virtual Server offers a unique advantage to the enterprises that run SAP landscape on IBM Power servers: It is designed for a faster and non-disruptive move to RISE with SAP. See [RISE with SAP on IBM Power Virtual Server](https://www.ibm.com/cloud/rise-with-sap){: external}.
+
+Surround workloads communicate and interact with your SAP core systems, see [Surround workloads overview](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-overview). These surround workloads can be non-RISE SAP, non-SAP and be hosted in IBM Cloud, other clouds on-premises or Software as a Service SaaS products.
 {: shortdesc}
 
 ## RISE with SAP
@@ -73,3 +77,76 @@ The following table describes the high-level responsibilities for RISE with SAP 
 | SAP Business Network | SAP |
 | SAP Business Process Intelligence | SAP |
 {: caption="RISE with SAP on IBM Power Virtual Server Responsibilities" caption-side="bottom"}
+
+## Surround workloads
+{: #get-started-surround-workloads}
+
+When considering moving your SAP systems to RISE with SAP on IBM Power Virtual Server, you also need to consider the surround workloads. These surround workloads communicate and interact with your SAP core systems. You should consider moving these surround workloads to an IBM Cloud account peered with RISE with SAP on IBM Power Virtual Server to enable low latency connections, innovation, scalability and resiliency.
+
+Once moved to IBM Cloud, you can easily and quickly create new surround workloads leveraging IBM Cloud services such as AI and Machine Learning with Watsonx, IBM’s data fabric, IoT Integration, cloud native applications using Red Hat OpenShift, key management, logging and monitoring, security and compliance with IBM Cloud Security and Compliance Centre and Workload Protection. For further information see:
+
+* [Surround workloads overview](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-overview).
+* [Surround workloads by platform](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-platform).
+* [Surround workloads by use-case](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-use-case).
+* [Surround Workloads for RISE on IBM PowerVS: Unlock the Full Power of SAP](https://community.ibm.com/community/user/blogs/lauri-mcinnis/2025/04/03/surround-workloads-for-rise-on-ibm-powerv).
+* [Realize the promise of AI with watsonx](https://www.ibm.com/watsonx).
+* [Data fabric solutions](https://www.ibm.com/data-fabric).
+* [IoT solutions](https://www.ibm.com/cloud/internet-of-things).
+* [Container solutions](https://www.ibm.com/containers).
+* [IBM Key Protect for IBM Cloud](https://www.ibm.com/products/key-protect).
+* [IBM Cloud Hyper Protect Crypto Services](https://www.ibm.com/products/hyper-protect-crypto).
+* [IBM Cloud Logs](https://www.ibm.com/products/cloud-logs).
+* [IBM Cloud Monitoring](https://www.ibm.com/products/cloud-monitoring)
+* [IBM Security and Compliance Center](https://www.ibm.com/products/security-and-compliance-center).
+* [Getting started with IBM Cloud Security and Compliance Center Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started).
+
+IBM Technology Expert Labs-Cloud is a professional services organization powered by an experienced team of IBM Cloud specialists with deep technical expertise, valuable tools, and proven methodologies to architect and build IBM Cloud solutions. By teaming with IBM Technology Expert Labs–Cloud, clients can improve the time to value of their IBM Cloud investment by taking the guesswork, re-work and on-the-job learning out of adopting IBM Cloud technologies. See [IBM Technology Expert Labs – Cloud](https://www.ibm.com/cloud/expert-labs).
+
+IBM Cloud Platform Engineering Services designs, implements and operates complex hybrid cloud infrastructure. PRISM, IBM’s cloud management platform for automated planning, provisioning, and management of workloads on multi-cloud environments, integrates with cloud-native services, IBM and third-party tools to provide a single pane of glass and a unified services delivery model. The services use [IBM Consulting AIOps](https://www.ibm.com/consulting/aiops), which leverages generative AI and Machine Learning, to autonomously manage IT by observing processes and solutions, detecting anomalies, predicting outages, analyzing their impact on business, and prescribing solutions to proactively avoid them. See [Cloud Platform Engineering Services](https://www.ibm.com/consulting/platform-engineering-services)
+
+## IBM Transformation Suite for SAP Applications
+{: #get-started-transformation-suite}
+
+To further accelerate Cloud ERP migration, IBM Transformation Suite for SAP Applications brings software and services from IBM and partners such as SNP that automates essential migration tasks, including technical assessments, data and code migration, code analysis, and automated testing.
+
+With the IBM Transformation Suite for SAP Applications, organizations can:
+
+* Accelerate the transition to SAP S/4HANA.
+* Unlock the potential of RISE with SAP.
+* Simplify their IT landscape while driving innovation.
+
+For more information on IBM Transformation Suite for SAP Applications, see [Accelerate your SAP S/4HANA journey with IBM Transformation Suite for SAP Applications](https://www.ibm.com/new/announcements/accelerate-your-sap-s-4hana-journey-with-ibm-transformation-suite-for-sap-applications).
+
+## Migration Acceleration Program
+{: #get-started-map}
+
+The migration acceleration program for IBM Cloud is designed to help you assess, plan and migrate your enterprise workloads, data and applications to IBM Cloud. This program provides technology accelerators and cloud credits for IBM Cloud solutions for IBM Power Virtual Server, VMware and SAP workloads. The goal is to meet you where you are in your cloud-adoption journey, with a streamlined migration process that helps you achieve your goals while reducing risk and offsetting the initial migration costs. See [Migration acceleration program for IBM Cloud](https://www.ibm.com/downloads/documents/us-en/10c317759fd40154).
+
+## Next Steps
+{: #get-started-next-steps}
+
+To review the following topics for RISE with SAP on IBM Power Virtual Server, see [RISE with SAP on IBM Power Virtual Server](https://www.ibm.com/cloud/rise-with-sap){: external}.
+
+* Overview.
+* Benefits.
+* Investment program.
+* IBM Transformation Suite for SAP.
+* Applications.
+* Transformation in action.
+* IDC Whitepaper.
+* Next steps.
+
+To review the following topics for non-RISE SAP, see [IBM Cloud for SAP](https://www.ibm.com/cloud/sap){: external}.
+
+* Benefits.
+* ROI of IBM Cloud for SAP.
+* RISE with SAP.
+* Solutions for SAP HANA and S/4HANA.
+* Solutions for SAP NetWeaver.
+* Case studies.
+* Migration Acceleration Program.
+* Business Partner Ecosystem.
+* Community Resources.
+* Next steps.
+
+For non-SAP, non-RISE surround workloads, see [IBM Cloud: AI-ready, secure, and hybrid by design](https://www.ibm.com/cloud){: external}.

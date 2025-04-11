@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-03-17
+lastupdated: 2025-04-11
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -100,4 +100,91 @@ These solution guides describe [Resiliency](/docs/resiliency) - This guide discu
 * [Understanding high availability](/docs/resiliency?topic=resiliency-understanding-ha) - A discussion on architecture patterns to design IBM Cloud services for high availability (HA), helping ensure resilience against different fault types that might impact the distributed IBM Cloud infrastructure. For HA in the cloud, it's important to understand the high-level concepts that you need to address if you're building or running a highly available cloud system. HA is achieved by using redundant system components and services, and by distributing these components across different environments. IBM Cloud delivers highly available cloud services by using redundant components and eliminating single points of failure. At the multizone regions (MZR) level, HA means having workloads running in multiple availability zones in the MZR, which provide the redundancy for local failures. 
 * [Understanding disaster recovery](/docs/resiliency?topic=resiliency-understanding-dr) - Disaster recovery (DR) the process of recovering one or more workloads to a working state in a second IBM Cloud region after an unplanned outage. HA is not the same as DR. Disasters are different. Disasters cause a workload to go down despite attempts to make it highly available. The worst disasters have widespread consequences, which means that affected workloads might require recovery in a different region altogether.
 * [Understanding cyber resiliency](/docs/resiliency?topic=resiliency-cyber-resiliency-overview) - Cyber resiliency is part of an organization's ability to prevent, withstand and recover from cybersecurity incidents, including ransomware attacks and other malicious actions.
-  
+
+## Backup
+{: #surround-workloads-by-use-case-backup}
+
+The following products or solution guides are available for backup of surround workloads in IBM Cloud:
+
+* SAP HANA Backup using Backint and IBM Cloud Object Storage.
+* Cobalt Iron Compass.
+* IBM Cloud Backup for VPC.
+* IBM Cloud Backup for Classic.
+* Portworx PX-Backup.
+* FalconStor StorSafe Virtual Tape Library.
+* Veeam Kasten.
+* TrilioVault for Kubernetes.
+* IBM Storage Protect.
+* Veeam Backup and Replication.
+
+### SAP HANA Backup using Backint and IBM Cloud Object Storage
+{: #surround-workloads-by-use-case-backup-backint}
+
+SAP HANA Backup using Backint and IBM Cloud Object Storage is an automated solution designed for the implementation of an SAP HANA Backup solution using Backint and IBM Cloud Object Storage. The setup runs just onetime initial full data backup to COS for SYSTEM and TENANT databases. The regular backup policy for the databases must be configured by the client. All data backup, log backup and catalog backup files are saved in the same dedicated bucket, with versioning enabled and no enforced storage quota created in an IBM Cloud Object Storage instance by using an existing bastion host with secure remote SSH access in the same IBM Cloud VPC as the SAP HANA system. The storage class for the deployed bucket is a Smart Tier Storage Class with regional resiliency. See [SAP HANA Backup using Backint and IBM Cloud Object Storage](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-sap-vpc-automation-hana-backup-cos-a2a5c6fa-64e8-4907-a88d-f8d38214d218-global/readme/terraform/terraform/f2b8715e-1fd7-45ab-9624-20585d9af619-global) and [Deploying SAP HANA db backup to Cloud Object Storage on existing IBM Cloud VPC with automation](/docs/sap?topic=sap-sap-automate-hana-db-backup-cos-deploy&interface=ui).
+
+### Cobalt Iron Compass
+{: #surround-workloads-by-use-case-backup-cobalt}
+
+Cobalt Iron Compass ia a single, unified, SaaS-based offering to backup and restore IBM PowerVS workloads. With IBM Storage Protect, Compass protects a variety of PowerVS platforms, applications, and data classes including AIX, Linux, Oracle on AIX, DB2 on AIX and SAP HANA on Linux. See [Cobalt Iron - Secure Automated Backup with Compass](https://cloud.ibm.com/catalog/services/cobalt-iron---secure-automated-backup-with-compass?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPWJhY2t1cCNzZWFyY2hfcmVzdWx0cw%3D%3D#about) and [Backup-as-a-Service for AIX/Linux On Power Virtual Server With Cobalt Iron Compass](/docs/pvs-baas-with-compass?topic=pvs-baas-with-compass-white-paper)
+
+### IBM Cloud Backup for VPC
+{: #surround-workloads-by-use-case-backup-vpc}
+
+IBM Cloud Backup for VPC automatically creates backups and manually restores Block Storage for VPC volumes and File Storage for VPC shares from backup snapshots. By using this service, you can prevent data loss, manage risk, and improve data compliance. You can ensure that your data is backed up regularly, and you can retain the backups while you need them. You can create and manage backup policies and plans in the console, from the CLI, with the API, or Terraform. See [About Backup for VPC](/docs/vpc?topic=vpc-backup-service-about&interface=ui),
+
+### IBM Cloud Backup for Classic
+{: #surround-workloads-by-use-case-backup-classic}
+
+IBM Cloud Backup for Classic is an automated agent-based multi-tenant backup system that provides users with a method to back up data between servers in one or more data centers on the IBM Cloud. IBM Cloud Backup is an enterprise-level backup storage and disaster recovery solution that is available for local access across globally dispersed data centers. With IBM Cloud Backup, you can add cloud-based backup to any physical, virtual, or hybrid server environment, leverage system image and granular recovery options and restore capabilities for dissimilar hardware, and schedule backups and retention schemes to follow custom timetables or employ the daily, or weekly pre-configured schedules as needed. See [Getting started with IBM Cloud Backup for Classic](/docs/Backup?topic=Backup-getting-started) and [Cloud Backup](https://cloud.ibm.com/cloud-storage/backup/order?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPWJhY2t1cCNzZWFyY2hfcmVzdWx0cw%3D%3D).
+
+### Portworx PX-Backup
+{: #surround-workloads-by-use-case-backup-portworx}
+
+Portworx PX-Backup delivers enterprise-grade point-and-click backup and recovery protection for all applications running on IBM Kubernetes Service and Red Hat OpenShift on IBM Cloud, even if they are stateless. Built exclusively for containerized applications, Portworx PX-Backup protects your applications - data, application configuration, and Kubernetes objects - with a single click at the Kubernetes Pod, Namespace, or Cluster level. See [PX-Backup for Kubernetes](https://cloud.ibm.com/catalog/services/px-backup-for-kubernetes?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPWJhY2t1cCNzZWFyY2hfcmVzdWx0cw%3D%3D#about)
+
+### FalconStor StorSafe Virtual Tape Library
+{: #surround-workloads-by-use-case-backup-falconstor}
+
+FalconStor StorSafe Virtual Tape Library (VTL) is a software solution that optimizes backup and restore, to improve performance and significantly reduce backup storage costs. With its integrated deduplication, the solution removes redundant copies of data, thereby reducing capacity requirements, decreasing storage costs, and minimizing replication and restore times. StorSafe VTL can be used with all leading backup solutions, and enables both hybrid and native-cloud backup, as well as both workload and tape migration to the cloud. StorSafe VTL also supports NFS and SMB interfaces in a NAS environment. AIX and Linux systems can use StorSafe as an NFS server for applications such as Oracle RMAN or SAP Hana Studio. You can also store backup files created with the Veeam Agent for IBM AIX on backup repositories managed by Veeam Backup & Replication (VBR). See [FalconStor StorSafe VTL for PowerVS Cloud](https://cloud.ibm.com/catalog/content/vtltile-tags-v10.03-01-f1e88e51-7e3d-4fbc-a7ed-3ab9adb2afea-global#about).
+
+### Veeam Kasten
+{: #surround-workloads-by-use-case-backup-kasten}
+
+Veeam Kasten is a Kubernetes-native backup and disaster recovery solution designed to protect, move, and manage containerized applications. On IBM Cloud, Kasten provides robust capabilities to ensure the safety and recoverability of your Kubernetes workloads. IBM Cloud Kubernetes Service (IKS) is a managed Kubernetes service to create your own cluster of compute hosts where you can deploy and manage containerized apps on IBM Cloud. See [Veeam Kasten - Enterprise Data Protection for Kubernetes](https://cloud.ibm.com/catalog/content/k10-8bd412c9-55a6-4ed1-ac85-fef553d91807-global/readme/iks/helm/f2ac708a-6879-44cd-bdcc-ac405d407e8d-global).
+
+### TrilioVault for Kubernetes
+{: #surround-workloads-by-use-case-backup-triliovault}
+
+TrilioVault for Kubernetes is a leading provider of cloud-native Data Protection software solutions, supporting private, public and hybrid-clouds, engineered from ground up for Kubernetes, KubeVirt and OpenStack environments. Trilio’s software dramatically reduces the amount of time spent on restoration and migration activities empowering customers from diverse sectors, such as telecommunications, financial services, defense, automotive and healthcare with the ability to easily deploy, manage and scale applications with confidence. See [TrilioVault for Kubernetes](https://cloud.ibm.com/catalog/content/k8s-triliovault-operator-7dbb5777-6b68-4efb-9a93-ec5ade46e293-global#about).
+
+
+### IBM Storage Protect
+{: #surround-workloads-by-use-case-backup-storage-protect}
+
+IBM Storage Protect provides data resilience for physical file servers, virtual environments, and a wide range of applications. Organizations can scale up to manage billions of objects per backup server. Clients can reduce backup infrastructure costs with built-in data efficiency capabilities and the ability to migrate or copy data to tape, public cloud services, and on-premises object storage. IBM Storage Protect can also store IBM Storage Protect Plus data, allowing companies to take advantage of their existing investment for long-term data retention and disaster recovery. See [IBM Storage Protect](https://cloud.ibm.com/catalog/content/SPonIBMCloud-20c54034-d319-48c0-beb6-0b4adc54265c-global#about).
+
+### Veeam Backup and Replication
+{: #surround-workloads-by-use-case-backup-veeam-vbr}
+
+Veeam Backup and Replication provides data protection and disaster recovery for virtual, physical, and cloud environments, offering efficient and reliable backup and recovery capabilities. Veeam Backup and Replication lets you deploy and manage the following Veeam Agents on computers in your infrastructure:
+
+* Veeam Agent for Microsoft Windows.
+* Veeam Agent for Linux.
+* Veeam Agent for IBM AIX.
+* Veeam Agent for Oracle Solaris.
+* Veeam Agent for Mac.
+
+Additionally Veeam supports the following plug-ins:
+
+* Veeam Plug-in for SAP HANA for x86.
+* Veeam Plug-in for SAP HANA for Linux on Power.
+* Veeam Plug-in for Oracle RMAN.
+* Veeam Plug-in for SAP on Oracle.
+* Veeam Plug-in for Microsoft SQL Server.
+* Veeam Plug-in for IBM Db2.
+
+Veeam Backup and Replication is available in IBM Cloud in the following environments:
+
+* IBM Cloud for VMware Cloud Foundation Classic Automated - Veeam seamlessly integrates directly with your VMware hypervisors to help your enterprise achieve high availability. This service provides recovery points and time objectives for your applications and data. The recovery points and time objectives can be provided in less than 15 minutes after configuration is completed. By using this service, you control both the backup and restore of all virtual machines (VMs) for your infrastructure directly from the Veeam console. See [Veeam on IBM Cloud overview](/docs/vmwaresolutions?topic=vmwaresolutions-veeamvm_overview).
+* IBM Cloud for VMware Cloud Foundation as a Service - The Veeam Backup service is available and ready to use in your IBM Cloud® for VMware Cloud Foundation as a Service instance. This service seamlessly integrates as a managed solution to help your enterprise achieve high availability and provides recovery points for your applications and data. By using this service, you control the backup of all virtual machines (VMs) for your infrastructure directly from the Veeam console. See [Managing Veeam for VCF as a Service](https://cloud.ibm.com/docs/vmware-service?topic=vmware-service-tenant-veeam)
+* IBM Cloud VPC - You can use Veeam software to back up your storage data on a virtual server instance for IBM Cloud Virtual Private Cloud. You can use Veeam software backups to protect the following resources individual volumes, folders and files. With the Veeam Agent for Linux® and the Veeam Agent for Microsoft™ Windows™ you can create backups and perform restores for storage that is attached to an individual virtual server instance. Additionally, with the Veeam Backup and Replication tool for Microsoft Windows, you can manage backup for multiple Linux® and Microsoft Windows virtual server instances through a single interface. See [About Veeam](https://cloud.ibm.com/docs/vpc?topic=vpc-about-veeam).

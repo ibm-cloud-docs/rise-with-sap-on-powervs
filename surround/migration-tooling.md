@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-03-18
+lastupdated: 2025-04-10
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
