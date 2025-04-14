@@ -56,7 +56,7 @@ The diagram below shows a scenario where the client owns the transit gateway.
 
 The diagram below shows a scenario where VPN is used to connect the two accounts.
 
-![Figure 4. The Enterprise hybrid high-level pattern with VPN](../images/hybrid-enterprise-high-level-vpn.svg "The Enterprise hybrid high-level pattern with VPN"){: caption="The Enterprise hybrid high-level pattern with client TGW" caption-side="bottom"}
+![Figure 4. The Enterprise hybrid high-level pattern with VPN](../images/hybrid-enterprise-high-level-vpn.svg "The Enterprise hybrid high-level pattern with VPN"){: caption="The Enterprise hybrid high-level pattern with VPN" caption-side="bottom"}
 
 You will need to discuss your requirements with your SAP representative on which of these three patterns SAP will authorize to satisfy your needs.
 

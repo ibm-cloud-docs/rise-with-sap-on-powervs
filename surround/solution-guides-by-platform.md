@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-03-17
+lastupdated: 2025-04-11
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -21,8 +21,10 @@ A deployable architecture is cloud automation for deploying a common architectur
 
 An IBM Cloud project is a management tool that is designed to organize and provide visibility into a real-world project that exists in your organization. A project manages all of the configured instances of a deployable architecture and the resources that are related to the real-world reasons that they are deployed. See [https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-understand-module-da#what-are-projects](https://cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-understand-module-da#what-are-projects).
 
-## IBM Cloud VPC
+## IBM Cloud Virtual Private Cloud
 {: #surround-workloads-by-platform-vpc}
+
+IBM Cloud Virtual Private Cloud (VPC) is a highly resilient and highly secure software-defined network (SDN) on which you can build isolated private clouds for your business operations while maintaining essential public cloud benefits. You choose your compute, storage and networking resources and IBM provides maximum availability and scalability, plus various cost-effective options for your workload demands. IBM Cloud VPC is purpose-built for your cloud needs with solutions for VMware, SAP, and more. See [IBM Cloud VPC Solutions](https://www.ibm.com/cloud/vpc).
 
 The following reference architectures are documented for non-RISE SAP on IBM Cloud VPC:
 
@@ -75,6 +77,14 @@ A diagram is shown below:
 
 ## IBM Cloud Power Virtual Server
 {: #surround-workloads-by-platform-powervs}
+
+IBM Power Virtual Server offers a powerful and flexible cloud platform with built in security, reliability, availability and performance, allowing clients to meet their requirements for a variety of complex and highly regulated workloads.
+
+With the latest update to IBM Cloud Security and Compliance Center (SCC) Workload Protection, Power servers on IBM Cloud and on-premises are now supported for compliance posture management, bringing a new layer of security to your critical workloads running on PowerVS. This new capability ensures that critical enterprise applications and workloads like SAP, Oracle, and DB2, can be protected and monitored more efficiently with a comprehensive security and compliance solution.
+
+SCC Workload Protection now provides compliance posture management capabilities for critical workloads on PowerVS, including AIX and Enterprise Linux on Power. With compliance posture management, these capabilities are designed to provide unified monitoring of your workloads’ posture to help access and manage compliance against regulatory and industry standards, such as CIS Benchmarks, in addition to advanced workload protection capabilities with vulnerability scanning and real-time threat detection for Linux on Power. See [Easily secure your IBM Cloud PowerVS Workloads with IBM Cloud Security and Compliance Center Workload Protection](https://www.ibm.com/new/announcements/easily-secure-your-ibm-cloud-powervs-workloads){: external}.
+
+When a PowerVS workspace is created, automatically a SCC Workload Protection instance is created with cloud security posture management (CSPM) for IBM Cloud enabled enabled by default. See [About IBM Cloud Security Posture Management (CSPM)](docs/workload-protection?topic=workload-protection-about)
 
 The following reference architectures are documented for non-RISE SAP on IBM Power Virtual Server:
 
@@ -135,6 +145,8 @@ The [Power Virtual Server for SAP HANA - variation 'SAP S/4HANA or BW/4HANA'](/d
 ## IBM Cloud Classic
 {: #surround-workloads-by-platform-classic}
 
+The IBM Cloud Classic IaaS environment leverages a traditional network architecture, best suited for lift and shift workloads so you can move applications quickly and keep the same architecture. See [IBM Cloud Bare Metal Servers on Classic Infrastructure](https://www.ibm.com/products/bare-metal-servers/classic?mhsrc=ibmsearch_a&mhq=classic%20infrastructure%20-%20ibm%20cloud), [IBM Cloud Virtual Servers on IBM Cloud Classic Infrastructure](https://www.ibm.com/products/virtual-servers-classic) and [Classic Infrastructure environment introduction](/docs/sap?topic=sap-classic-env-introduction).
+
 The following reference architectures are documented for non-RISE SAP on IBM Cloud Classic:
 
 [SAP Solutions and IBM Cloud Intel Bare Metal Servers on Classic Infrastructure](/docs/sap?topic=sap-fast-path-site-map-intel-bm)
@@ -162,11 +174,10 @@ The following reference architectures are documented for non-RISE, non-SAP on IB
 * [SQL Server Failover Cluster Instance on VMware vSAN Native](https://www.vmware.com/docs/sql-server-failover-cluster-instance-on-vmware-vsan-native){: external}.
 * [Using Oracle RAC on a vSAN Datastore](https://knowledge.broadcom.com/external/article/327037/using-oracle-rac-on-a-vsan-datastore.html){: external}.
 
-
 ## IBM Cloud Services
 {: #surround-workloads-by-platform-services}
 
-The following reference architectures are documented for non-RISE, non-SAP on IBM Cloud Services:
+IBM Cloud services is a suite of Platform as a Service (PaaS), and Software as a Service (SaaS) offerings hosted on the IBM Cloud platform. With these offerings you can consume the service without managing the infrastructure and software. To view these services see the IBM Cloud [Catalog](https://cloud.ibm.com/catalog?label%3Aservices=services#ibm_products). The following reference architectures are documented for non-RISE, non-SAP on IBM Cloud Services:
 
 * [IBM Cloud Databases](/docs/cloud-databases) - The IBM Cloud® Databases portfolio contains database-as-a-service offerings on IBM Cloud, including the following
 
@@ -195,13 +206,13 @@ The following reference architectures are documented for non-RISE, non-SAP on IB
     * [IBM Cloud Metrics Routing](/docs/metrics-router) - Use IBM Cloud Metrics Routing to configure how to route platform metrics in your IBM Cloud account.
 
 * [IBM Cloud Internet Services](https://www.ibm.com/products/cloud-internet-services) - IBM Cloud Internet Services brings market-leading security and performance to your external web content and internet applications before they reach the cloud.
-* [Veeam on IBM Cloud](https://www.ibm.com/products/veeam) - Veeam on IBM Cloud® can deliver reliable backup and predictable disaster recovery (DR) for virtual and physical workloads, wherever they reside—across your data center and the cloud.
-* [IBM Cloud Backup](https://www.ibm.com/products/backup) - IBM Cloud® Backup is a full-featured, agent-based backup and recovery system managed through a web interface. Back up data between IBM Cloud servers in one or more IBM Cloud global data centers.
+* [Veeam on IBM Cloud](https://www.ibm.com/products/veeam) - Veeam on IBM Cloud can deliver reliable backup and predictable disaster recovery (DR) for virtual and physical workloads, wherever they reside—across your data center and the cloud.
+* [IBM Cloud Backup](https://www.ibm.com/products/backup) - IBM Cloud Backup is a full-featured, agent-based backup and recovery system managed through a web interface. Back up data between IBM Cloud servers in one or more IBM Cloud global data centers.
 * [Zerto on IBM Cloud](https://www.ibm.com/products/zerto) - Zerto provides disaster recovery and cloud mobility for your VMware workloads within a single, simple, scalable solution.
 * [IBM Cloud Object Storage](https://www.ibm.com/products/cloud-object-storage/systems) - IBM Cloud® Object Storage is a software-defined hyper-scale storage solution that runs on premises.
 * [IBM Cloud Block Storage](https://www.ibm.com/products/block-storage) - High-performance data storage solutions with customizable IOPS and predictable billing.
 * [IBM Cloud File Storage](https://www.ibm.com/products/file-storage) - Flash-backed, durable, fast and flexible NFS-based file storage—with customizable IOPS and predictable billing.
-* [IBM Cloud DNS Services](https://www.ibm.com/products/dns) - IBM Cloud® DNS Services offers public and private authoritative DNS services with fast response time, unparalleled redundancy and advanced security—managed through the IBM Cloud web interface or by API.
+* [IBM Cloud DNS Services](https://www.ibm.com/products/dns) - IBM Cloud DNS Services offers public and private authoritative DNS services with fast response time, unparalleled redundancy and advanced security—managed through the IBM Cloud web interface or by API.
 * [IBM Cloud Container Registry](https://www.ibm.com/products/container-registry) - Store and distribute container images in a fully managed private registry. Push private images to conveniently run them in the IBM Cloud® Kubernetes Service and other runtime environments. Images are checked for security issues so you can make informed decisions about your deployments.
 
 ### IBM Cloud Essential Security and Observability Services deployable architecture

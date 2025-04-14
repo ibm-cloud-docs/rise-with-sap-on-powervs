@@ -92,6 +92,40 @@ The [IBM Cloud Essential Security and Observability Services](/docs/deployable-r
 * Security and Compliance Center - This platform offers a comprehensive suite of tools to assess, monitor, and maintain the security and compliance of your cloud environment. It provides insights and controls to help organizations meet regulatory requirements, adhere to best practices, and protect against threats. See [IBM Security and Compliance Center](https://www.ibm.com/products/security-and-compliance-center).
 * IBM Cloud Security and Compliance Center Workload Protection - This service offers features to protect workloads, get deep cloud and container visibility, posture management (compliance, benchmarks, CIEM), vulnerability scanning, forensics, and threat detection and blocking. See [Getting started with IBM Cloud Security and Compliance Center Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started).
 
+## Security and compliance
+{: #surround-workloads-by-use-case-security-compliance}
+
+The security and compliance use case focuses on the following IBM Cloud offerings:
+
+* [Security and Compliance Center](https://cloud.ibm.com/catalog/services/security-and-compliance-center?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPXNlY3VyaXR5I3NlYXJjaF9yZXN1bHRz){: external} - Manage your continuous compliance monitoring needs.
+* [Security and Compliance Center Workload Protection](https://cloud.ibm.com/workload-protection/catalog/security-and-compliance-center-workload-protection?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPXNlY3VyaXR5I3NlYXJjaF9yZXN1bHRz){: external} - Cloud-Native Application Protection Platform solution to manage your security and compliance posture, allowing you to monitor misconfigurations and detect and respond to vulnerabilities and threats in real-time.
+
+### IBM Cloud Security and Compliance Center
+{: #surround-workloads-by-use-case-security-compliance-scc}
+
+With IBM Cloud Security and Compliance Center, you can evaluate for and view the current compliance posture of your deployed resources through a unified dashboard. Each resource is evaluated to determine its compliance to a specific control that you select. With Security and Compliance Center you can evaluate your resources in IBM Cloud. To start evaluating resources in other environments such as a Amazon Web Services and Microsoft Azure, you must connect an instance of Security and Compliance Center Workload Protection through the integrations panel. For a list of IBm Cloud resources that can be evaluated see [IBM Cloud components that can be evaluated](/docs/security-compliance?topic=security-compliance-scannable-components#evaluate-services).
+
+You can configure Caveonix Cloud Platform to send results to Security and Compliance Center so that you can view all of your results in one place. Caveonix can transmit infrastructure findings that are found when a compliance scan is run that evaluates VMware environments. See [Connecting Caveonix Cloud Platform](/docs/security-compliance?topic=security-compliance-setup-caveonix&interface=ui)
+
+When you integrate an instance of IBM Cloud Security and Compliance Center Workload Protection with Security and Compliance Center, you can run scans that validate your level of compliance to a specific predefined profile. Then, you can view all the results and a history of those results in a single location. See [Connecting Workload Protection](/docs/security-compliance?topic=security-compliance-setup-workload-protection&interface=ui)
+
+As a security or compliance focal, you would choose a predefined profile that is most suitable for your organization and optionally customize the profile by creating custom rules, adding or removing rules, or building your own profile based on the catalog of controls. To scan your resources, you create an attachment of the profile to the scope of resources you want to scan. After the attachment is created, your resources are evaluated one time per day by Security and Compliance Center. As results are returned, they are forwarded to your Cloud Object Storage bucket while results are shown in the Security and Compliance Center dashboard. See [IBM Security and Compliance Center](https://www.ibm.com/products/security-and-compliance-center) and [Getting started with Security and Compliance Center](/docs/security-compliance?topic=security-compliance-getting-started).
+
+### IBM Cloud Security and Compliance Center Workload Protection
+{: #surround-workloads-by-use-case-security-compliance-scc-wp}
+
+IBM Cloud Security and Compliance Center (SCC) Workload Protection is a cloud-native application protection platform (CNAPP) that allows customers to monitor and secure workloads across hybrid multi-cloud environments. With SCC Workload Protection, you can leverage advanced features including vulnerability management, cloud security posture management (CSPM), along with threat detection, helping you safeguard your most critical business applications. See [Getting started with SCC Workload Protection guidance](/docs/workload-protection?topic=workload-protection-getting-started).
+
+SCC Workload Protection, automates compliance checks for IBM Cloud Framework for Financial Services, Digital Operational Resilience Act (DORA), CIS IBM Cloud Foundations Benchmark, PCI and many other industry related or best practices standards. With a detailed inventory of your IBM Cloud resources and prioritization based on full context it facilitates the resolution and management of collected violations. See [About IBM Cloud Security Posture Management (CSPM)](docs/workload-protection?topic=workload-protection-about). Key features of SCC Workload Protection include:
+
+* [Cloud Security Posture Management (CSPM)](/docs/workload-protection?topic=workload-protection-key-features#feature_1) - Provides a unified and centralized platform to manage the security and compliance of applications, workloads and infrastructure that run on IBM Cloud, in other clouds, and on-prem, covering managed services, hosts or VMs and containers, OpenShift or Kubernetes.
+* [Vulnerability Management](/docs/workload-protection?topic=workload-protection-key-features#feature_2) - Scanning for vulnerabilities on OS packages and 3rd-party libraries such as Java, Python, Golang, Javascript, or Ruby.
+* [Server Endpoint Detection and Response (EDR)](/docs/workload-protection?topic=workload-protection-key-features#feature_3) - Instruments hosts, VMs and Kubernetes/OpenShift clusters to inspect all system activity through system calls with minimal performance footprint.
+* [Kubernetes Workload Protection and Network Segmentation (CWPP)](/docs/workload-protection?topic=workload-protection-key-features#feature_4) - IBM Cloud Security and Compliance Center Workload Protection is a full Kubernetes Workload Protection Platform including vulnerability scanning, host and container detection/prevention, posture and compliance (KSPM), all built for Kubernetes and OpenShift.
+* [Incident response and forensics](/docs/workload-protection?topic=workload-protection-key-features#feature_5) - Automates the collection and correlation of events, posture, and vulnerabilities to identities across hosts, VMs, containers and Cloud activity.
+
+SCC Workload Protection is available in the IBM Cloud catalog, see [Security and Compliance Center Workload Protection](https://cloud.ibm.com/workload-protection/catalog/security-and-compliance-center-workload-protection).
+
 ## Resiliency
 {: #surround-workloads-by-use-case-resiliency}
 

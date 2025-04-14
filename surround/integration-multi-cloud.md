@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-02-11
+lastupdated: 2025-04-11
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -74,3 +74,12 @@ The following documentation is available for the deployment and configuration of
 * [Juniper Next-Gen SASE Firewall - BYOL](https://cloud.ibm.com/catalog/content/jnpr-nextgen-fw-vsrx-74b4b3ba-2a05-460d-afba-98e4d012f53a-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPWZpcmV3YWxsJTI1MjBsYWJlbCUyNTNBcGRyX2ZvcnRpbmV0X2luY18lMjUyMGxhYmVsJTI1M0FwZHJfY2hlY2tfcG9pbnRfc29mdHdhcmVfdGVjaG5vbG9naWVzJTI1MjBsYWJlbCUyNTNBcGRyX2p1bmlwZXJfbmV0d29ya3MlMjUyMGxhYmVsJTI1M0FwZHJfcGFsb19hbHRvX25ldHdvcmtzI3NlYXJjaF9yZXN1bHRz)- The IBM Catalog link to a Terraform script used in IBM Cloud Schematics to deploy a Juniper Next-Gen SASE Firewall into a zone in an existing VPC environment.
 * [F5 BIG-IP Virtual Edition for VPC](https://cloud.ibm.com/catalog/content/ibmcloud_schematics_bigip_multinic_declared-1.0-d33f1544-e938-478a-b0dd-d883370f08d0-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPUY1JTI1MjBCaWctSVAjc2VhcmNoX3Jlc3VsdHM%3D) - The IBM Catalog link to a Terraform script used in IBM Cloud Schematics to deploy a single F5 BIG-IP Virtual Edition for VPC appliance in a single zone.
     * [Deploy F5 BIG-IP Virtual Edition in IBM Cloud VPC Gen 2](https://clouddocs.f5.com/cloud/public/v1/ibm/ibm_deploy.html){: external} - A step-by-step guide of deploying the appliance in IBM Cloud VPC.
+
+## Connecting IBM Power Virtual Server to Microsoft Azure with Megaport
+{: #integration-multi-cloud-pvs-azure-megaport}
+
+The use case [Connecting IBM Power Virtual Server to Microsoft Azure with Megaport](/docs/power-iaas?topic=power-iaas-connect-azure-with-megaport) provides architectural solution guidelines for running IBM Power Virtual Servers and IBM Cloud with private connectivity between IBM Cloud and[Microsoft Azure](https://azure.microsoft.com/){: external} by using [Megaport](https://www.megaport.com/){: external}.
+
+This solution provides private network connectivity between IBM Power Virtual Server and Microsoft Azure for high-performance peer-to-peer connection of cross-cloud workloads. The architecture uses private connection services through IBM Cloud Direct Link, which is coupled with Microsoft Azure ExpressRoute, and joined by the Megaport Cloud Router, as shown in the diagram below:
+
+![Figure 2. Connecting IBM Power Virtual Server to Microsoft Azure with Megaport](/docs-content/v4/content/b26f89a5806299f299231da0f7dd0780cb84fc59/power-iaas/images/pvs_azure_architechture.svg "Connecting IBM Power Virtual Server to Microsoft Azure with Megaport"){: caption="Connecting IBM Power Virtual Server to Microsoft Azure with Megaport" caption-side="bottom"}
