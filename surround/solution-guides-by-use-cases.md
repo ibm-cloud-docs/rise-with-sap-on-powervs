@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-04-11
+lastupdated: 2025-04-14
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -24,15 +24,33 @@ An IBM Cloud project is a management tool that is designed to organize and provi
 ## AI
 {: #surround-workloads-by-use-case-ai}
 
-The following solution guides are available for AI to enable you to leverage AI into your non-RISE, non-SAP workloads:
+The following solution guides are available for AI to enable you to leverage AI with your non-RISE workloads:
 
 * [Gen AI Pattern for Watsonx on IBM Cloud](/docs/pattern-genai-rag?topic=pattern-genai-rag-genai-pattern) - This reference architecture summarizes the best practices for Watsonx Gen AI Pattern deployment on IBM Cloud. AI holds the promise to transform life and business but raises concerns around trust, security, and regulatory compliance. Understanding Gen AI and its infrastructure is vital for navigating its complex landscape. This reference architecture showcases how IBM Cloud and Watsonx provide a secure environment for deploying and governing Gen AI applications.
 * [Watsonx.ai SaaS with Assistant and Governance](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-watsonx-ai-reference-architecture) - The Watsonx.ai SaaS with Assistant and Governance deployable architecture is designed to automate the deployment and configuration of the IBM watsonx platform in an IBM Cloud account. The IBM watsonx platform is made up of several services working together to offer AI capabilities to end users who can explore them using IBM watsonx projects. The automation also configures a IBM watsonx starter project for an existing IBM Cloud user. A typical use case is to establish a ready to use IBM watsonx platform in an Enterprise account by granting administrator access to an AI Researcher. It enables an administrator to automatically install all of the services that the IBM watsonx platform is comprised of, as well as the setup of a starter watsonx project, allowing an AI Researcher to login to the platform and begin working immediately.
 
+IBM watsonx as a Service is where you work with, deploy, and govern foundation and machine learning models with watsonx.ai and watsonx.governance, see [Realize the promise of AI with watsonx](https://www.ibm.com/watsonx){: external}. For detailed information on wastonx, see [Documentation for IBM watsonx as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html?context=wx&audience=wdp){: external}
+
+## Data
+{: #surround-workloads-by-use-case-data}
+
+IBM watsonx.data is a hybrid, open data lakehouse to power AI and analytics with all your data anywhere. It combines the elements of the data warehouse and data lakes to bring the best-in-class features and optimizations.
+
+It offers a single platform where you can store the data or attach your current data sources for managing and analyzing your enterprise data. Attaching your data sources helps to reduce data duplication and cost of storing data in multiple places.
+
+It uses open data formats with APIs and machine learning libraries, making it easier for data scientists and data engineers to use the data. architecture enforces schema and data integrity, making it easier to implement robust data security and governance mechanisms.
+
+You can use watsonx.data to store any type of data (structured, semi-structured, and unstructured) and make that data accessible directly for Artificial Intelligence (AI) and Business Intelligence (BI). 
+
+At this time, there are no solution guides available to assist you with leveraging watson.data with your non-RISE workloads, however, watsonx.data can be deployed in IBM Cloud with one of the following deployment patterns:
+
+* Software as a Service (SaaS) – The SaaS version of watsonx.data deployed on IBM Cloud see [IBM watsonx.data overview](/docs/watsonxdata?topic=watsonxdata-wxd_ov).
+* Software – watsonx.data can be deployed on IBM Software Hub see [IBM watsonx.data on IBM Software Hub](https://www.ibm.com/docs/en/watsonx/watsonxdata/2.1.x?topic=software){: external}. IBM Software Hub runs on top of Red Hat OpenShift, which means that you can run IBM Software Hub on any on-premises, private cloud cluster or any public cloud infrastructure that supports Red Hat OpenShift. See [Red Hat OpenShift on IBM Cloud](https://www.ibm.com/products/openshift){: external} and [Getting started with Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-getting-started).
+
 ## IBM Cloud Framework for Financial Services
 {: #surround-workloads-by-use-case-fs}
 
-IBM Cloud for Financial Services® is designed to build trust and enable a transparent public cloud ecosystem with the features for security, compliance, and resiliency that financial institutions require. Financial institutions can confidently host their mission-critical applications in the cloud and transact quickly and efficiently. With a large partner ecosystem of independent software vendors (ISVs), Software as a Service (SaaS), and fintech partners, IBM Cloud for Financial Services offers a new generation of cloud for the enterprise.
+IBM Cloud for Financial Services&reg; is designed to build trust and enable a transparent public cloud ecosystem with the features for security, compliance, and resiliency that financial institutions require. Financial institutions can confidently host their mission-critical applications in the cloud and transact quickly and efficiently. With a large partner ecosystem of independent software vendors (ISVs), Software as a Service (SaaS), and fintech partners, IBM Cloud for Financial Services offers a new generation of cloud for the enterprise.
 
 Financial institutions can now deploy on public cloud to enable innovation and deliver new outstanding customer experiences, while managing stringent industry regulations for sensitive data and complex workloads. See the solution guide [Getting started with IBM Cloud for Financial Services](/docs/framework-financial-services?topic=framework-financial-services-about) which describes the following reference architectures: 
 
@@ -54,8 +72,8 @@ In addition to the solution guide above, [Landing zone](/docs/secure-infrastruct
 
 These solution guides describe hybrid use cases, linking on-premise applications with IBM Cloud:
 
-* [Hybrid HPC with persistent cloud resource pools](/docs/hybrid-hpc-cloud-pool?topic=hybrid-hpc-cloud-pool-hybrid-hpc-pers-cloud-pool) - This reference architecture summarizes the best practices for deploying a Hybrid High Performance Computing (HPC) environment connecting an on-premises HPC environment to a persistent pool of HPC compute on IBM Cloud®. An organization with an existing HPC on-premises facility might decide to augment this with cloud-based resources.
-* [Hybrid HPC with dynamic cloud resource pools](/docs/hybrid-hpc-cloud-pool?topic=hybrid-hpc-cloud-pool-hybrid-hpc-dyn-cloud-pool) - This reference architecture summarizes the best practices for deploying a Hybrid High Performance Computing (HPC) environment connecting an on-premises HPC environment to a dynamically provisioned pool of HPC compute resources on IBM Cloud®. An organization with an existing HPC on-premises facility might decide to augment this with these dynamic cloud-based resources.
+* [Hybrid HPC with persistent cloud resource pools](/docs/hybrid-hpc-cloud-pool?topic=hybrid-hpc-cloud-pool-hybrid-hpc-pers-cloud-pool) - This reference architecture summarizes the best practices for deploying a Hybrid High Performance Computing (HPC) environment connecting an on-premises HPC environment to a persistent pool of HPC compute on IBM Cloud&reg;. An organization with an existing HPC on-premises facility might decide to augment this with cloud-based resources.
+* [Hybrid HPC with dynamic cloud resource pools](/docs/hybrid-hpc-cloud-pool?topic=hybrid-hpc-cloud-pool-hybrid-hpc-dyn-cloud-pool) - This reference architecture summarizes the best practices for deploying a Hybrid High Performance Computing (HPC) environment connecting an on-premises HPC environment to a dynamically provisioned pool of HPC compute resources on IBM Cloud&reg;. An organization with an existing HPC on-premises facility might decide to augment this with these dynamic cloud-based resources.
 * [Deploy Satellite on-premises or in hyperscaler](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-base-ibm-cloud-satellite) - Due to privacy, regulatory, or compliance reasons, customers might not send or store data in the public cloud. In such scenarios, the best option is to create one or more Satellite locations on-premises and hosts the data locally to satisfy the data residency requirement. The Satellite on-premises or in hyperscaler pattern includes two common solution patterns:
 
     * One or more IBM Cloud Satellite locations configured on-premises
@@ -220,5 +238,5 @@ Additionally Veeam supports the following plug-ins:
 Veeam Backup and Replication is available in IBM Cloud in the following environments:
 
 * IBM Cloud for VMware Cloud Foundation Classic Automated - Veeam seamlessly integrates directly with your VMware hypervisors to help your enterprise achieve high availability. This service provides recovery points and time objectives for your applications and data. The recovery points and time objectives can be provided in less than 15 minutes after configuration is completed. By using this service, you control both the backup and restore of all virtual machines (VMs) for your infrastructure directly from the Veeam console. See [Veeam on IBM Cloud overview](/docs/vmwaresolutions?topic=vmwaresolutions-veeamvm_overview).
-* IBM Cloud for VMware Cloud Foundation as a Service - The Veeam Backup service is available and ready to use in your IBM Cloud® for VMware Cloud Foundation as a Service instance. This service seamlessly integrates as a managed solution to help your enterprise achieve high availability and provides recovery points for your applications and data. By using this service, you control the backup of all virtual machines (VMs) for your infrastructure directly from the Veeam console. See [Managing Veeam for VCF as a Service](https://cloud.ibm.com/docs/vmware-service?topic=vmware-service-tenant-veeam)
-* IBM Cloud VPC - You can use Veeam software to back up your storage data on a virtual server instance for IBM Cloud Virtual Private Cloud. You can use Veeam software backups to protect the following resources individual volumes, folders and files. With the Veeam Agent for Linux® and the Veeam Agent for Microsoft™ Windows™ you can create backups and perform restores for storage that is attached to an individual virtual server instance. Additionally, with the Veeam Backup and Replication tool for Microsoft Windows, you can manage backup for multiple Linux® and Microsoft Windows virtual server instances through a single interface. See [About Veeam](https://cloud.ibm.com/docs/vpc?topic=vpc-about-veeam).
+* IBM Cloud for VMware Cloud Foundation as a Service - The Veeam Backup service is available and ready to use in your IBM Cloud&reg; for VMware Cloud Foundation as a Service instance. This service seamlessly integrates as a managed solution to help your enterprise achieve high availability and provides recovery points for your applications and data. By using this service, you control the backup of all virtual machines (VMs) for your infrastructure directly from the Veeam console. See [Managing Veeam for VCF as a Service](https://cloud.ibm.com/docs/vmware-service?topic=vmware-service-tenant-veeam)
+* IBM Cloud VPC - You can use Veeam software to back up your storage data on a virtual server instance for IBM Cloud Virtual Private Cloud. You can use Veeam software backups to protect the following resources individual volumes, folders and files. With the Veeam Agent for Linux&reg; and the Veeam Agent for Microsoft&trade; Windows&trade; you can create backups and perform restores for storage that is attached to an individual virtual server instance. Additionally, with the Veeam Backup and Replication tool for Microsoft Windows, you can manage backup for multiple Linux&reg; and Microsoft Windows virtual server instances through a single interface. See [About Veeam](https://cloud.ibm.com/docs/vpc?topic=vpc-about-veeam).

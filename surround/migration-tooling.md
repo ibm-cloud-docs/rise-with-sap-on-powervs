@@ -17,6 +17,10 @@ subcollection: rise-with-sap-on-powervs
 
 This section high-lights some tooling and services to enable the migration of your surround workloads to IBM Cloud.
 
+The [Migrating to Power Virtual Server on IBM Cloud](/docs/powervs-migration?topic=powervs-migration-white-paper) white paper describes the business challenges with on-premises and colocated Power workloads and offers prescriptive solutions for migrating to {{site.data.keyword.powerSysFull}}. It covers key design considerations and migration strategies to guide your transition with actionable steps.
+
+The [Lift and shift VMware on-premises to IBM Cloud](/docs/pattern-migration-options-vmware-workloads?topic=pattern-migration-options-vmware-workloads-whitepaper) describes the business requirements, solution considerations, and migration approaches to move the on-premises x86 VMware virtualization compute, storage, and network to {{site.data.keyword.vmwaresolutions_full}}. The production workload environments are moved to {{site.data.keyword.vmwaresolutions_full_notm}} by using the lift and shift method with no change to the business applications.
+
 ## IBM Transformation Suite for SAP Applications
 {: #migration-tooling-transformation-suite}
 

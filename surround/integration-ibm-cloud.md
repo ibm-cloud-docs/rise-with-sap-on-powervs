@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-02-08
+lastupdated: 2025-04-14
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -15,7 +15,7 @@ subcollection: rise-with-sap-on-powervs
 # IBM Cloud
 {: #integration-ibm-cloud}
 
-While your RISE with SAP on {{site.data.keyword.powerSysFull}} workloads are running in the SAP® IBM Cloud Account, your IBM Cloud surround workloads run in your own IBM Cloud Account.
+While your RISE with SAP on {{site.data.keyword.powerSysFull}} workloads are running in the SAP&reg; IBM Cloud Account, your IBM Cloud surround workloads run in your own IBM Cloud Account.
 
 ![Figure 1. IBM Cloud Surround Workloads](../images/workloads.svg "IBM Cloud Surround Workloads"){: caption="IBM Cloud Surround Workloads" caption-side="bottom"}
 
@@ -41,7 +41,7 @@ The IBM Cloud Transit Gateway pattern has two sub-patterns:
 * IBM Cloud Transit Gateway in the SAP account.
 * IBM Cloud Transit Gateway in the client account.
 
-When connecting to RISE with SAP discuss with your SAP representative on the transit gateway connection they provide to enable peering between your IBM Cloud Account and the RISE with SAP IBM Cloud Account.
+When connecting to RISE with SAP, discuss with your SAP representative on which transit gateway pattern they prefer to use to enable the peering between your IBM Cloud Account and their RISE with SAP IBM Cloud Account.
 {: note}
 
 ### IBM Cloud Transit Gateway in the SAP account

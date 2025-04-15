@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-02-09
+lastupdated: 2025-04-14
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -30,7 +30,7 @@ This use case is useful if a client already has an IBM Cloud presence linked to 
 
 The diagram does not show the use of a Virtual Network Functions (VNFs) appliance. VNF appliances, are packaged 3rd party firewall offerings available on the IBM Catalog. See [About virtual network functions over VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vnf) and [Available IBM Cloud VNF catalog offerings](https://cloud.ibm.com/docs/vpc?topic=vpc-deploy-vnf#available-vnf-offerings). See the enterprise scale hybrid integration for the use of a VNF in the architecture.
 
-When connecting to RISE with SAP discuss with your SAP representative on the transit gateway connection they provide to enable peering between your IBM Cloud Account and the RISE with SAP IBM Cloud Account.
+When connecting to RISE with SAP, discuss with your SAP representative on which transit gateway pattern they prefer to use to enable the peering between your IBM Cloud Account and their RISE with SAP IBM Cloud Account.
 {: note}
 
 The documentation [Extending your enterprise network to IBM Cloud](https://cloud.ibm.com/docs/pattern-classic-edge-gateway?topic=pattern-classic-edge-gateway-extending-enterprise-network) takes a different approach and defines a reference architecture used to direct all network traffic to flow through an IBM Cloud Classic firewall or gateway appliance for inspection before going to the downstream workloads within IBM Cloud.
@@ -46,7 +46,7 @@ The pattern uses a transit VPC which enables a hub-and-spoke design where the hu
 
 While the diagrams show a Direct Link Dedicated connection to the Enterprise Networks, this connection could be Direct Link Connection or a VPN depending on your requirements. 
 
-The diagram below shows a scenario where SAP® own the transit gateway and when you request SAP to peer they issue a connection request to your VPC.
+The diagram below shows a scenario where SAP&reg; own the transit gateway and when you request SAP to peer, they issue a connection request to your VPC.
 
 ![Figure 2. The Enterprise hybrid high-level pattern with SAP TGW](../images/hybrid-enterprise-high-level-sap-tgw.svg "The Enterprise hybrid high-level pattern with SAP TGW"){: caption="The Enterprise hybrid high-level pattern with SAP TGW" caption-side="bottom"}
 
@@ -64,7 +64,7 @@ You will need to discuss your requirements with your SAP representative on which
 ## The Enterprise hybrid pattern in detail
 {: #integration-hybrid-enterprise-detail}
 
-The diagram below shows an enterprise scale hybrid integration scenario with a number of surround workloads hosted in the IBM Cloud infrastructure environments in your own IBM Cloud Account. The IBM Cloud Account for Client is peered with the IBM Cloud Account for RISE with SAP on IBM Power Virtual Server using a cross-account transit gateway connection. See [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui). The diagram shows a scenario where SAP® own the transit gateway and when you request SAP to peer they issue a connection request to your VPC.
+The diagram below shows an enterprise scale hybrid integration scenario with a number of surround workloads hosted in the IBM Cloud infrastructure environments in your own IBM Cloud Account. The IBM Cloud Account for Client is peered with the IBM Cloud Account for RISE with SAP on IBM Power Virtual Server using a cross-account transit gateway connection. See [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui). The diagram shows a scenario where SAP&reg; own the transit gateway and when you request SAP to peer they issue a connection request to your VPC.
 
 ![Figure 5. The Enterprise hybrid pattern](../images/hybrid-enterprise.svg "The Enterprise hybrid pattern"){: caption="The Enterprise hybrid pattern" caption-side="bottom"}
 
@@ -80,7 +80,7 @@ Key aspects of this pattern include the following:
 * The transit hub VPC can host enterprise shared resources such as DNS, see [About DNS Services](/docs/dns-svcs?topic=dns-svcs-about-dns-services) and Virtual Private Endpoints gateways. IBM Cloud VPE enables the connection of supported IBM Cloud services from your VPC network by using the IP addresses allocated from a subnet within your VPC. See [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe)
 * The spoke VPCs contains applications running on IBM Cloud virtual server instances, see [About virtual server instances for VPC](/docs/vpc?topic=vpc-about-advanced-virtual-servers), and bare metal servers, see [About Bare Metal Servers for VPC](/docs/vpc?topic=vpc-about-bare-metal-servers) logically grouped as needed.
 * One of the spoke VPCs can be designated a Management VPC and host enterprise management tooling. Alternatively, if business unit level management is required than additional spokes can host management tooling for each business unit
-* IBM Cloud Classic infrastructure environment contains the classic resources such as IBM Cloud VMware Solutions VMware Cloud Foundation (VCF) Classic. See [Overview of VCF for Classic - Automated](/docs/vmwaresolutions?topic=vmwaresolutions-vc_vcenterserveroverview).
+* IBM Cloud Classic infrastructure environment contains the classic resources such as {{site.data.keyword.vmwaresolutions_full_notm}} VMware Cloud Foundation (VCF) Classic. See [Overview of VCF for Classic - Automated](/docs/vmwaresolutions?topic=vmwaresolutions-vc_vcenterserveroverview).
 * The VCF as a Service (VCFaaS) Virtual Data Centers (VDC) hosts applications running on virtual machines and virtual appliances. See [VCF as a Service overview](/docs/vmwaresolutions?topic=vmwaresolutions-vmware-aas-overview).
 * Power Virtual Server workspace hosts applications running on AIX, IBMi or Linux on Power virtual server instances. See [Getting started with IBM Power Virtual Server](/docs/power-iaas?topic=power-iaas-getting-started)
 * IBM Cloud Services hosts services including security, logging, monitoring, databases and other SaaS based offerings. See [IBM Cloud Catalog](/catalog)

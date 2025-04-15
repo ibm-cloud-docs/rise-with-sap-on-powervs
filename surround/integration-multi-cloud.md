@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-04-11
+lastupdated: 2025-04-14
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -31,7 +31,7 @@ The pattern above shows:
     * Your surround workloads that remain in your locations.
     * A network gateway that connects your enterprise networks to external networks.
 * The Cloud Exchange Provider is a client selected partner who offers the required connections to your multi-cloud resources including IBM. 
-* SAP® Cloud Peering is a service that allows SAP customers to establish a direct, secure connection to SAP cloud services, like SAP BTP, Concur, Ariba, SuccessFactors and more. These SAP services, connected through a network of interconnection partners, bypass the public internet and provides high-speed, reliable connectivity for the SAP applications. Many of these interconnection partners are also known as cloud exchange providers.
+* SAP&reg; Cloud Peering is a service that allows SAP customers to establish a direct, secure connection to SAP cloud services, like SAP BTP, Concur, Ariba, SuccessFactors and more. These SAP services, connected through a network of interconnection partners, bypass the public internet and provides high-speed, reliable connectivity for the SAP applications. Many of these interconnection partners are also known as cloud exchange providers.
 * Other Cloud Providers are your cloud accounts in other cloud providers such as AWS, Azure and GCP. These cloud providers host your additional surround workloads and SaaS products that you consume.
 * Public Networks are Internet connected resources such as external users of the RISE with SAP, non-RISE and non-RISE non SAP systems and the SaaS are those products that are not accessible via the Cloud Exchange Provider and need to be accessed via the Internet.
 * The IBM Cloud Account for client is your account that contains all your non-RISE SAP and non-RISE non-SAP surround workloads that you are hosting in IBM Cloud:
@@ -39,7 +39,7 @@ The pattern above shows:
     * Additionally you can consume IBM Cloud Services such as DNS and more.
     * The pattern uses a transit VPC which enables a hub-and-spoke design where the hub is the transit VPC and the SAP VPC and your other VPCs, Power Workspace and Classic infrastructure are the spokes. All spoke-to-spoke traffic passes through the hub. An alternative design is an edge VPC which only receives traffic leaving or entering your IBM Cloud Account. Diagrammatically the two patterns look the same, the difference is enabled in the routing you have configured in the VPC routing tables. The transit VPC hosts your selected Virtual Network Function (VNF) appliances. VNF appliances, such as routers and firewalls running on virtual server instances, can monitor, log, route and filter the traffic through the transit VPC. See the [IBM Cloud Catalog](/catalog?search=firewall%20label%3Asoftware#search_results) for third party vendors like Palo Alto, Fortinet, Checkpoint and Juniper who offer VNFs in IBM Cloud VPC.
     * Integration of the different IBM Cloud IaaS environments, such as VPC, Classic, and PowerVS, is achieved by using the IBM Cloud Transit Gateway, which can be considered as a 'as a service Border Gateway Protocol (BGP) router'. The IBM Cloud transit gateway can be local, limited to a specific region or global, spanning multiple regions.
-    * The diagram shows Direct Link Dedicated connecting your enterprise networks to your transit VPC and and Direct Link Connect connecting to your selected Cloud Exchange Provider. An alternative is to use the Direct Link Connect for your enterprise network traffic.
+    * The diagram shows Direct Link Dedicated connecting your enterprise networks to your transit VPC and Direct Link Connect connecting to your selected Cloud Exchange Provider. An alternative is to use the Direct Link Connect for your enterprise network traffic.
     * Inbound Internet access would leverage public application load-balancers and optionally IBM Cloud Internet Services to provide the required security features. Note that VNFs in high-availability cannot be used for inbound Internet traffic. See [VNF limitations](/docs/vpc?topic=vpc-vnf-limitations).
     * Outbound Internet access uses a public gateway on the subnets in the transit VPC or Floating IPs attached to the VNFs, as described by the VNF type and deployment pattern.
 * The IBM Cloud account for RISE on Power Virtual Server is SAPs IBM Cloud account that hosts yor RISE with SAP resources. The diagram shows three options to connect the IBM Cloud Account for Client and the IBM Cloud Account for RISE with SAP on Power Virtual Server; Client provided transit gateway, SAP provided transit gateway and VPN, only one of these connections is required. You will need to discuss your requirements with your SAP representative on which of these three option SAP will authorize to satisfy your needs.

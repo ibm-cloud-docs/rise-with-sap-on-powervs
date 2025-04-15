@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-03-17
+lastupdated: 2025-04-14
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -19,6 +19,46 @@ It is helpful that you have an understanding of both the IBM and SAP offerings a
 
 ## IBM offerings and products
 {: #sap-offerings-and-products-ibm}
+
+### RISE with SAP – Premium Supplier
+{: #sap-offerings-and-products-ibm-premium}
+
+Premium Suppliers are SAP partners who have demonstrated expertise in RISE with SAP and offer a wide range of services. Premium Suppliers include IBM, T-Systems and Fujitsu. The IBM RISE with SAP – Premium Supplier is a service offered by IBM Consulting that: 
+
+* Delivers Premium Supplier Services to SAP under the same Service Level Agreement as Standard RISE.
+* Uses the IBM’s HA clustered solution allowing for 99.9% SLA around system availability under the extended Service level Agreement option from SAP.
+* Are built on the same Technical Architecture as Standard RISE.
+* IBM’s Well Architected Digital Operations Management Plane built on IBM’s own Cloud Tenant, giving clients more control. 
+* Enables better TCO efficiency with incremental scalability.
+
+The following table shows a comparison between RISE with SAP – Premium Supplier and RISE with SAP on IBM Power Virtual Server:
+
+| Area | RISE with SAP Responsible | RISE with SAP – Premium Supplier Responsible |
+|:---------|:----------|:----------|
+| Application Management | Application Management Provider (IBM/Other SI) | Application Management Provider (IBM/Other SI) |
+| Development & Extensions | Application Management Provider (IBM/Other SI) | Application Management Provider (IBM/Other SI) |
+| Implementation | System Integrator (IBM/Other SI) | System Integrator (IBM/Other SI) |
+| Integration | System Integrator (IBM/Other SI) | System Integrator (IBM/Other SI) |
+| Upgrade / Migration | System Integrator (IBM/Other SI) | System Integrator (IBM/Other SI) |
+| Security Management | SAP | IBM Security |
+| Software Maintenance | SAP | BASIS Services (SAP) |
+| NetWeaver Stack (SAP Basis) | SAP | BASIS Services (SAP) |
+| Database Management | SAP | BASIS Services (SAP) |
+| Data Backup and Restore | SAP | IBM Platform Engineering (PES) |
+| System Governance | SAP | IBM Platform Engineering (PES) |
+| Operating System / SDN / SDS / SDC | SAP | IBM Platform Engineering (PES) |
+| Virtualization | SAP | IBM Cloud / Azure / AWS |
+| Servers | SAP | IBM Cloud / Azure / AWS |
+| Storage | SAP | IBM Cloud / Azure / AWS |
+| DC and Networking | SAP | IBM Cloud / Azure / AWS |
+| Licenses | SAP | SAP |
+| Tools & Services for Migration & Readiness Check | SAP | SAP |
+| SAP Business Technology Platform | SAP | SAP |
+| SAP Business Network | SAP | SAP |
+| SAP Business Process Intelligence | SAP | SAP |
+{: caption="RISE with SAP on IBM Power Virtual Server and RISE with SAP – Premium Supplier comparison" caption-side="bottom"}
+
+Typically client's select RISE with SAP – Premium Supplier over RISE with SAP as they require a single provider across the landscape and direct relationship with the support teams. For more information, see [BREAKTHROUGH with IBM for RISE with SAP](https://www.ibm.com/consulting/rise-with-sap){: external}.
 
 ### IBM ManagePlus
 {: #sap-offerings-and-products-ibm-manageplus}
@@ -69,46 +109,7 @@ IBM ManagePlus increases client value, due to the following:
 * IBM built control plane that allows organizations to adopt IT operational management best practices based on AI and automation.
 * Ability to address customer unique requirements such as tailored security standards.
 
-### RISE with SAP – Premium Supplier
-{: #sap-offerings-and-products-ibm-premium}
-
-Premium Suppliers are SAP partners who have demonstrated expertise in RISE with SAP and offer a wide range of services. Premium Suppliers include 
-IBM, T-Systems and Fujitsu. The IBM RISE with SAP – Premium Supplier is a service offered by IBM Consulting that: 
-
-* Delivers Premium Supplier Services to SAP under the same Service Level Agreement as Standard RISE.
-* Uses the IBM’s HA clustered solution allowing for 99.9% SLA around system availability under the extended Service level Agreement option from SAP.
-* Are built on the same Technical Architecture as Standard RISE.
-* IBM’s Well Architected Digital Operations Management Plane built on IBM’s own Cloud Tenant, giving clients more control. 
-* Enables better TCO efficiency with incremental scalability.
-
-The following table shows a comparison between RISE with SAP – Premium Supplier and RISE with SAP on IBM Power Virtual Server:
-
-| Area | RISE with SAP Responsible | RISE with SAP – Premium Supplier Responsible |
-|:---------|:----------|:----------|
-| Application Management | Application Management Provider (IBM/Other SI) | Application Management Provider (IBM/Other SI) |
-| Development & Extensions | Application Management Provider (IBM/Other SI) | Application Management Provider (IBM/Other SI) |
-| Implementation | System Integrator (IBM/Other SI) | System Integrator (IBM/Other SI) |
-| Integration | System Integrator (IBM/Other SI) | System Integrator (IBM/Other SI) |
-| Upgrade / Migration | System Integrator (IBM/Other SI) | System Integrator (IBM/Other SI) |
-| Security Management | SAP | IBM Security |
-| Software Maintenance | SAP | BASIS Services (SAP) |
-| NetWeaver Stack (SAP Basis) | SAP | BASIS Services (SAP) |
-| Database Management | SAP | BASIS Services (SAP) |
-| Data Backup and Restore | SAP | IBM Platform Engineering (PES) |
-| System Governance | SAP | IBM Platform Engineering (PES) |
-| Operating System / SDN / SDS / SDC | SAP | IBM Platform Engineering (PES) |
-| Virtualization | SAP | IBM Cloud / Azure / AWS |
-| Servers | SAP | IBM Cloud / Azure / AWS |
-| Storage | SAP | IBM Cloud / Azure / AWS |
-| DC and Networking | SAP | IBM Cloud / Azure / AWS |
-| Licenses | SAP | SAP |
-| Tools & Services for Migration & Readiness Check | SAP | SAP |
-| SAP Business Technology Platform | SAP | SAP |
-| SAP Business Network | SAP | SAP |
-| SAP Business Process Intelligence | SAP | SAP |
-{: caption="RISE with SAP on IBM Power Virtual Server and RISE with SAP – Premium Supplier comparison" caption-side="bottom"}
-
-Typically client's select RISE with SAP – Premium Supplier over RISE with SAP as they require a single provider across the landscape and direct relationship with the support teams.
+Review the IBM blog [ManagePlus—your journey before, with and beyond RISE with SAP](https://www.ibm.com/products/blog/manageplus-your-journey-before-with-and-beyond-rise-with-sap){: external}. For more information [Contact your IBM representative](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-consult){: external}.
 
 ## SAP offerings and products
 {: #sap-offerings-and-products-sap}

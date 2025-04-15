@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-04-11
+lastupdated: 2025-04-14
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -34,14 +34,14 @@ The SAP Core systems are the candidates for the RISE with SAP on IBM Power Virtu
 ## Non-RISE SAP surround workloads
 {: #surround-overview-non-rise}
 
-Non-RISE SAP® surround workloads are those workloads that currently reside alongside your on-premise SAP systems hosted on {{site.data.keyword.IBM}} Power that you intend to migrate to RISE with SAP on {{site.data.keyword.powerSysFull}}.
+Non-RISE SAP&reg; surround workloads are those workloads that currently reside alongside your on-premise SAP systems hosted on {{site.data.keyword.IBM}} Power that you intend to migrate to RISE with SAP on {{site.data.keyword.powerSysFull}}.
 
 ![Figure 1. Non-RISE SAP surround workloads](../images/non-rise.svg "Non-RISE SAP surround workloads"){: caption="Non-RISE SAP surround workloads" caption-side="bottom"}
 
 ## Non-RISE non-SAP surround workloads
 {: #surround-overview-non-rise-non-sap-surround-workloads}
 
-Surround non-RISE non-SAP® workloads are those workloads that currently reside alongside your on-premise SAP systems hosted on {{site.data.keyword.IBM}} Power that you intend to migrate to IBM Cloud because they are tightly coupled to your SAP systems hosted in RISE with SAP on IBM Power Virtual Server.
+Surround non-RISE non-SAP&reg; workloads are those workloads that currently reside alongside your on-premise SAP systems hosted on {{site.data.keyword.IBM}} Power that you intend to migrate to IBM Cloud because they are tightly coupled to your SAP systems hosted in RISE with SAP on IBM Power Virtual Server.
 
 ![Figure 2. Non-RISE non-SAP surround workloads](../images/non-sap.svg "Non-RISE non-SAP surround workloads"){: caption="Non-RISE non-SAP surround workloads" caption-side="bottom"}
 
@@ -62,7 +62,7 @@ As tightly coupled workloads require low latency connections to your SAP systems
 
 As these surround workloads cannot be hosted in the SAP owned RISE with SAP on IBM Power Virtual Server IBM Account, the diagram below, shows how they can be migrated to one of the following three infrastructure environments in your IBM Cloud account and peered with the SAP owned RISE with SAP on IBM Power Virtual Server IBM Account:
 
-* Virtual Private Cloud (VPC) - IBM Cloud Virtual Private Cloud (VPC) is a highly resilient and highly secure software-defined network (SDN) on which you can build isolated private clouds for your business operations while maintaining essential public cloud benefits. See [IBM Cloud VPC Solutions](https://www.ibm.com/cloud/vpc) and [IBM Cloud® Virtual Private Cloud (VPC) Infrastructure environment introduction](/docs/sap?topic=sap-vpc-env-introduction).
+* Virtual Private Cloud (VPC) - IBM Cloud Virtual Private Cloud (VPC) is a highly resilient and highly secure software-defined network (SDN) on which you can build isolated private clouds for your business operations while maintaining essential public cloud benefits. See [IBM Cloud VPC Solutions](https://www.ibm.com/cloud/vpc) and [IBM Cloud&reg; Virtual Private Cloud (VPC) Infrastructure environment introduction](/docs/sap?topic=sap-vpc-env-introduction).
 * Power Virtual Server - IBM Power Virtual Server is a family of configurable, multi-tenant, virtual IBM Power servers with access to IBM Cloud services. See [IBM Power Virtual Server](https://www.ibm.com/products/power-virtual-server) and [IBM Power Systems Infrastructure environment introduction](/docs/sap?topic=sap-power-env-introduction).
 * Classic Infrastructure - The classic infrastructure IaaS platform leverages a traditional network architecture, best suited for lift and shift workloads so you can move applications quickly and keep the same architecture. See [IBM Cloud Bare Metal Servers on Classic Infrastructure](https://www.ibm.com/products/bare-metal-servers/classic?mhsrc=ibmsearch_a&mhq=classic%20infrastructure%20-%20ibm%20cloud), [IBM Cloud Virtual Servers on IBM Cloud Classic Infrastructure](https://www.ibm.com/products/virtual-servers-classic) and [Classic Infrastructure environment introduction](/docs/sap?topic=sap-classic-env-introduction).
 
@@ -77,7 +77,7 @@ As loosely coupled workloads do not need high bandwidth connectivity or low late
 ## IBM Cloud platform
 {: #surround-overview-ibm-cloud-platform}
 
-The IBM Cloud platform combines platform as a service (PaaS) with infrastructure as a service (IaaS) to provide an integrated experience and is globally deployed across data centers around the world, enabling you to migrate or create your surround workloads quickly and and that perform securely and reliably.
+The IBM Cloud platform combines platform as a service (PaaS) with infrastructure as a service (IaaS) to provide an integrated experience and is globally deployed across data centers around the world, enabling you to migrate or create your surround workloads quickly and that perform securely and reliably.
 
 IBM Cloud provides solutions that enable higher levels of compliance, security, and management, with proven architecture patterns and methods for rapid delivery for running your surround workloads. See [Surround workloads by platform](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-platform) and [Surround workloads by use-case](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-use-case). Available in data centers worldwide, with multi-zone regions in North and South America, Europe, Asia, and Australia.
 

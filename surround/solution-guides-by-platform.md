@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-04-11
+lastupdated: 2025-04-14
 
 keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
 
@@ -49,7 +49,7 @@ The following reference architectures are documented for non-RISE, non-SAP on IB
 * [Web app cross-region resiliency](/docs/pattern-vpc-vsi-cross-region-resiliency?topic=pattern-vpc-vsi-cross-region-resiliency-web-app-cross-region) - The web app cross-region resiliency architecture deploys a 3-tier web application on Virtual Servers for VPC using compute, storage, and network cloud resources as well as other Cloud services provisioned in multiple availability zones across two regions to protect from region-wide natural disasters or outages.
 * [Deployable architecture for Maximo Application Suite](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deployable-architecture-mas-components) - The IBM Maximo Application Suite deployable architecture provides a simple automated way to get started with Maximo Application Suite on IBM Cloud. Maximo Application Suite is a set of applications for asset monitoring, management, predictive maintenance, and reliability planning. It is a single, integrated cloud-based platform that uses Artificial Intelligence (AI), Internet of Things (IoT), and analytics to optimize performance, extend asset lifecycles, and reduce operational downtime and costs.
 * [Dizzion Managed DaaS on IBM Cloud](https://www.ibm.com/cloud/dizzion) - Dizzion Managed Desktop as a Service (DaaS) on IBM Cloud can help enterprises build an agile, long-term remote work environment, using cloud desktops to optimize end-user performance, security and compliance. The solution can support a variety of challenging use cases, including streaming voice and video, compliant personal devices, and media-intense workloads.
-* [IBM MQ SaaS](https://www.ibm.com/products/mq/saas) - IBM® MQ SaaS offers secure and reliable messaging across multiple clouds. Utilise IBM MQ SaaS as a fully managed service with quick and easy setup. IBM’s solution handles upgrades, patches, and many operational management tasks, allowing you to focus on integrating with your applications.
+* [IBM MQ SaaS](https://www.ibm.com/products/mq/saas) - IBM&reg; MQ SaaS offers secure and reliable messaging across multiple clouds. Utilise IBM MQ SaaS as a fully managed service with quick and easy setup. IBM’s solution handles upgrades, patches, and many operational management tasks, allowing you to focus on integrating with your applications.
 
 ### VPC for SAP HANA NetWeaver ABAP deployable architecture
 {: #surround-workloads-by-platform-vpc-hana}
@@ -59,10 +59,6 @@ The [VPC for SAP HANA NetWeaver ABAP](https://cloud.ibm.com/catalog/architecture
 * VPC, subnet, security group.
 * A deployment server, also known as a bastion server in the same VPC, with the SAP kits from the SAP Portal downloaded to it.
 
-A diagram is shown below:
-    
-![Figure 1. VPC for SAP HANA NetWeaver ABAP](../images/refarch-sap-hana-single-host-only.svg "VPC for SAP HANA NetWeaver ABAP"){: caption="VPC for SAP HANA NetWeaver ABAP" caption-side="bottom"}
-
 ### VPC with Additional Application Server ABAP on Linux for SAP HANA deployable architecture
 {: #surround-workloads-by-platform-vpc-add}
 
@@ -70,10 +66,6 @@ The [VPC with Additional Application Server ABAP on Linux for SAP HANA](https://
 
 * VPC, subnet, security group.
 * A deployment server, also known as a bastion server in the same VPC, with the SAP kits from the SAP Portal downloaded to it.
-
-A diagram is shown below:
-    
-![Figure 2. VPC with Additional Application Server ABAP on Linux for SAP HANA](../images/refarch-sap-hana-single-host-all-q2-23.svg "VPC with Additional Application Server ABAP on Linux for SAP HANA"){: caption="VPC with Additional Application Server ABAP on Linux for SAP HANA" caption-side="bottom"}
 
 ## IBM Cloud Power Virtual Server
 {: #surround-workloads-by-platform-powervs}
@@ -99,48 +91,36 @@ The following reference architectures are documented for non-RISE, non-SAP SAP o
 ### Power Virtual Server with VPC landing zone - 'Standard Variation' deployable architecture
 {: #surround-workloads-by-platform-pwr-with-vpc-std}
 
-The [Power Virtual Server with VPC landing zone - 'Standard Variation'](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard) deployment of the Power Virtual Server with VPC landing zone creates VPC services and a Power Virtual Server workspace and interconnects them. A proxy service for public internet access from the PowerVS workspace is configured. You can optionally configure some management components on VPC (such as an NFS service, NTP forwarder, and DNS forwarder). A diagram is shown below:
-
-![Figure 3. Power Virtual Server with VPC landing zone - 'Standard Variation'](../images/deploy-arch-ibm-pvs-inf-standard.svg "Power Virtual Server with VPC landing zone - 'Standard Variation'"){: caption="Power Virtual Server with VPC landing zone - 'Standard Variation'" caption-side="bottom"}
+The [Power Virtual Server with VPC landing zone - 'Standard Variation'](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard) deployment of the Power Virtual Server with VPC landing zone creates VPC services and a Power Virtual Server workspace and interconnects them. A proxy service for public internet access from the PowerVS workspace is configured. You can optionally configure some management components on VPC (such as an NFS service, NTP forwarder, and DNS forwarder).
 
 ### Power Virtual Server with VPC landing zone - 'Standard Extend Variation' deployable architecture
 {: #surround-workloads-by-platform-pwr-with-vpc-std-ext}
 
-The [Power Virtual Server with VPC landing zone - 'Standard Extend Variation'](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-extension) creates an additional Power Virtual Server workspace and connects it with the already created Power Virtual Server with VPC landing zone. It builds on the existing Power Virtual Server with VPC landing zone deployed as a standard variation. A diagram is shown below:
-
-![Figure 4. Power Virtual Server with VPC landing zone - 'Standard Extend Variation'](../images/deploy-arch-ibm-pvs-inf-standard-extend.svg "Power Virtual Server with VPC landing zone - 'Standard Extend Variation'"){: caption="Power Virtual Server with VPC landing zone - 'Standard Extend Variation'" caption-side="bottom"}
+The [Power Virtual Server with VPC landing zone - 'Standard Extend Variation'](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-extension) creates an additional Power Virtual Server workspace and connects it with the already created Power Virtual Server with VPC landing zone. It builds on the existing Power Virtual Server with VPC landing zone deployed as a standard variation.
 
 ### Power Virtual Server with VPC landing zone - 'Quickstart Variation' deployable architecture
 {: #surround-workloads-by-platform-pwr-with-vpc-quick}
 
-The [Power Virtual Server with VPC landing zone - 'Quickstart Variation'](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard-plus-vsi) deployment of the Power Virtual Server with VPC landing zone creates VPC services, a Power Virtual Server workspace, and interconnects them. It also deploys a Power Virtual Server of chosen T-shirt size or custom configuration. Supported operating systems are AIX, IBMi, and Linux images. A proxy service for public internet access from the PowerVS workspace is configured. You can optionally configure some management components on VPC (such as an NFS service, NTP forwarder, and DNS forwarder). A diagram is shown below:
-
-![Figure 5. Power Virtual Server with VPC landing zone - 'Quickstart Variation'](../images/deploy-arch-ibm-pvs-inf-standard-plus-vsi.svg "Power Virtual Server with VPC landing zone - 'Quickstart Variation'"){: caption="Power Virtual Server with VPC landing zone - 'Quickstart Variation'" caption-side="bottom"}
+The [Power Virtual Server with VPC landing zone - 'Quickstart Variation'](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-deploy-arch-ibm-pvs-inf-standard-plus-vsi) deployment of the Power Virtual Server with VPC landing zone creates VPC services, a Power Virtual Server workspace, and interconnects them. It also deploys a Power Virtual Server of chosen T-shirt size or custom configuration. Supported operating systems are AIX, IBMi, and Linux images. A proxy service for public internet access from the PowerVS workspace is configured. You can optionally configure some management components on VPC (such as an NFS service, NTP forwarder, and DNS forwarder).
 
 ### Power Virtual Server with VPC landing zone - as 'Import' deployment deployable architecture
 {: #surround-workloads-by-platform-pwr-with-vpc-import}
 
-The [Power Virtual Server with VPC landing zone - as 'Import' deployment](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-power-virtual-server-with-vpc-landing-zone-as-import-deployment) solution helps to install the deployable architecture 'Power Virtual Server for SAP HANA' on top of a pre-existing Power Virtual Server landscape. This import solution creates a schematics workspace by taking the pre-existing VPC and PowerVS infrastructure resource details as inputs. The ID of the existing schematics workspace will be the pre-requisite workspace ID required by this deployment. A diagram is shown below:
-
-![Figure 6. Power Virtual Server with VPC landing zone - as 'Import' deployment](../images/deploy-arch-ibm-pvs-inf-import.svg "Power Virtual Server with VPC landing zone - as 'Import' deployment"){: caption="Power Virtual Server with VPC landing zone - as 'Import' deployment" caption-side="bottom"}
+The [Power Virtual Server with VPC landing zone - as 'Import' deployment](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-power-virtual-server-with-vpc-landing-zone-as-import-deployment) solution helps to install the deployable architecture 'Power Virtual Server for SAP HANA' on top of a pre-existing Power Virtual Server landscape. This import solution creates a schematics workspace by taking the pre-existing VPC and PowerVS infrastructure resource details as inputs. The ID of the existing schematics workspace will be the pre-requisite workspace ID required by this deployment.
 
 ### Power Virtual Server for SAP HANA - variation 'SAP ready PowerVS' deployable architecture
 {: #surround-workloads-by-platform-pwr-hana-ready}
 
 The [Power Virtual Server for SAP HANA](/docs/sap-powervs) deployable architecture is designed to assist you in deploying SAP ERP software landscapes into IBM Cloud on the IBM Power Virtual Server infrastructure. This is the second step in the deployment process for creating a full environment. Before starting this step, you should first deploy 'Power Virtual Server with VPC landing zone' deployable architecture. Once this is completed, you are prepared to deploy this deployable architecture.
 
-The [Power Virtual Server for SAP HANA - variation 'SAP ready PowerVS'](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-sap-ready-to-go) variation of the Power Virtual Server for SAP HANA architecture creates a basic and expandable SAP system landscape. The variation builds on the foundation of the VPC landing zone and Power Virtual Server with VPC landing zone. PowerVS instances for SAP HANA, SAP NetWeaver, and optionally for shared SAP files are deployed and pre-configured for SAP installation. Services such as DNS, NTP, and NFS running in VPC and provided by Power Virtual Server with VPC landing zone are leveraged. The transit gateway provide the network bridge between the IBM Power infrastructure and the IBM Cloud VPC and public internet. The resulting SAP landscape leverages the services such as Activity Tracker, Cloud Object Storage, Key Management from the VPC landing zone and the network connectivity configuration provided by Power Virtual Server with VPC landing zone. A diagram is shown below:
-    
-![Figure 7. Power Virtual Server for SAP HANA - variation 'SAP ready PowerVS'](../images/deploy-arch-ibm-pvs-sap-ready-to-go.svg "Power Virtual Server for SAP HANA - variation 'SAP ready PowerVS'"){: caption="Power Virtual Server for SAP HANA - variation 'SAP ready PowerVS'" caption-side="bottom"}
+The [Power Virtual Server for SAP HANA - variation 'SAP ready PowerVS'](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-sap-ready-to-go) variation of the Power Virtual Server for SAP HANA architecture creates a basic and expandable SAP system landscape. The variation builds on the foundation of the VPC landing zone and Power Virtual Server with VPC landing zone. PowerVS instances for SAP HANA, SAP NetWeaver, and optionally for shared SAP files are deployed and pre-configured for SAP installation. Services such as DNS, NTP, and NFS running in VPC and provided by Power Virtual Server with VPC landing zone are leveraged. The transit gateway provide the network bridge between the IBM Power infrastructure and the IBM Cloud VPC and public internet. The resulting SAP landscape leverages the services such as Activity Tracker, Cloud Object Storage, Key Management from the VPC landing zone and the network connectivity configuration provided by Power Virtual Server with VPC landing zone.
 
 ### Power Virtual Server for SAP HANA - variation 'SAP S/4HANA or BW/4HANA' deployable architecture
 {: #surround-workloads-by-platformpwr-hana-hana}
 
 The [Power Virtual Server for SAP HANA](/docs/sap-powervs) deployable architecture is designed to assist you in deploying SAP ERP software landscapes into IBM Cloud on the IBM Power Virtual Server infrastructure. This is the second step in the deployment process for creating a full environment. Before starting this step, you should first deploy 'Power Virtual Server with VPC landing zone' deployable architecture. Once this is completed, you are prepared to deploy this deployable architecture.
 
-The [Power Virtual Server for SAP HANA - variation 'SAP S/4HANA or BW/4HANA'](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-sap-s4hana-bw4hana) - variation of the Power Virtual Server for SAP HANA architecture creates a basic and expandable SAP system landscape built on the foundation of Power Virtual Server with VPC landing zone. Power Virtual Server instances for SAP HANA, SAP NetWeaver, and optionally for shared SAP files are deployed and pre-configured for SAP installation. The S/4HANA or BW/4HANA solution is installed based on the selected version. Services such as DNS, NTP, and NFS running in VPC and provided by Power Virtual Server with VPC landing zone are leveraged. Transit gateway connections provide the network bridge between the IBM Power infrastructure and the IBM Cloud VPC and public internet. The resulting SAP landscape leverages the services such as Activity Tracker, Cloud Object Storage, Key Management from the VPC landing zone and the network connectivity configuration provided by Power Virtual Server with VPC landing zone. A diagram is shown below:
-    
-![Figure 8. Power Virtual Server for SAP HANA - variation 'SAP S/4HANA or BW/4HANA'](../images/deploy-arch-ibm-pvs-sap-s4hana-bw4hana.svg "Power Virtual Server for SAP HANA - variation 'SAP S/4HANA or BW/4HANA'"){: caption="Power Virtual Server for SAP HANA - variation 'SAP S/4HANA or BW/4HANA'" caption-side="bottom"}
+The [Power Virtual Server for SAP HANA - variation 'SAP S/4HANA or BW/4HANA'](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-sap-s4hana-bw4hana) - variation of the Power Virtual Server for SAP HANA architecture creates a basic and expandable SAP system landscape built on the foundation of Power Virtual Server with VPC landing zone. Power Virtual Server instances for SAP HANA, SAP NetWeaver, and optionally for shared SAP files are deployed and pre-configured for SAP installation. The S/4HANA or BW/4HANA solution is installed based on the selected version. Services such as DNS, NTP, and NFS running in VPC and provided by Power Virtual Server with VPC landing zone are leveraged. Transit gateway connections provide the network bridge between the IBM Power infrastructure and the IBM Cloud VPC and public internet. The resulting SAP landscape leverages the services such as Activity Tracker, Cloud Object Storage, Key Management from the VPC landing zone and the network connectivity configuration provided by Power Virtual Server with VPC landing zone.
 
 ## IBM Cloud Classic
 {: #surround-workloads-by-platform-classic}
@@ -153,7 +133,7 @@ The following reference architectures are documented for non-RISE SAP on IBM Clo
 
 The following documentation is applicable for non-RISE, non-SAP on IBM Cloud Classic:
 
-* [IBM Bare Metal Servers for Oracle workloads](https://www.ibm.com/products/bare-metal-servers-oracle) - This document discusses the IBM Cloud servers that are certified to run Oracle Linux and Virtualization and Oracle Hardware Certification List (HCL) compliant. IBM Bare Metal Servers for Oracle workloads are true, raw-performance, no-hypervisor, single-tenant bare metal servers and feature the latest generation of Intel® Xeon® processors for advanced core and memory demands.
+* [IBM Bare Metal Servers for Oracle workloads](https://www.ibm.com/products/bare-metal-servers-oracle) - This document discusses the IBM Cloud servers that are certified to run Oracle Linux and Virtualization and Oracle Hardware Certification List (HCL) compliant. IBM Bare Metal Servers for Oracle workloads are true, raw-performance, no-hypervisor, single-tenant bare metal servers and feature the latest generation of Intel&reg; Xeon&reg; processors for advanced core and memory demands.
 * [Gateway appliances](https://www.ibm.com/products/network-appliances) - Gateway appliances are devices that give you enhanced control over network traffic, let you accelerate your network’s performance, and give your network a security boost. Manage your physical and virtual networks for routing multiple VLANs, for firewalls, VPN, traffic shaping and more.
 
 ## IBM Cloud for VMware Solutions
@@ -170,7 +150,7 @@ The following reference architecture are documented for non-RISE SAP on IBM Clou
 
 The following reference architectures are documented for non-RISE, non-SAP on IBM Cloud for VMware Solutions:
 
-* [Three-tier web application on VCFaaS across MZR](/docs/vcfaas-on-mzr?topic=vcfaas-on-mzr-web-app-multizone) - This reference architecture outlines a resilient, multi-zone, 3-tier web application deployment on IBM Cloud® for VMware Cloud Foundation as a Service (VCFaaS). Provision compute, storage, and network resources with other cloud services, all within a single region.
+* [Three-tier web application on VCFaaS across MZR](/docs/vcfaas-on-mzr?topic=vcfaas-on-mzr-web-app-multizone) - This reference architecture outlines a resilient, multi-zone, 3-tier web application deployment on IBM Cloud&reg; for VMware Cloud Foundation as a Service (VCFaaS). Provision compute, storage, and network resources with other cloud services, all within a single region.
 * [SQL Server Failover Cluster Instance on VMware vSAN Native](https://www.vmware.com/docs/sql-server-failover-cluster-instance-on-vmware-vsan-native){: external}.
 * [Using Oracle RAC on a vSAN Datastore](https://knowledge.broadcom.com/external/article/327037/using-oracle-rac-on-a-vsan-datastore.html){: external}.
 
@@ -179,7 +159,7 @@ The following reference architectures are documented for non-RISE, non-SAP on IB
 
 IBM Cloud services is a suite of Platform as a Service (PaaS), and Software as a Service (SaaS) offerings hosted on the IBM Cloud platform. With these offerings you can consume the service without managing the infrastructure and software. To view these services see the IBM Cloud [Catalog](https://cloud.ibm.com/catalog?label%3Aservices=services#ibm_products). The following reference architectures are documented for non-RISE, non-SAP on IBM Cloud Services:
 
-* [IBM Cloud Databases](/docs/cloud-databases) - The IBM Cloud® Databases portfolio contains database-as-a-service offerings on IBM Cloud, including the following
+* [IBM Cloud Databases](/docs/cloud-databases) - The IBM Cloud&reg; Databases portfolio contains database-as-a-service offerings on IBM Cloud, including the following
 
     * [IBM Cloud Databases for PostgreSQL](/docs/databases-for-postgresql).
     * [IBM Cloud Databases for MongoDB](/docs/databases-for-mongodb).
@@ -209,11 +189,13 @@ IBM Cloud services is a suite of Platform as a Service (PaaS), and Software as a
 * [Veeam on IBM Cloud](https://www.ibm.com/products/veeam) - Veeam on IBM Cloud can deliver reliable backup and predictable disaster recovery (DR) for virtual and physical workloads, wherever they reside—across your data center and the cloud.
 * [IBM Cloud Backup](https://www.ibm.com/products/backup) - IBM Cloud Backup is a full-featured, agent-based backup and recovery system managed through a web interface. Back up data between IBM Cloud servers in one or more IBM Cloud global data centers.
 * [Zerto on IBM Cloud](https://www.ibm.com/products/zerto) - Zerto provides disaster recovery and cloud mobility for your VMware workloads within a single, simple, scalable solution.
-* [IBM Cloud Object Storage](https://www.ibm.com/products/cloud-object-storage/systems) - IBM Cloud® Object Storage is a software-defined hyper-scale storage solution that runs on premises.
+* [IBM Cloud Object Storage](https://www.ibm.com/products/cloud-object-storage/systems) - IBM Cloud&reg; Object Storage is a software-defined hyper-scale storage solution that runs on premises.
 * [IBM Cloud Block Storage](https://www.ibm.com/products/block-storage) - High-performance data storage solutions with customizable IOPS and predictable billing.
 * [IBM Cloud File Storage](https://www.ibm.com/products/file-storage) - Flash-backed, durable, fast and flexible NFS-based file storage—with customizable IOPS and predictable billing.
 * [IBM Cloud DNS Services](https://www.ibm.com/products/dns) - IBM Cloud DNS Services offers public and private authoritative DNS services with fast response time, unparalleled redundancy and advanced security—managed through the IBM Cloud web interface or by API.
-* [IBM Cloud Container Registry](https://www.ibm.com/products/container-registry) - Store and distribute container images in a fully managed private registry. Push private images to conveniently run them in the IBM Cloud® Kubernetes Service and other runtime environments. Images are checked for security issues so you can make informed decisions about your deployments.
+* [IBM Cloud Container Registry](https://www.ibm.com/products/container-registry) - Store and distribute container images in a fully managed private registry. Push private images to conveniently run them in the IBM Cloud&reg; Kubernetes Service and other runtime environments. Images are checked for security issues so you can make informed decisions about your deployments.
+
+To use IBM Cloud services hosted in your IBM Cloud account directly with your SAP workloads hosted in RISE with SAP on Power Virtual Server, IBM Cloud VPC Virtual Private Endpoints will need to be utilized. See [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe) and [VPE-enabled services](/docs/vpc?topic=vpc-vpe-supported-services#vpe-enabled-supported-services).
 
 ### IBM Cloud Essential Security and Observability Services deployable architecture
 {: #surround-workloads-by-platform-services-observability}
