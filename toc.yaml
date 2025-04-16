@@ -1,0 +1,45 @@
+#  Name your file `toc.yaml`
+#  Make sure you include all nav file coding requirements, as defined in https://test.cloud.ibm.com/docs-internal/writing?topic=writing-code-nav
+#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
+#  navgroup id must be one of ['learn', 'tutorial', 'howto', 'reference', 'help', 'overview', 'architecture', 'plan', 'migrate', 'deploy']
+---
+toc:
+  properties:
+    subcollection: rise-with-sap-on-powervs
+    href: /docs/rise-with-sap-on-powervs
+    path: rise-with-sap-on-powervs
+    audience: solution
+    category: solution_docs
+    content-type: solution
+    use-case: BusinessProcessAutomation
+    compliance: SAPCertified
+    description: RISE with SAP on Power Virtual Sever, replaces your on-premises Enterprise Resource Planning (ERP) so you can modernize business processes and become more agile.
+    label: RISE with SAP on Power Virtual Sever
+  entries:
+  - navgroup:
+      id: overview
+      topics:
+      - overview/get-started.md
+      - overview/products.md
+      - overview/reference-architecture.md
+  - navgroup:
+      id: reference
+      topics:
+       - topicgroup:
+          label: Surround Workloads
+          topics:
+          - surround/overview.md
+          - surround/migration-considerations.md
+          - surround/migration-tooling.md
+       - topicgroup:
+          label: Integration
+          topics:
+          - surround/integration-overview.md
+          - surround/integration-ibm-cloud.md
+          - surround/integration-hybrid.md
+          - surround/integration-multi-cloud.md
+       - topicgroup:
+          label: Solution Guides
+          topics:
+          - surround/solution-guides-by-platform.md
+          - surround/solution-guides-by-use-cases.md
