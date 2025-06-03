@@ -7,6 +7,7 @@ toc:
   properties:
     subcollection: rise-with-sap-on-powervs
     href: /docs/rise-with-sap-on-powervs
+    console-page: "/catalog?search=SAP#search_results"
     path: rise-with-sap-on-powervs
     audience: solution
     category: solution_docs
