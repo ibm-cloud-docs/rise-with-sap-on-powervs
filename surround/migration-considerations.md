@@ -2,9 +2,9 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-03-17
+lastupdated: 2025-06-03
 
-keywords: SAP, {{site.data.keyword.cloud_notm}} SAP-Certified Infrastructure, {{site.data.keyword.ibm_cloud_sap}}, SAP Workloads
+keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
 subcollection: rise-with-sap-on-powervs
 
