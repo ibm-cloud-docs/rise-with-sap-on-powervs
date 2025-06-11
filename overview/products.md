@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-06-03
+lastupdated: "2025-06-11"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -23,12 +23,12 @@ It is helpful that you have an understanding of both the IBM and SAP offerings a
 ### RISE with SAP – Premium Supplier
 {: #sap-offerings-and-products-ibm-premium}
 
-Premium Suppliers are SAP partners who have demonstrated expertise in RISE with SAP and offer a wide range of services. Premium Suppliers include IBM, T-Systems and Fujitsu. The IBM RISE with SAP – Premium Supplier is a service offered by IBM Consulting that: 
+Premium Suppliers are SAP partners who have demonstrated expertise in RISE with SAP and offer a wide range of services. Premium Suppliers include IBM, T-Systems and Fujitsu. The IBM RISE with SAP – Premium Supplier is a service offered by IBM Consulting that:
 
 * Delivers Premium Supplier Services to SAP under the same Service Level Agreement as Standard RISE.
 * Uses the IBM’s HA clustered solution allowing for 99.9% SLA around system availability under the extended Service level Agreement option from SAP.
 * Are built on the same Technical Architecture as Standard RISE.
-* IBM’s Well Architected Digital Operations Management Plane built on IBM’s own Cloud Tenant, giving clients more control. 
+* IBM’s Well Architected Digital Operations Management Plane built on IBM’s own Cloud Tenant, giving clients more control.
 * Enables better TCO efficiency with incremental scalability.
 
 The following table shows a comparison between RISE with SAP – Premium Supplier and RISE with SAP on IBM Power Virtual Server:
@@ -66,7 +66,7 @@ Typically client's select RISE with SAP – Premium Supplier over RISE with SAP 
 IBM ManagePlus is a service offered by IBM Consulting and can be layered onto RISE with SAP or RISE with SAP – Premium Supplier, where it offers:
 
 * An assurance service which reduces the risk in delivering implementation services.
-* Built on the RISE RACI roles and responsibilities providing complete transparency. 
+* Built on the RISE RACI roles and responsibilities providing complete transparency.
 * Provides a wrapper service complimenting the RISE Standard Services.
 * Based on pre-packaged options, tailored packages also available based on client’s custom requirements.
 * Integrated into the RISE Adoption Framework.
@@ -81,7 +81,7 @@ The following table describes how IBM ManagePlus layers onto RISE with SAP or RI
 | 4-Data Management life cycle | IBM ManagePlus |
 | 5-Technical Maintenance | RISE with SAP or RISE with SAP – Premium Supplier |
 | 6-Technical Software Upgrades | RISE with SAP or RISE with SAP – Premium Supplier |
-| 7-Operating System (OS) Maintenance | RISE with SAP or RISE with SAP – Premium Supplier | 
+| 7-Operating System (OS) Maintenance | RISE with SAP or RISE with SAP – Premium Supplier |
 | 8-Cloud Technical Maintenance | RISE with SAP or RISE with SAP – Premium Supplier |
 | 9-Software & Support | RISE with SAP or RISE with SAP – Premium Supplier |
 | 10-Cloud BoM | RISE with SAP or RISE with SAP – Premium Supplier |
@@ -97,7 +97,7 @@ IBM ManagePlus can cover non-RISE SAP and non-SAP services based on the client r
 | 4-Data Management life cycle | IBM ManagePlus |
 | 5-Technical Maintenance | IBM ManagePlus |
 | 6-Technical Software Upgrades | IBM ManagePlus |
-| 7-Operating System (OS) Maintenance | IBM ManagePlus | 
+| 7-Operating System (OS) Maintenance | IBM ManagePlus |
 | 8-Cloud Technical Maintenance | IBM ManagePlus |
 | 9-Software & Support | Client's contract with software vendors |
 | 10-Cloud BoM | Client's contract with Cloud provider |
@@ -158,7 +158,7 @@ SAP Global Trade Services (GTS) is software that allows organizations to support
 ### SAP Business Technology Platform
 {: #sap-offerings-and-products-sap-btp}
 
-SAP Business Technology Platform (BTP) is a SaaS product that runs in the SAP Cloud. The SAP Cloud is a global network of data centers that include SAP’s data centers as well as public cloud providers such as Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP) and Alibaba Cloud. The SAP Cloud provides lot of flexibility for those enterprises that want to co-locate SAP BTP along with their existing workloads. Once a customer subscribes to SAP BTP, they can create sub-accounts for extension and integration scenarios on any of the available regions/IaaS providers. 
+SAP Business Technology Platform (BTP) is a SaaS product that runs in the SAP Cloud. The SAP Cloud is a global network of data centers that include SAP’s data centers as well as public cloud providers such as Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP) and Alibaba Cloud. The SAP Cloud provides lot of flexibility for those enterprises that want to co-locate SAP BTP along with their existing workloads. Once a customer subscribes to SAP BTP, they can create sub-accounts for extension and integration scenarios on any of the available regions/IaaS providers.
 
 SAP BTP is a flexible and scalable cloud-based platform that provides enterprises with the tools and services to build, deploy, and manage their custom applications securely and efficiently.
 
