@@ -15,6 +15,7 @@ toc:
     compliance: SAPCertified
     description: RISE with SAP on Power Virtual Sever, replaces your on-premises Enterprise Resource Planning (ERP) so you can modernize business processes and become more agile.
     label: RISE with SAP on Power Virtual Sever
+    version: 2
   entries:
   - navgroup:
       id: overview
