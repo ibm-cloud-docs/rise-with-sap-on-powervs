@@ -8,8 +8,8 @@ toc:
     content-type: solution
     use-case: BusinessProcessAutomation
     compliance: SAPCertified
-    description: RISE with SAP on Power Virtual Sever, replaces your on-premises Enterprise Resource Planning (ERP) so you can modernize business processes and become more agile.
-    label: RISE with SAP on Power Virtual Sever
+    description: RISE with SAP on Power Virtual Server, replaces your on-premises Enterprise Resource Planning (ERP) so you can modernize business processes and become more agile.
+    label: RISE with SAP on Power Virtual Server
     version: 2
     industry: SoftwareAndPlatformApplications
   entries:
