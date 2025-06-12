@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-06-03
+lastupdated: "2025-06-11"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -31,7 +31,7 @@ In addition, classify the workloads into:
 If the surround workload has been classified as tactical then it is important to consider the strategy of achieving the migration in the timeline. These cloud migration strategies include re-hosting, re-platforming, refactoring, repurchasing and retiring.
 
 * Re-hosting - Re-hosting, also known as Lift and Shift, involves moving applications from your on-premises environment to the cloud without making significant changes. Examples include:
-    * Moving VMware from on-premises to IBM Cloud for VMware Solutions. For information on the offering, benefits and use cases see [IBM cloud for VMware Solutions](https://www.ibm.com/products/vmware). For information on migration see [Lift and shift VMware on-premises to IBM Cloud](/docs/pattern-migration-options-vmware-workloads?topic=pattern-migration-options-vmware-workloads-whitepaper). 
+    * Moving VMware from on-premises to IBM Cloud for VMware Solutions. For information on the offering, benefits and use cases see [IBM cloud for VMware Solutions](https://www.ibm.com/products/vmware). For information on migration see [Lift and shift VMware on-premises to IBM Cloud](/docs/pattern-migration-options-vmware-workloads?topic=pattern-migration-options-vmware-workloads-whitepaper).
     * Moving Power Systems from on-premises to Power Virtual Server in IBM Cloud. For information on the offering, benefits and use cases see [Power Virtual Server in IBM Cloud](https://www.ibm.com/products/power-virtual-server). For information on migration see [Migration strategies to IBM Cloud Power Virtual Server](/docs/power-iaas?topic=power-iaas-system-migration).
 * Re-platforming - With a re-platforming migration, some adjustments or optimizations are made to the applications before moving them to the cloud. An example of this strategy is moving a VMware VM to run on [IBM Cloud Virtual Server for VPC](https://www.ibm.com/products/virtual-servers).
 * Refactoring - Refactoring involves modifying or redesigning applications to fully leverage cloud-native features. This migration type often involves breaking down monolithic applications into microservices, making them more scalable in the cloud environment. Migrating applications to run on [IBM Cloud Kubernetes Services](https://www.ibm.com/products/kubernetes-service) or [Red Hat OpenShift on IBM Cloud](https://www.ibm.com/products/openshift)
@@ -57,8 +57,8 @@ The move of the surround workload is supported by your migration program. An exa
 * Phase 3: Minimum Viable Product (MVP) - Provides the confidence in the viability of the proposed solution. It is important to clearly define and articulate upfront the success criteria of the MVP as well as to identify the approving stakeholders. The successful MVP builds trust and confidence in the solution and provides the go ahead for the migration of the surround workload. The MVP familiarizes your operations team with the cloud platform and guides towards a smooth adoption.
 * Phase 4: Migration - The surround workloads are migrated to cloud. The duration of the migration phase depends on the complexity and criticality of the surround workload. [IBM Technology Expert Labs](https://www.ibm.com/products/expertlabs) includes accelerator services to migrate workloads to IBM Cloud.
 * Phase 5: Operate: Refers to tooling and processes to maintain the surround workload operational after the migration to IBM Cloud and leveraging cloud services. IBM Cloud services arranged by key operational processes includes:
-    * Backup - [IBM Cloud Backup](https://www.ibm.com/products/backup), [Veeam on IBM Cloud](https://www.ibm.com/products/veeam), [Backup-as-a-Service for AIX/Linux On Power Virtual Server With Cobalt Iron Compass](https://cloud.ibm.com/docs/pvs-baas-with-compass?topic=pvs-baas-with-compass-white-paper), [Virtual Tape Library (VTL) for Power Virtual Server](/docs/power-iaas?topic=power-iaas-manage-vtl). 
-    * Observability - [IBM Cloud Logs](https://www.ibm.com/products/cloud-logs), [IBM Cloud Monitoring](https://www.ibm.com/products/cloud-monitoring) 
+    * Backup - [IBM Cloud Backup](https://www.ibm.com/products/backup), [Veeam on IBM Cloud](https://www.ibm.com/products/veeam), [Backup-as-a-Service for AIX/Linux On Power Virtual Server With Cobalt Iron Compass](https://cloud.ibm.com/docs/pvs-baas-with-compass?topic=pvs-baas-with-compass-white-paper), [Virtual Tape Library (VTL) for Power Virtual Server](/docs/power-iaas?topic=power-iaas-manage-vtl).
+    * Observability - [IBM Cloud Logs](https://www.ibm.com/products/cloud-logs), [IBM Cloud Monitoring](https://www.ibm.com/products/cloud-monitoring)
     * Compliance. - [IBM Security and Compliance Center](https://www.ibm.com/products/security-and-compliance-center), [Getting started with IBM Cloud Security and Compliance Center Workload Protection](https://cloud.ibm.com/docs/workload-protection?topic=workload-protection-getting-started), [Caveonix RiskForesight on IBM Cloud overview](https://cloud.ibm.com/docs/workload-protection?topic=workload-protection-getting-started)
 
 
@@ -73,5 +73,5 @@ The diagram below illustrates the post-migration state of your SAP systems and s
 
 * Your SAP systems have migrated to RISE for SAP on Power Virtual Server.
 * Your non-RISE SAP surround workloads have migrated to [IBM Cloud Virtual Server for VPC](https://www.ibm.com/products/virtual-servers), [IBM Cloud for VMware Solutions](https://www.ibm.com/products/vmware), [Power Virtual Server](https://www.ibm.com/products/power-virtual-server) and hosted in your own IBM Cloud Account.
-* Your non-RISE non-SAP surround workloads have also migrated to [IBM Cloud Virtual Server for VPC](https://www.ibm.com/products/virtual-servers), [IBM Cloud for VMware Solutions](https://www.ibm.com/products/vmware), [Power Virtual Server](https://www.ibm.com/products/power-virtual-server) or one the two container platform options [IBM Cloud Kubernetes Services](https://www.ibm.com/products/kubernetes-service) or [Red Hat OpenShift on IBM Cloud](https://www.ibm.com/products/openshift) and hosted in your own IBM Cloud Account. 
+* Your non-RISE non-SAP surround workloads have also migrated to [IBM Cloud Virtual Server for VPC](https://www.ibm.com/products/virtual-servers), [IBM Cloud for VMware Solutions](https://www.ibm.com/products/vmware), [Power Virtual Server](https://www.ibm.com/products/power-virtual-server) or one the two container platform options [IBM Cloud Kubernetes Services](https://www.ibm.com/products/kubernetes-service) or [Red Hat OpenShift on IBM Cloud](https://www.ibm.com/products/openshift) and hosted in your own IBM Cloud Account.
 * Your designated strategic loosely coupled surround workloads remain in your data centers awaiting migration according to your timeline.

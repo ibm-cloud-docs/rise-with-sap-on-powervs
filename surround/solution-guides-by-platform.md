@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-06-03
+lastupdated: "2025-06-11"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -41,7 +41,7 @@ The following reference architectures are documented for non-RISE, non-SAP on IB
 
 * [Microsoft Software on IBM Cloud](/docs/microsoft) - IBM Cloud has a strategic relationship with Microsoft to offer their suite of software. We offer their software natively in our cloud offerings and as Bring Your Own Licenses (BYOL). This solution guide discusses IBM Cloud Bare Metal servers in Classis as well as Microsoft SQL Server in VPC.
 * [Red Hat OpenShift on VPC](/docs/pattern-openshift-vpc-mz-resiliency?topic=pattern-openshift-vpc-mz-resiliency-openshift-on-vpc) - The Red Hat OpenShift architecture is deployed on VPC servers across three availability zones within a region. From the IBM Cloud catalog, you can select from the compatible and recommended nodes that are available for Red Hat OpenShift on IBM Cloud. Worker pools are classified as variations of CPU, memory, and operating system characteristics. Choose the variation that's best suited to your use case. Shared Virtual Servers instances are used for worker nodes to run stateful applications in a production environment. Associated with this reference architecture are two deployable architectures:
-  
+
     * [Red Hat OpenShift Container Platform on VPC landing zone](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-ocp-ra) - Red Hat OpenShift Container Platform on VPC landing zone is a deployable architecture solution that is based on the IBM Cloud for Financial Services reference architecture. It creates secure and compliant Red Hat OpenShift Container Platform workload clusters on a Virtual Private Cloud (VPC) network.
     * [Red Hat OpenShift Container Platform on VPC landing zone - QuickStart variation](/docs/deployable-reference-architectures?topic=deployable-reference-architectures-roks-ra-qs) - The QuickStart variation of the Red Hat OpenShift Container Platform on VPC landing zone deployable architecture creates a fully customizable Virtual Private Cloud (VPC) environment in a single region. The solution provides a single Red Hat OpenShift cluster in a secure VPC for your workloads. The QuickStart variation is designed to deploy quickly for demonstration and development.
 
@@ -178,7 +178,7 @@ IBM Cloud services is a suite of Platform as a Service (PaaS), and Software as a
     * Satellite Connector - A layer-7, endpoint-oriented connection from IBM Cloud to access on-premises data source.
 
 * [Observability](/docs/observability-hub) - IBM Cloud offers Observability services that you can use to monitor, troubleshoot, and understand the activity in your account. You can also use them to keep records for auditing and compliance. This guide describes the following services:
-  
+
     * [IBM Cloud Logs](/docs/cloud-logs) - IBM Cloud Logs is a scalable logging service that persists logs and provides users with capabilities for querying, tailing, and visualizing logs.
     * [IBM Cloud Monitoring](/docs/monitoring) - IBM Cloud Monitoring is a cloud-native, and container-intelligence management system that you can include as part of your IBM Cloud architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms.
     * [IBM Cloud Activity Tracker Event Routing](/docs/atracker) - Use IBM Cloud Activity Tracker Event Routing to configure how to route auditing events, both global and location-based event data, in your IBM Cloud. Auditing events are critical data for security operations and a key element for meeting compliance requirements. Control of the storage location is critical to building enterprise-grade solutions on the IBM Cloud.

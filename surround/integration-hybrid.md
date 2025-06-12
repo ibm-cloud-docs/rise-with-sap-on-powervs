@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-06-03
+lastupdated: "2025-06-11"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -44,7 +44,7 @@ The diagrams below show a high-level pattern for an enterprise scale hybrid inte
 
 The pattern uses a transit VPC which enables a hub-and-spoke design where the hub is the transit VPC and the SAP VPC and your other VPCs, Power Workspace and Classic infrastructure are the spokes and all spoke-to-spoke traffic passes through the hub. An alternative design is an edge VPC which only receives traffic leaving or entering your IBM Cloud Account. Diagrammatically the two patterns look the same, the difference is enabled in the routing.
 
-While the diagrams show a Direct Link Dedicated connection to the Enterprise Networks, this connection could be Direct Link Connection or a VPN depending on your requirements. 
+While the diagrams show a Direct Link Dedicated connection to the Enterprise Networks, this connection could be Direct Link Connection or a VPN depending on your requirements.
 
 The diagram below shows a scenario where SAP&reg; own the transit gateway and when you request SAP to peer, they issue a connection request to your VPC.
 
@@ -153,7 +153,7 @@ VPC has the following routing tables:
     * Custom routing tables can be added as needed.
     * Subnets can be added to custom routing tables to define routing for that subnet.
     * Adding a subnet removes the subnet from the default routing table.
-    * You can choose if VPN servers or VPN gateways can create routes in the custom routing table. 
+    * You can choose if VPN servers or VPN gateways can create routes in the custom routing table.
     * You can select which traffic source (Direct link, Transit gateway, VPC zone, Public internet) can use this routing table to route its traffic to the VPC. When selected the VPC prefixes are advertised to the traffic source. Optionally you can advertise the route to ingress sources that are outside the address prefix range of the VPC.
     * For the Direct link, Transit gateway, VPC zone, Public internet traffic sources, only one custom routing table can be enabled.
     * The Public internet traffic source allows public internet ingress traffic destined to a floating IP to be routed to a VPC next-hop IP.

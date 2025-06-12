@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: 2025-06-03
+lastupdated: "2025-06-11"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -40,7 +40,7 @@ It offers a single platform where you can store the data or attach your current 
 
 It uses open data formats with APIs and machine learning libraries, making it easier for data scientists and data engineers to use the data. architecture enforces schema and data integrity, making it easier to implement robust data security and governance mechanisms.
 
-You can use watsonx.data to store any type of data (structured, semi-structured, and unstructured) and make that data accessible directly for Artificial Intelligence (AI) and Business Intelligence (BI). 
+You can use watsonx.data to store any type of data (structured, semi-structured, and unstructured) and make that data accessible directly for Artificial Intelligence (AI) and Business Intelligence (BI).
 
 At this time, there are no solution guides available to assist you with leveraging watson.data with your non-RISE workloads, however, watsonx.data can be deployed in IBM Cloud with one of the following deployment patterns:
 
@@ -52,7 +52,7 @@ At this time, there are no solution guides available to assist you with leveragi
 
 IBM Cloud for Financial Services&reg; is designed to build trust and enable a transparent public cloud ecosystem with the features for security, compliance, and resiliency that financial institutions require. Financial institutions can confidently host their mission-critical applications in the cloud and transact quickly and efficiently. With a large partner ecosystem of independent software vendors (ISVs), Software as a Service (SaaS), and fintech partners, IBM Cloud for Financial Services offers a new generation of cloud for the enterprise.
 
-Financial institutions can now deploy on public cloud to enable innovation and deliver new outstanding customer experiences, while managing stringent industry regulations for sensitive data and complex workloads. See the solution guide [Getting started with IBM Cloud for Financial Services](/docs/framework-financial-services?topic=framework-financial-services-about) which describes the following reference architectures: 
+Financial institutions can now deploy on public cloud to enable innovation and deliver new outstanding customer experiences, while managing stringent industry regulations for sensitive data and complex workloads. See the solution guide [Getting started with IBM Cloud for Financial Services](/docs/framework-financial-services?topic=framework-financial-services-about) which describes the following reference architectures:
 
 * [Single-region IBM Cloud for Financial Services reference architecture for VPC with Virtual Servers for VPC](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-detailed-vsi) - This architecture shows a deployment of the VPC that uses Virtual Servers for VPC as the primary compute.
 * [Virtual Servers for VPC and Power Virtual Server reference architecture for IBM Cloud for Financial Services](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-detailed-vsi-w-powervs) - This solution pattern contains the design and architecture decisions for cloud native and Power Virtual Server workloads in IBM Cloud for Financial Services.
@@ -93,7 +93,7 @@ These solution guides describe hybrid use cases, linking on-premise applications
 {: #surround-workloads-by-use-case-observability}
 
 These solution guides describe [Observability](/docs/observability-hub) use cases. IBM Cloud offers Observability services that you can use to monitor, troubleshoot, and understand the activity in your account. You can also use them to keep records for auditing and compliance. This guide describes the following services:
-  
+
 * [IBM Cloud Logs](/docs/cloud-logs) - IBM Cloud Logs is a scalable logging service that persists logs and provides users with capabilities for querying, tailing, and visualizing logs.
 * [IBM Cloud Monitoring](/docs/monitoring) - IBM Cloud Monitoring is a cloud-native, and container-intelligence management system that you can include as part of your IBM Cloud architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms.
 * [IBM Cloud Activity Tracker Event Routing](/docs/atracker) - Use IBM Cloud Activity Tracker Event Routing to configure how to route auditing events, both global and location-based event data, in your IBM Cloud. Auditing events are critical data for security operations and a key element for meeting compliance requirements. Control of the storage location is critical to building enterprise-grade solutions on the IBM Cloud.
@@ -149,7 +149,7 @@ SCC Workload Protection is available in the IBM Cloud catalog, see [Security and
 
 These solution guides describe [Resiliency](/docs/resiliency) - This guide discusses the following resiliency topics:
 
-* [Understanding high availability](/docs/resiliency?topic=resiliency-understanding-ha) - A discussion on architecture patterns to design IBM Cloud services for high availability (HA), helping ensure resilience against different fault types that might impact the distributed IBM Cloud infrastructure. For HA in the cloud, it's important to understand the high-level concepts that you need to address if you're building or running a highly available cloud system. HA is achieved by using redundant system components and services, and by distributing these components across different environments. IBM Cloud delivers highly available cloud services by using redundant components and eliminating single points of failure. At the multizone regions (MZR) level, HA means having workloads running in multiple availability zones in the MZR, which provide the redundancy for local failures. 
+* [Understanding high availability](/docs/resiliency?topic=resiliency-understanding-ha) - A discussion on architecture patterns to design IBM Cloud services for high availability (HA), helping ensure resilience against different fault types that might impact the distributed IBM Cloud infrastructure. For HA in the cloud, it's important to understand the high-level concepts that you need to address if you're building or running a highly available cloud system. HA is achieved by using redundant system components and services, and by distributing these components across different environments. IBM Cloud delivers highly available cloud services by using redundant components and eliminating single points of failure. At the multizone regions (MZR) level, HA means having workloads running in multiple availability zones in the MZR, which provide the redundancy for local failures.
 * [Understanding disaster recovery](/docs/resiliency?topic=resiliency-understanding-dr) - Disaster recovery (DR) the process of recovering one or more workloads to a working state in a second IBM Cloud region after an unplanned outage. HA is not the same as DR. Disasters are different. Disasters cause a workload to go down despite attempts to make it highly available. The worst disasters have widespread consequences, which means that affected workloads might require recovery in a different region altogether.
 * [Understanding cyber resiliency](/docs/resiliency?topic=resiliency-cyber-resiliency-overview) - Cyber resiliency is part of an organization's ability to prevent, withstand and recover from cybersecurity incidents, including ransomware attacks and other malicious actions.
 
