@@ -12,7 +12,7 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Internet access
+# Connecting to and from the Internet
 {: #integration-internet}
 
 

@@ -12,7 +12,7 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# IBM Cloud
+# Connecting from IBM Cloud
 {: #integration-ibm-cloud}
 
 In this setup, your RISE with SAP on {{site.data.keyword.powerSysFull}} workloads are running in the SAP® {{site.data.keyword.cloud_notm}} Account, and your {{site.data.keyword.cloud_notm}} surround workloads run in your own {{site.data.keyword.cloud_notm}} Account.
@@ -22,24 +22,15 @@ In this setup, your RISE with SAP on {{site.data.keyword.powerSysFull}} workload
 
 There are two types of connectivity patterns for peering your {{site.data.keyword.cloud_notm}} surround workloads to your RISE with SAP on {{site.data.keyword.powerSys_notm}} workloads:
 
-* {{site.data.keyword.cloud_notm}} Transit Gateway.
-* {{site.data.keyword.cloud_notm}} Site-to-Site VPN.
+* {{site.data.keyword.cloud_notm}} Transit Gateway
+* {{site.data.keyword.cloud_notm}} Site-to-Site VPN
 
 ## The IBM Cloud Transit Gateway pattern
 {: #integration-ibm-cloud-tgw}
 
 With {{site.data.keyword.cloud_notm}} Transit Gateway, you can define and control communication between resources hosted in the {{site.data.keyword.cloud_notm}} infrastructure environments or on-premises networks. See [Getting started with IBM Cloud Transit Gateway](/docs/transit-gateway?topic=transit-gateway-getting-started).
 
-With an {{site.data.keyword.cloud_notm}} Transit Gateway, you can connect:
-
-* VPCs in your account or a different account.
-* {{site.data.keyword.cloud_notm}} classic infrastructure in your account or a different account.
-* Direct Link in your account or a different account.
-* {{site.data.keyword.powerSys_notm}} in {{site.data.keyword.cloud_notm}} data center in your account or a different account.
-* Unbound Generic Routing Encapsulation (GRE) tunnels allow a connection between a zone and an endpoint in IBM Cloud Classic in your account or a different account.
-* Redundant Generic Routing Encapsulation (GRE) tunnels allow a connection between two zones and an endpoint in IBM Cloud Classic or a VPC in your account or a different account.
-
-This pattern uses the {{site.data.keyword.cloud_notm}} Transit Gateway in the RISE with SAP on {{site.data.keyword.powerSys_notm}} {{site.data.keyword.cloud_notm}} Account. As this {{site.data.keyword.cloud_notm}} Transit Gateway has the local routing option, it only supports your VPC or {{site.data.keyword.powerSys_notm}} in the same region as the RISE with SAP on {{site.data.keyword.powerSys_notm}} VPC. Classic infrastructure is a flat global network. With this connection option, you can only connect one {{site.data.keyword.cloud_notm}} infrastructure as a service platform to the SAP RISE Transit Gateway.
+This pattern uses the {{site.data.keyword.cloud_notm}} Transit Gateway in the RISE with SAP on {{site.data.keyword.powerSys_notm}} {{site.data.keyword.cloud_notm}} Account. As this {{site.data.keyword.cloud_notm}} Transit Gateway has the local routing option, it only supports your VPC or {{site.data.keyword.powerSys_notm}} in the same region as the RISE with SAP on {{site.data.keyword.powerSys_notm}} VPC. Classic infrastructure is a flat global network, so your Classic Data Center location does not matter in this context. With this connection option, you can only connect one of your {{site.data.keyword.cloud_notm}} infrastructure as a service platform to the SAP RISE Transit Gateway.
 
 ![Figure 2. IBM Cloud Transit Gateway with IBM Cloud IaaS platforms](../images/sap-tgw-native.svg "IBM Cloud Transit Gateway with IBM Cloud IaaS platforms"){: caption="IBM Cloud Transit Gateway with IBM Cloud IaaS platforms" caption-side="bottom"}
 
