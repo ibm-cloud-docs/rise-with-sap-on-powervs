@@ -20,23 +20,23 @@ toc:
       - overview/products.md
       - overview/reference-architecture.md
   - navgroup:
-      id: reference
+      id: howto
       topics:
       - topicgroup:
           label: Surround Workloads
           topics:
           - surround/overview.md
           - surround/migration-considerations.md
-          - surround/migration-tooling.md
       - topicgroup:
-          label: Integration
+          label: Connectivity
           topics:
           - integration/integration-overview.md
+          - integration/integration-dns-ips.md
           - integration/integration-internet.md
           - integration/integration-ibm-cloud.md
           - integration/integration-on-premises.md
       - topicgroup:
           label: Solution Guides
           topics:
-          - surround/solution-guides-by-platform.md
-          - surround/solution-guides-by-use-cases.md
+          - surround/solution-guides-agentic-ai.md
+          - surround/solution-guides-data-integration.md
