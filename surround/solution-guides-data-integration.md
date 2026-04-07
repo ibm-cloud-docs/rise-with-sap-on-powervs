@@ -13,7 +13,7 @@ subcollection: rise-with-sap-on-powervs
 {{site.data.keyword.attribute-definition-list}}
 
 # Data integration
-{: #solution-data-integration.md}
+{: #solution-data-integration}
 
 ## Overview
 
