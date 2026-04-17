@@ -32,9 +32,9 @@ toc:
           topics:
           - integration/integration-overview.md
           - integration/integration-dns-ips.md
-          - integration/integration-internet.md
-          - integration/integration-ibm-cloud.md
           - integration/integration-on-premises.md
+          - integration/integration-ibm-cloud.md
+          - integration/integration-internet.md
       - topicgroup:
           label: Solution Guides
           topics:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-17"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -16,7 +16,7 @@ subcollection: rise-with-sap-on-powervs
 # DNS and IP considerations
 {: #integration-dns-ips}
 
-Integration of your networks with cloud based infrastructure requires careful planning for IP addressing and providing a seamless name resolution is a critical part of a successful project. The same rule applies to the integration of your RISE with SAP on IBM {{site.data.keyword.powerSysFull}} with your on-premises network.
+Integration of your networks with cloud based infrastructure requires careful planning for IP addressing. In addition, providing a seamless domain name resolution is a critical part of a successful onboarding project.
 {: shortdesc}
 
 ## IP address schema
@@ -32,4 +32,4 @@ When you request the RISE with SAP on {{site.data.keyword.powerSysFull}}, you su
 
 In some circumstances SAP will allow DNS forwarding of requests from your DNS servers to SAP's DNS servers. You must request this non-preferred method from your SAP representative.
 
-The selected inter-connectivity option will influence how the connectivity between your DNS servers and RISE with SAP DNS servers must be setup. For more details, refer to each connectivity option's network integration patterns.  
+The selected inter-connectivity option will influence how the connectivity between your DNS servers and RISE with SAP DNS servers must be setup.

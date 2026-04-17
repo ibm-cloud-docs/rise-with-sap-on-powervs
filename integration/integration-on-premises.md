@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-17"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -16,15 +16,15 @@ subcollection: rise-with-sap-on-powervs
 # Connecting from on-premises
 {: #integration-on-premises}
 
-This use case illustrates a want to connect on-premises or other external locations to the RISE with SAP on {{site.data.keyword.powerSysFull}}. This pattern is useful if a client is new and they don't have an existing {{site.data.keyword.cloud}} presence.
+This use case describes a solution to connect from on-premises or other external locations to the RISE with SAP on {{site.data.keyword.powerSysFull}}. This pattern is useful if a client is new and they don't have an existing {{site.data.keyword.cloud}} presence.
 {: shortdesc}
 
-The connectivity between the Enterprise Network and the {{site.data.keyword.cloud}} Account for Client can be optionally **VPN**, **Direct Link** or **both** depending on client requirements.
+The connectivity between the Enterprise Network and the {{site.data.keyword.cloud}} account for Client can be optionally **VPN**, **Direct Link** or **both** depending on client requirements.
 
 ## Connecting using VPN
 {: #integration-on-premises-vpn}
 
-Enable access from your Enterprise Network to your {{site.data.keyword.cloud}} account with an {{site.data.keyword.cloud}} VPN for VPC site-to-site gateway. Traffic between {{site.data.keyword.cloud}} and your Enterprise Network is encrypted via Internet Protocol security (IPsec) and transferred through a secure tunnel over the internet. This option is efficient, and faster to implement when compared to the {{site.data.keyword.dl_short}}. An overview of the VPN connectivity pattern is shown in the diagram below.
+Enable access from your Enterprise Network to your {{site.data.keyword.cloud}} account with an {{site.data.keyword.cloud}} VPN for VPC site-to-site gateway. Traffic between {{site.data.keyword.cloud}} and your Enterprise Network is encrypted via Internet Protocol security (IPsec) and transferred through a secure tunnel over the internet. An overview of the VPN connectivity pattern is shown in the diagram below. This option is efficient, and faster to implement when compared to the {{site.data.keyword.dl_short}}, but the throughput and the latency might be higher than connecting though Direct Link. 
 
 ![Figure 1. Integrating on-premises and {{site.data.keyword.cloud}} with RISE with SAP on IBM {{site.data.keyword.powerSysFull}} using VPN](../images/on-premises-vpn.svg "Integrating on-premises and {{site.data.keyword.cloud}} with RISE with SAP on IBM {{site.data.keyword.powerSysFull}} using VPN"){: caption="Integrating on-premises and {{site.data.keyword.cloud}} with RISE with SAP on IBM {{site.data.keyword.powerSysFull}} using VPN" caption-side="bottom"}
 
