@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-17"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -23,32 +23,59 @@ This guide presents three integration patterns for consuming SAP data in IBM Clo
 
 All patterns follow these core principles:
 
-1. **Compliance-First**: Use SAP-approved APIs and methods; avoid unauthorized database access or long-term replication
-2. **Zero-Copy Preferred**: Minimize data movement to reduce costs and complexity
-3. **Temporary Materialization**: SAP data can be temporarily stored for processing, analytics, and enrichment
-4. **Data Enrichment**: Extracted data can be combined with external sources, ML predictions, and derived metrics
-5. **Flexible Architecture**: Support diverse use cases from agentic AI to business intelligence
+* **Compliance-First**: Use SAP-approved APIs and methods (e.g., OData, SAP BDC Connect); avoid unauthorized database access or permanent replication of original SAP data
+* **Zero-Copy Preferred**: Minimize data movement to reduce costs and complexity where possible
+* **Consume and Materialize**: SAP data can be consumed via approved connectors and temporarily materialized in third-party systems (like watsonx.data) for performance optimization—caching data to speed up queries without constantly accessing SAP sources
+* **Enrich and Transform**: Materialized data can be enriched through joins, AI processing, ML predictions, and integration with external data sources; enriched/transformed data can be stored indefinitely as it becomes distinct from original SAP Data Products
+* **No Downstream Distribution**: Data cannot be distributed to subsequent systems outside the approved ecosystem; third-party systems serve as processing endpoints, not pass-through pipelines
+* **Flexible Architecture**: Support diverse use cases from agentic AI to business intelligence while maintaining SAP compliance
 
+## SAP Data Integration Patterns
 
-## Pattern Selection Guide
+This guide presents three complementary patterns for SAP data integration:
 
-Choose the right pattern based on your requirements:
+**Pattern 1: API-Based Integration (OData)**
+- **Description**: Direct, real-time API access to SAP data
+- **Data Movement**: None—consume on-demand
+- **Complexity**: Low
+- **Cost**: Low
+- **Best For**: Real-time queries, agentic AI, conversational queries, low-volume access
+- **Example**: Customer service chatbot querying order status
 
-| Pattern | Best For | Data Movement | Complexity | Cost |
-|---------|----------|---------------|------------|------|
-| **1. API-Based** | Real-time queries, agentic AI, low-volume access | None | Low | Low |
-| **2. Zero-Copy** | Large-scale analytics, federated queries, cost-sensitive | Minimal/None | Medium-High | Medium |
-| **3. Enrichment** | ML/AI training, complex transformations, multi-source integration | Selective | High | High |
+**Pattern 2: Zero-Copy Data Access via watsonx.data**
+- **Description**: Federated queries without physical data movement; access SAP data where it lives using open standards
+- **Data Movement**: Minimal/None
+- **Complexity**: Medium-High
+- **Cost**: Medium
+- **Best For**: Large-scale analytics, federated queries, multi-source integration, cost-sensitive scenarios
+- **Example**: Cross-system financial consolidation
+- **Three sub-patterns:**
+  - **2A - Native Connectors**: Standard federated queries using built-in watsonx.data connectors
+  - **2B - Streaming Integration**: Near-real-time analytics with event-driven architectures using Kafka/Confluent Cloud streaming SAP CDC events to Iceberg tables (e.g., TableFlow, custom Kafka consumers)
+  - **2C - Delta Sharing**: True zero-copy access using SAP Datasphere and Delta Sharing protocol
 
-### Quick Decision Tree
+**Pattern 3: Data Enrichment in watsonx.data Fabric**
+- **Description**: Selective data extraction with temporary materialization; enrich with ML predictions, external data, and derived metrics
+- **Data Movement**: Selective
+- **Complexity**: High
+- **Cost**: High
+- **Best For**: ML/AI training, complex transformations, multi-source integration, predictive analytics
+- **Example**: Customer churn prediction with enriched features
 
-```
-Need real-time data? → Pattern 1 (API)
-Need ML enrichment? → Pattern 3 (Enrichment)
-Have SAP Datasphere? → Pattern 2C (Delta Sharing)
-Need near-real-time analytics? → Pattern 2B (TableFlow)
-Large-scale analytics? → Pattern 2A (Connectors)
-```
+**Selecting the Right Pattern:**
+
+Choose your pattern based on your primary use case and requirements:
+
+- **Pattern 1 (API-Based)** is ideal when you need real-time data access for conversational AI, chatbots, or low-volume queries where data freshness is critical and you want to avoid any data storage.
+
+- **Pattern 2 (Zero-Copy)** is best for large-scale analytics where you want to minimize data movement and storage costs. Choose the sub-pattern based on your specific needs:
+  - Use **2A (Native Connectors)** for standard batch analytics with built-in watsonx.data connectors
+  - Use **2B (Streaming)** for near-real-time or event-driven analytics requiring continuous data updates
+  - Use **2C (Delta Sharing)** when you have SAP Datasphere and want true zero-copy access with SAP-native governance
+
+- **Pattern 3 (Enrichment)** is the right choice when you need to combine SAP data with ML predictions, external data sources, or complex transformations that justify temporary data materialization and storage.
+
+Many organizations use multiple patterns simultaneously—for example, Pattern 1 for real-time queries, Pattern 2 for analytics, and Pattern 3 for ML model training.
 
 ---
 
@@ -56,111 +83,72 @@ Large-scale analytics? → Pattern 2A (Connectors)
 
 ### Overview
 
-Direct API access to SAP data for real-time queries. Data is consumed on-demand without storage, ideal for agentic AI and low-volume access.
+Direct API access to SAP data for real-time queries. Data is consumed on-demand without storage, making it ideal for agentic AI and low-volume access scenarios.
 
-**Use When:**
-- ✅ Real-time data freshness required
+**When to Use This Pattern:**
+- ✅ Real-time data freshness is critical
 - ✅ Low-volume access (< 1000 queries/day)
 - ✅ Agentic AI conversational queries
 - ✅ Minimal infrastructure preferred
 - ❌ Avoid for high-volume analytics or complex joins
 
-**Example Use Cases:**
-- Customer service chatbots querying order status
-- Sales agents checking inventory
-- On-demand financial reports
-- Executive dashboards with live data
+### Use Cases
 
-### Architecture Diagram
+**Real-World Examples:**
+- **Customer Service Chatbots**: Query order status, delivery information, or customer details in real-time
+- **Sales Agent Tools**: Check inventory availability, pricing, or customer credit limits during sales calls
+- **Executive Dashboards**: Display live KPIs and metrics without data replication
+- **On-Demand Reports**: Generate financial or operational reports with current data
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        IBM Cloud                            │
-│                                                             │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │         Agentic AI / Analytics Application           │   │
-│  │  ┌────────────────────────────────────────────────┐  │   │
-│  │  │  watsonx.ai / watsonx.orchestrate              │  │   │
-│  │  │  - AI Agents                                   │  │   │
-│  │  │  - LLM Processing                              │  │   │
-│  │  │  - Orchestration Logic                         │  │   │
-│  │  └────────────────────────────────────────────────┘  │   │
-│  │                        ↓                             │   │
-│  │  ┌────────────────────────────────────────────────┐  │   │
-│  │  │  API Integration Layer                         │  │   │
-│  │  │  - IBM Cloud Code Engine / OpenShift           │  │   │
-│  │  │  - API Gateway / API Connect                   │  │   │
-│  │  │  - Caching Layer (Redis)                       │  │   │
-│  │  └────────────────────────────────────────────────┘  │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                        ↓ OData/REST API                     │
-└────────────────────────┼────────────────────────────────────┘
-                         ↓
-              ┌──────────────────────┐
-              │   SAP S/4HANA        │
-              │   - OData Services   │
-              │   - REST APIs        │
-              └──────────────────────┘
-```
+### Architecture
 
-### Architecture & Services
+**Architecture Diagram:**
 
-**IBM Cloud Services:**
-- watsonx.ai/orchestrate (AI runtime)
-- Code Engine (serverless compute)
-- API Connect (optional, API management)
-- Databases for Redis (optional, caching)
-- Secrets Manager (credential storage)
+![SAP Data Integration Pattern 1](../images/data/SAP-data-integration-pattern-1.svg)
 
-**Network Options:** Public Internet, Direct Link, VPN, SAP Private Link
+**Architecture Components:**
 
-**Authentication:** OAuth 2.1 (recommended), Basic Auth, Certificate-based
+**Supporting IBM Cloud Services:**
+- **watsonx.ai / watsonx.orchestrate**: AI runtime for agentic workflows and LLM processing
+- **Code Engine**: Serverless compute for API integration layer and custom logic
+- **API Connect** (optional): API management, rate limiting, and security policies
+- **Databases for Redis** (optional): Caching layer for improved performance
+- **Secrets Manager**: Secure storage for SAP credentials and API keys
 
-### Implementation Details
+**Network Connectivity:**
 
-**Performance Optimization:**
-- Cache reference data with appropriate TTL
-- Use OData query options ($select, $filter, $top, $skip)
-- Implement rate limiting and circuit breakers
-- Connection pooling for efficiency
+For detailed network connectivity options, see [Integration Overview](../integration/integration-overview.md).
 
-**Sample Implementation Flow:**
-```
-User Query → AI Agent → OData API Call → SAP S/4HANA
-                ↓
-         Process & Format
-                ↓
-         Return Response
-                ↓
-         Discard Data
-```
+- **Public Internet**: Simple setup for non-production or low-security requirements
+- **Direct Link**: Dedicated, high-bandwidth connection for production workloads
+- **VPN**: Encrypted tunnel over internet for secure connectivity
+- **SAP Private Link**: SAP's private connectivity service for secure, private connections between SAP BTP and hyperscaler services without internet exposure
 
-**Example:** Customer service agent queries order status
-1. Parse: "What is the status of order 12345?"
-2. Call: `/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('12345')`
-3. Process and format response
-4. Discard temporary data
+**Authentication Methods:**
+- **OAuth 2.1** (recommended): Modern, token-based authentication with enhanced security
+- **Basic Auth**: Simple username/password authentication (use only for development)
+- **Certificate-based**: Mutual TLS authentication for highest security requirements
 
-### Key Considerations
+### Considerations
 
 **Advantages:**
-- ✅ SAP compliant (no data storage)
-- ✅ Real-time data access
-- ✅ Low cost and complexity
-- ✅ Simple architecture
+- ✅ **SAP Compliant**: No data storage, fully compliant with SAP usage terms
+- ✅ **Real-Time Access**: Always queries live data from SAP
+- ✅ **Low Cost**: Minimal infrastructure and storage costs
+- ✅ **Simple Architecture**: Easy to implement and maintain
 
 **Limitations:**
-- ❌ Network latency per query
-- ❌ API rate limits
-- ❌ Limited for complex analytics
-- ❌ Dependent on SAP availability
+- ⚠️ **Network Latency**: Each query requires a round-trip to SAP
+- ⚠️ **API Rate Limits**: Subject to SAP API throttling and quotas
+- ⚠️ **Limited Analytics**: Not suitable for complex joins or aggregations
+- ⚠️ **Availability Dependency**: Requires SAP system to be available
 
 **Best Practices:**
-- Cache reference data intelligently
-- Optimize with OData query options
-- Monitor response times and errors
-- Use OAuth 2.1 authentication
-- Implement retry logic with exponential backoff
+- **Security**: Use OAuth 2.1 for authentication; store credentials in Secrets Manager
+- **Performance**: Cache reference data intelligently; optimize queries with OData options
+- **Resilience**: Implement retry logic with exponential backoff; add circuit breakers
+- **Monitoring**: Track response times, error rates, and API quota usage
+- **Error Handling**: Provide graceful degradation when SAP is unavailable
 
 ---
 
@@ -168,124 +156,77 @@ User Query → AI Agent → OData API Call → SAP S/4HANA
 
 ### Overview
 
-Access SAP data without physical movement using watsonx.data and open standards (Iceberg, Delta Sharing). Data stays in SAP while enabling federated queries.
+Access SAP data without physical movement using watsonx.data and open standards (Iceberg, Delta Sharing). Data stays in SAP while enabling federated queries, making it ideal for large-scale analytics and multi-source integration.
 
-**Use When:**
+**When to Use This Pattern:**
 - ✅ Large-scale analytics workloads
 - ✅ Multi-source data integration (SAP + non-SAP)
-- ✅ Cost-sensitive (minimize storage)
-- ✅ SAP Datasphere available (Delta Sharing)
+- ✅ Cost-sensitive scenarios (minimize storage)
+- ✅ Need to combine data from multiple sources
 - ❌ Avoid for simple queries or extensive transformations
 
-**Sub-Patterns:**
-- **2A (Native Connectors)**: Standard federated queries, simple setup
-- **2B (TableFlow)**: Near-real-time analytics with CDC
-- **2C (Delta Sharing)**: True zero-copy with SAP Datasphere
+**Three Sub-Patterns:**
+- **2A - Native Connectors**: Standard federated queries with built-in watsonx.data connectors
+- **2B - Streaming Integration**: Near-real-time analytics with event-driven architectures
+- **2C - Delta Sharing**: True zero-copy access using SAP Datasphere and Delta Sharing protocol
 
-**Example Use Cases:**
-- Cross-system financial consolidation
-- Customer 360 views (SAP + CRM)
-- Supply chain analytics across multiple SAP instances
+### Use Cases
 
-### Architecture Diagram
+**Real-World Examples:**
+- **Cross-System Financial Consolidation**: Combine financial data from multiple SAP instances and external systems for enterprise-wide reporting
+- **Customer 360 Views**: Integrate SAP customer data with CRM, social media, and support systems for complete customer intelligence
+- **Supply Chain Analytics**: Analyze supply chain data across multiple SAP instances, IoT sensors, and external logistics providers
+- **Multi-Cloud Analytics**: Federate queries across SAP on IBM Cloud and data in other cloud platforms
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                           IBM Cloud                                 │
-│                                                                     │
-│  ┌────────────────────────────────────────────────────────────────┐ │
-│  │                    watsonx.data                                │ │
-│  │  ┌──────────────────────────────────────────────────────────┐  │ │
-│  │  │      Query Engine (Presto/Trino)                         │  │ │
-│  │  │  - Federated Query Processing                            │  │ │
-│  │  │  - Query Optimization                                    │  │ │
-│  │  └──────────────────────────────────────────────────────────┘  │ │
-│  │                           ↓                                    │ │
-│  │  ┌──────────────────────────────────────────────────────────┐  │ │
-│  │  │        Zero-Copy Data Access Layer                       │  │ │
-│  │  │  ┌─────────────┐  ┌──────────────┐  ┌─────────────────┐  │  │ │
-│  │  │  │ watsonx.data│  │  Confluent   │  │  Delta Sharing  │  │  │ │
-│  │  │  │ Connectors  │  │  TableFlow   │  │    Protocol     │  │  │ │
-│  │  │  └─────────────┘  └──────────────┘  └─────────────────┘  │  │ │
-│  │  └──────────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────┘ │
-│                           ↓                                         │
-│  ┌────────────────────────────────────────────────────────────────┐ │
-│  │              AI/Analytics Applications                         │ │
-│  │  - watsonx.ai (AI/ML workloads)                                │ │
-│  │  - watsonx.orchestrate (Agentic workflows)                     │ │
-│  └────────────────────────────────────────────────────────────────┘ │
-└──────────────────────────────┼──────────────────────────────────────┘
-                               ↓ Zero-Copy Access
-                    ┌──────────────────────┐
-                    │   SAP Data Sources   │
-                    │  - SAP Datasphere    │
-                    │  - SAP S/4HANA       │
-                    └──────────────────────┘
-```
+### Architecture
 
-### Sub-Pattern Details
+**Architecture Diagram:**
 
-**2A: Native Connectors**
-- Built-in watsonx.data connectors for standard protocols
-- Services: watsonx.data, watsonx.ai, Cloud Object Storage, VPC
-- ✅ Native integration, standard SQL
-- ❌ Limited SAP version support, network latency
+![SAP Data Integration Pattern 1](../images/data/SAP-data-integration-pattern-2.svg)
 
-**2B: TableFlow Integration** ([Reference](https://community.ibm.com/community/user/blogs/william-accetta/2026/03/17/aiready-data-with-open-standards-using-confluent))
-- Stream SAP CDC → Kafka → TableFlow → Iceberg → watsonx.data
-- Services: watsonx.data, Event Streams, Confluent Cloud, Cloud Object Storage
-- ✅ Near-real-time, incremental updates, time travel
-- ❌ Requires Confluent, some data movement, complexity
 
-**2C: Delta Sharing** ([Reference](https://architecture.learning.sap.com/docs/ref-arch/f5b6b597a6/1))
-- True zero-copy with SAP Datasphere
-- Services: watsonx.data (Delta Sharing client), watsonx.ai, Cloud Object Storage
-- ✅ True zero-copy, SAP-native, open standard, audit trail
-- ❌ Requires SAP Datasphere, network latency
 
-### Implementation Details
+**Architecture Components:**
 
-**Network & Security:**
-- Use Direct Link for dedicated connection
-- Deploy watsonx.data in region closest to SAP
-- TLS 1.3, OAuth 2.1 or certificate-based auth
-- RBAC and comprehensive audit logging
+**Supporting IBM Cloud Services:**
+- **watsonx.data**: Lakehouse platform with Presto query engine for federated queries
+- **watsonx.ai**: AI/ML workloads and model training on federated data
+- **Cloud Object Storage**: Storage for query results and metadata caching
+- **Event Streams** (for 2B): Managed Apache Kafka for streaming SAP CDC events
+- **VPC**: Secure network isolation for data access
 
-**Performance Optimization:**
-- Cache query results and table metadata
-- Leverage partition pruning and predicate pushdown
-- Monitor and tune query performance
+**Network Connectivity:**
 
-**Sample Implementation:**
-```
-Supply Chain Analytics:
-SQL Query → watsonx.data → Federated Query → SAP + Weather API
-Result: Real-time supply risk scores
+For detailed network connectivity options, see [Integration Overview](../integration/integration-overview.md).
 
-Customer 360:
-Delta Sharing → SAP Customer Data + Social Sentiment + Credit Rating
-Result: Unified customer intelligence
-```
+- **Direct Link** (recommended): Dedicated, high-bandwidth connection for production workloads
+- **VPN**: Encrypted tunnel for secure connectivity
+- **SAP Private Link**: SAP's private connectivity service for secure, private connections between SAP BTP and hyperscaler services without internet exposure
 
-### Key Considerations
+**Authentication Methods:**
+- **OAuth 2.1**: Token-based authentication for SAP APIs
+- **Certificate-based**: Mutual TLS for highest security
+- **RBAC**: Role-based access control in watsonx.data
+
+### Considerations
 
 **Advantages:**
-- ✅ Zero-copy access (especially Delta Sharing)
-- ✅ Scalable for large analytics
-- ✅ Combine SAP and non-SAP data
-- ✅ Open standards, cost-effective
+- ✅ **Zero-Copy Access**: Especially with Delta Sharing, no data duplication
+- ✅ **Scalable**: Handle large-scale analytics workloads efficiently
+- ✅ **Multi-Source**: Combine SAP and non-SAP data in single queries
+- ✅ **Cost-Effective**: Minimize storage costs with open standards
 
 **Limitations:**
-- ❌ Complex setup
-- ❌ Requires watsonx.data infrastructure
-- ❌ Network-dependent performance
+- ⚠️ **Complex Setup**: Requires watsonx.data infrastructure and configuration
+- ⚠️ **Network Dependency**: Query performance depends on network latency
+- ⚠️ **Infrastructure Required**: Need watsonx.data platform
 
 **Best Practices:**
-- Choose sub-pattern based on requirements
-- Optimize network with Direct Link
-- Implement intelligent caching
-- Use least privilege access controls
+- **Sub-Pattern Selection**: Choose 2A for simplicity, 2B for real-time needs, 2C for true zero-copy with Datasphere
+- **Network**: Use Direct Link for production workloads to minimize latency
+- **Caching**: Implement intelligent caching for frequently accessed data
+- **Security**: Use least privilege access controls and comprehensive audit logging
+- **Monitoring**: Track query performance, network latency, and resource utilization
 
 ---
 
@@ -293,9 +234,9 @@ Result: Unified customer intelligence
 
 ### Overview
 
-Selective data movement from SAP to watsonx.data for enrichment with ML predictions, external data, and derived metrics. Data is temporarily materialized for processing.
+Selective data movement from SAP to watsonx.data for enrichment with ML predictions, external data, and derived metrics. Data is temporarily materialized for processing, making it ideal for AI/ML workloads and complex transformations.
 
-**Use When:**
+**When to Use This Pattern:**
 - ✅ ML/AI model training and inference
 - ✅ Complex data transformations
 - ✅ Multi-source data blending
@@ -303,132 +244,93 @@ Selective data movement from SAP to watsonx.data for enrichment with ML predicti
 - ❌ Avoid for simple queries or strict data residency requirements
 
 **Key Considerations:**
-- Requires data lifecycle management (retention policies)
-- Higher storage costs than Pattern 2
-- Best when enrichment value justifies data movement
+- Requires data lifecycle management with retention policies (e.g., 7 days for temporary SAP data)
+- Higher storage costs than Pattern 2, but justified by enrichment value
+- Enriched/transformed data can be stored indefinitely per SAP usage terms
 
-**Example Use Cases:**
-- Customer churn prediction with enriched features
-- Supply chain optimization with IoT and weather data
-- Financial forecasting with market indicators
-- Product recommendation engines
+### Use Cases
 
-### Architecture Diagram
+**Real-World Examples:**
+- **Customer Churn Prediction**: Extract customer data, enrich with usage patterns, social sentiment, and support interactions; train ML models to predict churn risk
+- **Supply Chain Optimization**: Combine SAP logistics data with IoT sensor data, weather forecasts, and traffic patterns for predictive delivery optimization
+- **Financial Forecasting**: Blend SAP financial data with market indicators, economic data, and news sentiment for advanced forecasting models
+- **Product Recommendation Engines**: Enrich SAP sales and customer data with browsing behavior, social media activity, and demographic data for personalized recommendations
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                           IBM Cloud                                 │
-│                                                                     │
-│  ┌────────────────────────────────────────────────────────────────┐ │
-│  │                    watsonx.data Fabric                         │ │
-│  │                                                                │ │
-│  │  ┌──────────────────────────────────────────────────────────┐  │ │
-│  │  │              Enrichment Layer                            │  │ │
-│  │  │  ┌────────────┐  ┌────────────┐  ┌──────────────────┐    │  │ │
-│  │  │  │ ML Models  │  │ External   │  │  Transformation  │    │  │ │
-│  │  │  │(watsonx.ai)│  │ Data APIs  │  │     Logic        │    │  │ │
-│  │  │  └────────────┘  └────────────┘  └──────────────────┘    │  │ │
-│  │  └──────────────────────────────────────────────────────────┘  │ │
-│  │                           ↓                                    │ │
-│  │  ┌──────────────────────────────────────────────────────────┐  │ │
-│  │  │         Enriched Data Storage (Iceberg)                  │  │ │
-│  │  │  - SAP Data (Temporary Materialization)                  │  │ │
-│  │  │  - Enriched Attributes                                   │  │ │
-│  │  │  - Derived Metrics                                       │  │ │
-│  │  │  - ML Predictions                                        │  │ │
-│  │  └──────────────────────────────────────────────────────────┘  │ │
-│  │                           ↑                                    │ │
-│  │  ┌──────────────────────────────────────────────────────────┐  │ │
-│  │  │           Data Ingestion Layer                           │  │ │
-│  │  │  - Batch ETL (Spark)                                     │  │ │
-│  │  │  - Streaming (Kafka)                                     │  │ │
-│  │  │  - API-based extraction                                  │  │ │
-│  │  └──────────────────────────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────┘ │
-│                           ↑                                         │
-└───────────────────────────┼─────────────────────────────────────────┘
-                            ↓ Data Extraction
-                 ┌──────────────────────┐
-                 │   SAP Data Sources   │
-                 │  - SAP S/4HANA       │
-                 │  - SAP BW/4HANA      │
-                 └──────────────────────┘
-```
+### Architecture
 
-### Architecture & Services
+**Architecture Diagram:**
 
-**IBM Cloud Services:**
-- watsonx.data (lakehouse platform)
-- watsonx.ai (AI/ML enrichment)
-- Cloud Object Storage (data lake storage)
-- DataStage (optional, ETL/ELT)
-- Event Streams (optional, streaming)
-- Code Engine (serverless compute)
-- Cloud Databases (metadata)
+![SAP Data Integration Pattern 1](../images/data/SAP-data-integration-pattern-3.svg)
 
-### Implementation Details
 
-**Data Extraction:**
-- Batch: OData API with date filters → Iceberg tables
-- Streaming: SAP CDC → Kafka → Iceberg tables (real-time)
 
-**Enrichment Strategies:**
-1. **ML-Based**: Add churn predictions, LTV scores via watsonx.ai
-2. **External Data**: Combine with market intelligence, social sentiment, IoT data
-3. **Derived Metrics**: Calculate KPIs, RFM scores, aggregations
+**Architecture Components:**
 
-**Lifecycle Management:**
-- Set retention policies (e.g., 7 days for temporary SAP data)
-- Expire old snapshots to manage costs
-- Implement data quality checks and lineage tracking
+**Supporting IBM Cloud Services:**
+- **watsonx.data**: Lakehouse platform for data management and query processing
+- **watsonx.ai**: AI/ML model training and inference for data enrichment
+- **Cloud Object Storage**: Scalable object storage for data lake (Iceberg tables)
+- **DataStage** (optional): Enterprise ETL/ELT for complex data transformations
+- **Event Streams** (optional): Managed Apache Kafka for real-time data streaming
+- **Code Engine**: Serverless compute for custom data processing logic
+- **Cloud Databases**: Metadata storage and catalog management
 
-**Sample Implementation Flow:**
-```
-Extract SAP Data → Enrich with ML/External Data → Store in Iceberg
-                                ↓
-                    Customer Intelligence Platform
-                    - Churn predictions
-                    - Social sentiment
-                    - RFM scores
-                    - Expose via API
-```
+**Network Connectivity:**
 
-### Key Considerations
+For detailed network connectivity options, see [Integration Overview](../integration/integration-overview.md).
+
+- **Direct Link** (recommended): Dedicated connection for high-volume data extraction
+- **VPN**: Encrypted tunnel for secure data transfer
+- **Public Internet**: For non-sensitive or low-volume extractions
+
+**Authentication Methods:**
+- **OAuth 2.1**: Token-based authentication for SAP APIs
+- **Certificate-based**: Mutual TLS for secure data extraction
+
+### Considerations
 
 **Advantages:**
-- ✅ Rich enrichment capabilities
-- ✅ Combine multiple data sources
-- ✅ ML/AI integration
-- ✅ Complex analytics support
+- ✅ **Rich Enrichment**: Combine SAP data with ML predictions, external data, and derived metrics
+- ✅ **Multi-Source Integration**: Blend data from multiple sources seamlessly
+- ✅ **ML/AI Ready**: Optimized for training and inference workloads
+- ✅ **Complex Analytics**: Support advanced transformations and aggregations
 
 **Limitations:**
-- ❌ Data movement required
-- ❌ Higher storage costs
-- ❌ Complex governance
-- ❌ Requires lifecycle management
+- ⚠️ **Data Movement**: Requires extracting data from SAP (selective, not full replication)
+- ⚠️ **Storage Costs**: Higher than Pattern 2 due to data materialization
+- ⚠️ **Governance Complexity**: Requires data lineage tracking and lifecycle management
+- ⚠️ **Lifecycle Management**: Must implement retention policies for temporary SAP data
 
 **Best Practices:**
-- Implement retention and expiration policies
-- Monitor data quality with automated checks
-- Track data lineage for governance
-- Optimize storage with compaction
-- Secure sensitive data with encryption
+- **Lifecycle Management**: Implement retention policies (e.g., 7 days for temporary SAP data); enriched data can be kept indefinitely
+- **Data Quality**: Monitor data quality with automated checks and alerts
+- **Lineage Tracking**: Track data lineage for governance and compliance
+- **Storage Optimization**: Use Iceberg compaction and partitioning to optimize storage costs
+- **Security**: Encrypt sensitive data at rest and in transit; implement fine-grained access controls
+- **Monitoring**: Track extraction jobs, enrichment pipelines, and storage usage
 
 ---
 
 ## Pattern Comparison
 
+This table provides a side-by-side comparison of the three integration patterns to help you select the right approach for your requirements:
+
 | Criteria | Pattern 1: API | Pattern 2: Zero-Copy | Pattern 3: Enrichment |
 |----------|----------------|----------------------|-----------------------|
-| **Data Movement** | None | Minimal/None | Selective |
-| **Latency** | High (per query) | Medium | Low (cached) |
-| **Complexity** | Low | Medium-High | High |
-| **Cost** | Low | Medium | High |
-| **Use Cases** | Ad-hoc queries, agentic AI | Large-scale analytics | ML/AI, complex transformations |
-| **SAP Compliance** | ✅ Excellent | ✅ Excellent | ✅ Good (temporary) |
-| **Scalability** | Limited | High | Very High |
-| **Data Freshness** | Real-time | Near real-time | Batch/streaming |
-| **Setup Time** | Quick | Medium | Long |
+| **Data Movement** | None - data consumed on-demand | Minimal/None - queries federated to source | Selective - only needed data extracted |
+| **Latency** | High - each query requires SAP round-trip | Medium - network-dependent federated queries | Low - data cached locally for fast access |
+| **Complexity** | Low - simple API integration | Medium-High - requires watsonx.data setup | High - full data pipeline with enrichment |
+| **Cost** | Low - minimal infrastructure | Medium - watsonx.data platform costs | High - storage + compute + enrichment |
+| **Use Cases** | Ad-hoc queries, agentic AI, real-time lookups | Large-scale analytics, multi-source queries | ML/AI training, complex transformations |
+| **SAP Compliance** | ✅ Excellent - no data storage | ✅ Excellent - zero-copy access | ✅ Good - temporary materialization allowed |
+| **Scalability** | Limited - constrained by API limits | High - scales with query engine | Very High - scales with data platform |
+| **Data Freshness** | Real-time - always current | Near real-time - depends on sub-pattern | Batch/streaming - scheduled or continuous |
+| **Setup Time** | Quick - hours to days | Medium - days to weeks | Long - weeks to months |
+
+**Key Takeaways:**
+- **Pattern 1** is best for simplicity and real-time access with low volume
+- **Pattern 2** balances cost and capability for large-scale analytics
+- **Pattern 3** provides maximum flexibility for AI/ML workloads with data enrichment
 
 ---
 
@@ -506,3 +408,7 @@ For complete agentic AI patterns, see [Building Agentic AI Solutions in IBM Clou
 **Integration Technologies:**
 - [Apache Iceberg](https://iceberg.apache.org/) | [Delta Sharing](https://delta.io/sharing/)
 - [Confluent TableFlow](https://docs.confluent.io/cloud/current/connectors/cc-iceberg-sink.html)
+
+**Tutorials and Articles:**
+- [Building an Event-Driven Agentic AI System with Apache Kafka on Confluent Cloud and watsonx Orchestrate](https://developer.ibm.com/tutorials/event-driven-agentic-ai-system-confluent-watsonx-orchestrate/)
+- [AI-Ready Data with Open Standards: Using Confluent TableFlow and IBM watsonx.data](https://community.ibm.com/community/user/blogs/william-accetta/2026/03/17/aiready-data-with-open-standards-using-confluent)

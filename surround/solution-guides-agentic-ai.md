@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-17"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -17,7 +17,7 @@ subcollection: rise-with-sap-on-powervs
 
 ## Introduction
 
-This guide covers building Agentic AI solutions in IBM Cloud integrated with RISE with SAP. Agentic AI enables autonomous agents to reason, plan, and execute tasks using tools and data sources, automating complex SAP business processes and providing intelligent enterprise assistance.
+This guide covers building Agentic AI solutions on IBM Cloud that integrate with SAP data and resources as surround workloads. These solutions leverage autonomous agents that can reason, plan, and execute tasks using tools and data sources. By connecting to RISE with SAP environments, Agentic AI enables automation of complex SAP business processes and provides intelligent enterprise assistance.
 
 ---
 
@@ -26,12 +26,12 @@ This guide covers building Agentic AI solutions in IBM Cloud integrated with RIS
 
 Agentic AI solutions are built on multiple interconnected layers, each serving a specific purpose in the overall architecture:
 
-![IBM Cloud Agentic AI Architecture Layers](../images/ai/Agentic_AI_layers.png)
+![IBM Cloud Agentic AI Architecture Layers](../images/ai/Agentic_AI_layers.svg)
 
 ### 1. Resource Layer
 {: #solution-agentic-ai-architecture-layers-resource}
 
-The Resource Layer represents all enterprise resources including data sources, APIs, services, and systems across the landscape. This foundational layer provides the information and capabilities that agents access and process, supporting diverse locations and formats to meet enterprise requirements.
+The Resource Layer represents all enterprise resources including data, APIs, and services across the landscape. This foundational layer provides the information and capabilities that agents access and process, supporting diverse locations and formats to meet enterprise requirements.
 
 **Location Flexibility:**
 - **On-Premises**: Legacy systems, SAP ERP, databases
@@ -103,7 +103,7 @@ The Application Layer represents user-facing interfaces and backend services tha
 
 Four primary patterns connect Agentic AI solutions with RISE with SAP. Each addresses different integration needs and can be combined for comprehensive solutions.
 
-![IBM Cloud Agentic AI Architecture Layers](../images/ai/SAP_Surround_agent_integration_patterns.png)
+![IBM Cloud Agentic AI Architecture Layers](../images/ai/SAP_Surround_agent_integration_patterns.svg)
 
 ### Pattern 1: MCP Server Integration with SAP
 {: #solution-agentic-ai-sap-integration-patterns-1}
@@ -130,7 +130,15 @@ MCP (Model Context Protocol) servers provide the integration layer between agent
    - Example: Low inventory detected → Agent creates PO via MCP → Routes for approval
 
 **Architecture:**
-See diagram above showing SAP systems → SAP APIs → MCP Server (IBM Cloud) → Agents
+Agents → MCP Server (IBM Cloud) → SAP APIs → SAP systems
+
+Agents invoke tools on the MCP server, which translates requests into SAP API calls to access SAP systems. This pattern centralizes SAP connectivity through MCP servers deployed on IBM Cloud, providing reusable tools for multiple agents.
+
+**Supporting IBM Cloud Services:**
+- **Code Engine / OpenShift**: Host MCP servers with auto-scaling and container orchestration
+- **VPC**: Provide isolated network environment for secure SAP connectivity
+- **Secrets Manager**: Store and manage SAP credentials and API keys securely
+- **Direct Link**: Enable low-latency, dedicated connection to on-premises SAP systems
 
 ---
 
@@ -152,9 +160,16 @@ Agents on watsonx.orchestrate consume MCP server tools to interact with SAP, ena
    - Example: Payment received → Matches invoices → Identifies discrepancies → Creates follow-up tasks
 
 **Architecture:**
-See diagram showing watsonx.orchestrate agents → MCP Server Registry → SAP MCP Servers
+watsonx.orchestrate Agents → MCP Server Registry → SAP MCP Servers → SAP APIs → SAP systems
 
-**Required Services:** watsonx.orchestrate, watsonx.ai, VPC, App ID
+Agents on watsonx.orchestrate discover and invoke tools through the MCP Server Registry, which routes requests to appropriate SAP MCP Servers. These servers translate agent requests into SAP API calls, enabling intelligent reasoning and multi-step operations across SAP systems.
+
+**Supporting IBM Cloud Services:**
+- **watsonx.orchestrate**: Provide agent platform with pre-built templates and workflow automation
+- **watsonx.ai**: Supply foundation models for agent reasoning and natural language understanding
+- **VPC**: Ensure secure, isolated network for agent and MCP server communication
+- **App ID**: Manage user authentication and authorization for agent access
+- **Secrets Manager**: Securely store SAP credentials used by MCP servers
 
 ---
 
@@ -182,7 +197,16 @@ Agents use A2A protocol to collaborate on complex multi-domain tasks, enabling t
    - Benefits: Real-time negotiation, competitive pricing, automation
 
 **Architecture:**
-See diagram showing Orchestrator Agent → Internal Agents (A2A) → External Partner Agents (A2A)
+Orchestrator Agent → Internal Agents (A2A) → External Partner Agents (A2A)
+
+An orchestrator agent coordinates specialized agents using the A2A protocol for task delegation and result aggregation. Internal agents communicate with each other and external partner agents to execute complex multi-domain workflows across multiple domains and systems.
+
+**Supporting IBM Cloud Services:**
+- **Code Engine / OpenShift**: Deploy and scale multiple specialized agents with container orchestration
+- **VPC**: Create secure network boundaries for internal and external agent communication
+- **Event Streams**: Enable asynchronous messaging and event-driven agent coordination
+- **API Connect**: Manage and secure A2A protocol endpoints with rate limiting and monitoring
+- **Secrets Manager**: Store credentials for inter-agent authentication and system access
 
 **Security:** Mutual TLS, OAuth 2.0, end-to-end encryption, rate limiting, audit logging
 
@@ -209,7 +233,17 @@ Applications (web, mobile, enterprise) integrate with SAP-enabled agents for int
    - Example: "Summarize customer order history" → Copilot analyzes → Provides insights
 
 **Architecture:**
-See diagram showing User Applications → API Gateway → Application Backend → SAP Agents → SAP MCP Servers
+User Applications → API Gateway → Application Backend → SAP Agents → SAP MCP Servers → SAP systems
+
+Applications interact with SAP-enabled agents through an API Gateway that provides authentication, routing, and rate limiting. The application backend manages business logic and coordinates agent requests, while agents use MCP servers to access SAP systems and provide intelligent, conversational interfaces.
+
+**Supporting IBM Cloud Services:**
+- **Code Engine / OpenShift**: Host application backends and agent services with scalability
+- **API Connect**: Provide API gateway for authentication, routing, and rate limiting
+- **VPC**: Ensure secure communication between application layers
+- **App ID**: Manage end-user authentication and single sign-on
+- **Object Storage**: Store application data, logs, and agent conversation history
+- **Cloud Databases**: Provide persistent storage for application state and user data
 
 ---
 
@@ -239,7 +273,7 @@ For detailed guidance, see **[SAP Data Integration Patterns for IBM Cloud](solut
 | Analytics (cross-system reports) | Zero-Copy | Federated queries, no duplication |
 | ML predictions | Enrichment | Feature engineering, model training |
 
-**Services:** watsonx.data, Object Storage, Cloud Databases, Event Streams
+**Supporting IBM Cloud Services:** watsonx.data, Object Storage, Cloud Databases, Event Streams
 
 #### Event-Driven Integration
 
@@ -248,7 +282,7 @@ SAP events trigger real-time agent actions for reactive automation.
 
 **Use Cases:** Order processing, inventory alerts, customer service automation, transaction monitoring
 
-**Services:** Event Streams, Code Engine, Cloud Functions
+**Supporting IBM Cloud Services:** Event Streams, Code Engine, Cloud Functions
 
 ---
 
@@ -264,6 +298,26 @@ SAP events trigger real-time agent actions for reactive automation.
 | **Event-Driven** | Low | Very Low (ms) | Very High | Real-time automation |
 
 *Response time varies: Lakehouse (pre-loaded data) is faster than virtualization (real-time federation)
+
+**Metric Definitions:**
+
+- **Design Effort**
+  - **Low**: Minimal custom code, leverage existing services and templates
+  - **Low-Medium**: Some custom integration logic, configuration required
+  - **Medium**: Moderate development, custom agent logic and integration
+  - **High**: Significant custom development, complex architecture design
+
+- **Response Time**
+  - **Very Low (ms)**: < 100ms - Event-driven triggers, direct API calls
+  - **Low (ms)**: 100ms - 1s - Simple operations without LLM reasoning
+  - **Low-Medium**: 1-3s - API operations with light processing
+  - **Medium (seconds)**: 2-10s - Single agent with LLM reasoning
+  - **Medium-High (seconds)**: 5-15s - Multi-agent coordination, complex workflows
+  - **Low-High***: Variable - Depends on data source (API: low, federation: high)
+
+- **Scalability**
+  - **High**: Supports 100s-1,000s of concurrent operations
+  - **Very High**: Supports 10,000+ concurrent operations with horizontal scaling
 
 **Selection Guidance:** Choose based on requirements; patterns can be combined (e.g., Event-Driven + Agent-MCP)
 
@@ -296,12 +350,39 @@ SAP events trigger real-time agent actions for reactive automation.
 
 **Legend:** ✅ Best | ⚠️ Works with caveats | 💰 Works but costly
 
+**Detailed Comparison:**
+
+- **Variable Load**
+  - **Code Engine (✅)**: Auto-scales to zero, pay only for actual usage, ideal for unpredictable traffic
+  - **OpenShift (💰)**: Always-on infrastructure incurs costs even during low usage periods
+  - **Hybrid (⚠️)**: Over-engineered for simple variable load scenarios
+
+- **Consistent Load**
+  - **Code Engine (💰)**: Continuous usage makes serverless pricing expensive vs reserved capacity
+  - **OpenShift (✅)**: Reserved capacity provides better economics for predictable workloads
+  - **Hybrid (✅)**: Optimal cost balance using OpenShift for baseline, Code Engine for peaks
+
+- **Complex Networking**
+  - **Code Engine (⚠️)**: Limited VPC integration, basic networking features
+  - **OpenShift (✅)**: Full Kubernetes networking, service mesh, advanced routing
+  - **Hybrid (✅)**: Leverage OpenShift networking while using Code Engine where appropriate
+
+- **Rapid Dev/Test**
+  - **Code Engine (✅)**: Zero infrastructure setup, deploy in minutes, instant scaling
+  - **OpenShift (⚠️)**: Requires cluster setup, configuration, more initial overhead
+  - **Hybrid (⚠️)**: Additional complexity managing two platforms
+
+- **Enterprise Governance**
+  - **Code Engine (⚠️)**: Basic RBAC, limited policy controls, simpler compliance features
+  - **OpenShift (✅)**: Advanced RBAC, network policies, compliance operators, audit logging
+  - **Hybrid (✅)**: Comprehensive governance across both platforms with unified policies
+
 ---
 
 ## Deployment Patterns
 
-### Fully Managed IBM Cloud
-Applications, agents, and MCP servers deployed on IBM Cloud (Code Engine/OpenShift) with watsonx.orchestrate and watsonx.data for unified data access.
+### IBM Cloud-Based Deployment
+Applications, agents, and MCP servers deployed on IBM Cloud infrastructure using managed services (Code Engine/OpenShift, watsonx.orchestrate, watsonx.data) for unified data access.
 
 ### Hybrid with External Agents
 IBM Cloud agents communicate with external/partner agents via A2A protocol for multi-organization workflows.
@@ -321,8 +402,9 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 | Service | Purpose | Key Capabilities |
 |---------|---------|------------------|
 | **watsonx.orchestrate** | Agent platform | Pre-built templates, workflow automation, multi-agent coordination |
-| **watsonx.ai** | Foundation models | LLM access, fine-tuning, prompt engineering, governance |
+| **watsonx.ai** | Foundation models | LLM access, fine-tuning, prompt engineering, model governance |
 | **watsonx.data** | Data lakehouse | Multi-source integration, query federation, SAP connectivity |
+| **watsonx.governance** | AI governance | Model lifecycle management, risk assessment, compliance monitoring, audit trails |
 | **Code Engine** | Serverless compute | MCP servers, auto-scaling, pay-per-use, zero infrastructure |
 | **OpenShift** | Enterprise Kubernetes | Production deployments, service mesh, multi-zone HA |
 | **Object Storage** | Scalable storage | Unstructured data, data lake, backups, AI training data |
@@ -331,7 +413,12 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 | **Direct Link** | Dedicated connection | Low-latency SAP access, high bandwidth, compliance |
 | **Event Streams** | Event streaming | Real-time SAP events, agent communication, Kafka-based |
 | **Secrets Manager** | Secrets management | SAP credentials, API keys, automatic rotation |
-| **Security Center** | Security posture | Compliance monitoring, threat detection, audit logging |
+| **API Connect** | API gateway | Authentication, routing, rate limiting, API lifecycle management |
+| **App ID** | User authentication | SSO, OAuth 2.0, user management, multi-factor authentication |
+| **Cloud Functions** | Serverless functions | Event-driven processing, lightweight compute, pay-per-execution |
+| **IBM Cloud Monitoring** | Infrastructure monitoring | Metrics, dashboards, alerts, performance monitoring |
+| **IBM Cloud Log Analysis** | Log management | Centralized logging, search, filtering, real-time analysis |
+| **Security and Compliance Center** | Security posture | Compliance monitoring, threat detection, audit logging |
 
 ---
 
@@ -387,6 +474,7 @@ By following the patterns and guidelines in this document, organizations can bui
 
 ### IBM Cloud Documentation
 - [IBM Cloud Agentic AI Workflow Pattern](https://cloud.ibm.com/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow) - **Primary Reference**
+- [Accelerate Gen AI on IBM Cloud with Deployable Architectures](https://developer.ibm.com/tutorials/awb-maximize-gen-ai-on-ibm-cloud-deployable-architectures/)
 - [IBM watsonx.orchestrate Documentation](https://www.ibm.com/docs/en/watsonx/orchestrate)
 - [IBM Cloud Code Engine](https://cloud.ibm.com/docs/codeengine)
 - [Red Hat OpenShift on IBM Cloud](https://cloud.ibm.com/docs/openshift)
