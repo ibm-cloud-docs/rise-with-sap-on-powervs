@@ -208,7 +208,7 @@ An orchestrator agent coordinates specialized agents using the A2A protocol for 
 - **API Connect**: Manage and secure A2A protocol endpoints with rate limiting and monitoring
 - **Secrets Manager**: Store credentials for inter-agent authentication and system access
 
-**Security:** Mutual TLS, OAuth 2.0, end-to-end encryption, rate limiting, audit logging
+**Security:** Mutual TLS, OAuth 2.1, end-to-end encryption, rate limiting, audit logging
 
 ---
 
@@ -414,7 +414,7 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 | **Event Streams** | Event streaming | Real-time SAP events, agent communication, Kafka-based |
 | **Secrets Manager** | Secrets management | SAP credentials, API keys, automatic rotation |
 | **API Connect** | API gateway | Authentication, routing, rate limiting, API lifecycle management |
-| **App ID** | User authentication | SSO, OAuth 2.0, user management, multi-factor authentication |
+| **App ID** | User authentication | SSO, OAuth 2.1, user management, multi-factor authentication |
 | **Cloud Functions** | Serverless functions | Event-driven processing, lightweight compute, pay-per-execution |
 | **IBM Cloud Monitoring** | Infrastructure monitoring | Metrics, dashboards, alerts, performance monitoring |
 | **IBM Cloud Log Analysis** | Log management | Centralized logging, search, filtering, real-time analysis |
