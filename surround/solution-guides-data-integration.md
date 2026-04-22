@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-22"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -53,6 +53,9 @@ This guide presents three complementary patterns for SAP data integration:
   - **2A - Native Connectors**: Standard federated queries using built-in watsonx.data connectors
   - **2B - Streaming Integration**: Near-real-time analytics with event-driven architectures using Kafka/Confluent Cloud streaming SAP CDC events to Iceberg tables (e.g., TableFlow, custom Kafka consumers)
   - **2C - Delta Sharing**: True zero-copy access using SAP Datasphere and Delta Sharing protocol
+  
+**Note:** The Delta Sharing protocol integration is currently under development by the watsonx.data team. Please refer to [watsonx.data documentation](https://cloud.ibm.com/docs/watsonxdata) for the latest availability information.
+{: note}
 
 **Pattern 3: Data Enrichment in watsonx.data Fabric**
 - **Description**: Selective data extraction with temporary materialization; enrich with ML predictions, external data, and derived metrics
@@ -61,6 +64,9 @@ This guide presents three complementary patterns for SAP data integration:
 - **Cost**: High
 - **Best For**: ML/AI training, complex transformations, multi-source integration, predictive analytics
 - **Example**: Customer churn prediction with enriched features
+
+**Note:** In practice, some clients replicate SAP data to a staging database before performing enrichment or running ETL scripts. This approach can provide additional flexibility for data transformation workflows and reduce load on the SAP system during complex processing operations.
+{: note}
 
 **Selecting the Right Pattern:**
 
