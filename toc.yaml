@@ -23,11 +23,6 @@ toc:
       id: howto
       topics:
       - topicgroup:
-          label: Surround Workloads
-          topics:
-          - surround/overview.md
-          - surround/migration-considerations.md
-      - topicgroup:
           label: Connectivity
           topics:
           - integration/integration-overview.md
