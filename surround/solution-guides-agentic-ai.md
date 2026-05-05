@@ -308,10 +308,10 @@ SAP events trigger real-time agent actions for reactive automation.
 **Metric Definitions:**
 
 - **Design Effort**
-  - **Low**: Minimal custom code, leverage existing services and templates
-  - **Low-Medium**: Some custom integration logic, configuration required
-  - **Medium**: Moderate development, custom agent logic and integration
-  - **High**: Significant custom development, complex architecture design
+    - **Low**: Minimal custom code, leverage existing services and templates
+    - **Low-Medium**: Some custom integration logic, configuration required
+    - **Medium**: Moderate development, custom agent logic and integration
+    - **High**: Significant custom development, complex architecture design
 
 - **Response Time**
     - **Very Low (ms)**: < 100ms - Event-driven triggers, direct API calls
@@ -400,6 +400,7 @@ Applications, agents, and MCP servers deployed on IBM Cloud infrastructure using
 
 ### Hybrid with External Agents
 {: #solution-agentic-ai-deployment-patterns-hybrid}
+
 IBM Cloud agents communicate with external/partner agents via A2A protocol for multi-organization workflows.
 
 ### Edge-to-Cloud
