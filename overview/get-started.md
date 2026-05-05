@@ -22,7 +22,7 @@ For more than half a century, enterprises have relied on IBM infrastructure to r
 
 **IBM {{site.data.keyword.powerSys_notm}}** is a family of configurable, multitenant virtual IBM Power servers that are deeply integrated with {{site.data.keyword.cloud_notm}} services. It provides flexible, secure, and scalable compute capacity for SAP enterprise workloads. This also includes support for key SAP platform components such as **SAP Business Warehouse in SAP Business Data Cloud (BDC)**, giving organizations a consistent, cloud-ready data foundation when modernizing analytics and ERP landscapes.
 
-**RISE WITH SAP** combines Cloud ERP based on SAP S/4HANA&reg;, infrastructure, and services to help customers redefine their enterprise operating model. IBM {{site.data.keyword.powerSys_notm}} offers a unique benefit for customers running SAP on IBM Power: it enables a streamlined, low disruption move to SAP Cloud ERP Private by preserving existing architecture patterns while delivering the scalability and operational efficiency of a hyperscaler cloud.
+**RISE with SAP** combines Cloud ERP based on SAP S/4HANA&reg;, infrastructure, and services to help customers redefine their enterprise operating model. IBM {{site.data.keyword.powerSys_notm}} offers a unique benefit for customers running SAP on IBM Power: it enables a streamlined, low disruption move to SAP Cloud ERP Private by preserving existing architecture patterns while delivering the scalability and operational efficiency of a hyperscaler cloud.
 
 
 ## Journey to RISE with SAP
