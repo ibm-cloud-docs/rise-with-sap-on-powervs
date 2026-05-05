@@ -30,7 +30,7 @@ For more than half a century, enterprises have relied on IBM infrastructure to r
 
 The [RISE with SAP](https://www.sap.com/products/erp/rise.html){: external} offering is an SAP&reg; managed cloud service that helps organizations using on-premise ERP software that includes SAP ERP, SAP ECC, and SAP S/4HANA, to migrate to the SAP Business Suite securely and smoothly. RISE with SAP is tailored to help larger enterprises migrate their existing ERP data, processes, and capabilities to SAP Cloud ERP Private.
 
-RISE with SAP is a fully accredited cloud infrastructure-managed service that includes technical system operations, software support, and security services based on best-practice cloud architecture, and includes management of the operating system, SAP HANA database, and SAP Cloud ERP Private application.
+RISE with SAP is a fully accredited cloud infrastructure-managed service that includes technical system operations, software support, and security services based on best-practice cloud architecture. SAP manages the entire solution stack, including the operating system, SAP HANA database, and SAP Cloud ERP Private application.
 
 The RISE with SAP offering:
 
