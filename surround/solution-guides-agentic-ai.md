@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-05-05"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -117,7 +117,7 @@ MCP (Model Context Protocol) servers provide the integration layer between agent
 - Reusable across multiple agents
 - Centralized SAP connectivity
 
-**Key Use Cases:**
+**Key Use Case Examples:**
 
 1. **Real-time Inventory Management**
    - E-commerce platforms checking product availability across SAP warehouses
@@ -148,7 +148,7 @@ Agents invoke tools on the MCP server, which translates requests into SAP API ca
 **Overview:**
 Agents on watsonx.orchestrate consume MCP server tools to interact with SAP, enabling reasoning about SAP data and executing operations.
 
-**Key Use Cases:**
+**Key Use Case Examples:**
 
 1. **Intelligent Order Processing**
    - Customer service agent handles complex order inquiries with natural language understanding
@@ -184,7 +184,7 @@ Agents use A2A protocol to collaborate on complex multi-domain tasks, enabling t
 - Asynchronous communication
 - Task decomposition and delegation
 
-**Key Use Cases:**
+**Key Use Case Examples:**
 
 1. **End-to-End Order Fulfillment**
    - Orchestrator coordinates sales, inventory, logistics, and finance agents
@@ -218,7 +218,7 @@ An orchestrator agent coordinates specialized agents using the A2A protocol for 
 **Overview:**
 Applications (web, mobile, enterprise) integrate with SAP-enabled agents for intelligent, conversational SAP interfaces.
 
-**Key Use Cases:**
+**Key Use Case Examples:**
 
 1. **Conversational E-commerce**
    - AI-powered shopping assistant with SAP inventory integration
@@ -280,7 +280,7 @@ For detailed guidance, see **[SAP Data Integration Patterns for IBM Cloud](solut
 **Overview:**
 SAP events trigger real-time agent actions for reactive automation.
 
-**Use Cases:** Order processing, inventory alerts, customer service automation, transaction monitoring
+**Use Case Examples:** Order processing, inventory alerts, customer service automation, transaction monitoring
 
 **Supporting IBM Cloud Services:** Event Streams, Code Engine, Cloud Functions
 

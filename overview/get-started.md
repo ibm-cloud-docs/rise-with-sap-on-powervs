@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-27"
+lastupdated: "2026-05-05"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, {{site.data.keyword.ibm_cloud_sap}}, Benefits of RISE with SAP on IBM Cloud, IBM {{site.data.keyword.powerSys_notm}}, SAP modernization
 
@@ -12,7 +12,7 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Get started
+# Getting started
 {: #get-started}
 
 This documentation provides architectural considerations and implementation guidance for integrating SAP workloads with **SAP Cloud ERP Private** on **{{site.data.keyword.powerSysFull}}**.
