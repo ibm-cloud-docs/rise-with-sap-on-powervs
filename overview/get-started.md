@@ -35,7 +35,7 @@ RISE with SAP is a fully accredited cloud infrastructure-managed service that in
 The RISE with SAP offering:
 
 - Is a single contract with a unified service level agreement (SLA) for the entire solution stack, helping ensure consistent service quality across all components, simplifying procurement and management.
-- Includes ongoing support and maintenance for the entire solution stack, including infrastructure, platform, and application layers by using certified subject matter experts (SME) who handle operating system management tasks, such as patches, monitoring, and maintenance.
+- Includes ongoing support and maintenance for the entire solution stack, including infrastructure, platform, and application layers by using certified subject matter experts (SME) who handle operating environment management tasks, such as patches, monitoring, and maintenance.
 - Has the ability to scale up or down as needed with flexible pricing based on usage and consumption.
 - Has enhanced security and compliance features with built-in controls and monitoring to help protect data and meet regulatory requirements.
 - Enables integration with SAP Business Technology Platform, which provides advanced analytics, AI, and machine learning capabilities to help businesses make data-driven decisions and improve operational efficiency.
