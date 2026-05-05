@@ -37,7 +37,9 @@ All patterns follow these core principles:
 
 This guide presents three complementary patterns for SAP data integration:
 
-**Pattern 1: API-Based Integration (OData)**
+### Pattern 1: API-Based Integration (OData)
+{: #solution-data-integration-patterns-pattern1}
+
 - **Description**: Direct, real-time API access to SAP data
 - **Data Movement**: None—consume on-demand
 - **Complexity**: Low
@@ -45,7 +47,9 @@ This guide presents three complementary patterns for SAP data integration:
 - **Best For**: Real-time queries, agentic AI, conversational queries, low-volume access
 - **Example**: Customer service chatbot querying order status
 
-**Pattern 2: Zero-Copy Data Access via watsonx.data**
+### Pattern 2: Zero-Copy Data Access via watsonx.data
+{: #solution-data-integration-patterns-pattern2}
+
 - **Description**: Federated queries without physical data movement; access SAP data where it lives using open standards
 - **Data Movement**: Minimal/None
 - **Complexity**: Medium-High
@@ -53,14 +57,16 @@ This guide presents three complementary patterns for SAP data integration:
 - **Best For**: Large-scale analytics, federated queries, multi-source integration, cost-sensitive scenarios
 - **Example**: Cross-system financial consolidation
 - **Three sub-patterns:**
-  - **2A - Native Connectors**: Standard federated queries using built-in watsonx.data connectors
-  - **2B - Streaming Integration**: Near-real-time analytics with event-driven architectures using Kafka/Confluent Cloud streaming SAP CDC events to Iceberg tables (e.g., TableFlow, custom Kafka consumers)
-  - **2C - Delta Sharing**: True zero-copy access using SAP Datasphere and Delta Sharing protocol
+    - **2A - Native Connectors**: Standard federated queries using built-in watsonx.data connectors
+    - **2B - Streaming Integration**: Near-real-time analytics with event-driven architectures using Kafka/Confluent Cloud streaming SAP CDC events to Iceberg tables (e.g., TableFlow, custom Kafka consumers)
+    - **2C - Delta Sharing**: True zero-copy access using SAP Datasphere and Delta Sharing protocol
   
 The Delta Sharing protocol integration is currently under development by the watsonx.data team. Please refer to [watsonx.data documentation](https://cloud.ibm.com/docs/watsonxdata) for the latest availability information.
 {: note}
 
-**Pattern 3: Data Enrichment in watsonx.data Fabric**
+### Pattern 3: Data Enrichment in watsonx.data Fabric
+{: #solution-data-integration-patterns-pattern3}
+
 - **Description**: Selective data extraction with temporary materialization; enrich with ML predictions, external data, and derived metrics
 - **Data Movement**: Selective
 - **Complexity**: High
@@ -78,9 +84,9 @@ Choose your pattern based on your primary use case and requirements:
 - **Pattern 1 (API-Based)** is ideal when you need real-time data access for conversational AI, chatbots, or low-volume queries where data freshness is critical and you want to avoid any data storage.
 
 - **Pattern 2 (Zero-Copy)** is best for large-scale analytics where you want to minimize data movement and storage costs. Choose the sub-pattern based on your specific needs:
-  - Use **2A (Native Connectors)** for standard batch analytics with built-in watsonx.data connectors
-  - Use **2B (Streaming)** for near-real-time or event-driven analytics requiring continuous data updates
-  - Use **2C (Delta Sharing)** when you have SAP Datasphere and want true zero-copy access with SAP-native governance
+    - Use **2A (Native Connectors)** for standard batch analytics with built-in watsonx.data connectors
+    - Use **2B (Streaming)** for near-real-time or event-driven analytics requiring continuous data updates
+    - Use **2C (Delta Sharing)** when you have SAP Datasphere and want true zero-copy access with SAP-native governance
 
 - **Pattern 3 (Enrichment)** is the right choice when you need to combine SAP data with ML predictions, external data sources, or complex transformations that justify temporary data materialization and storage.
 
@@ -375,22 +381,25 @@ These patterns enable MCP (Model Context Protocol) tools and AI agents to access
 {: #solution-data-integration-ai-integration-examples}
 
 **Pattern 1 - Conversational:**
-```
+```text
 User: "What's the status of order 12345?"
 Agent: [get_order_status tool] → Real-time SAP data
 ```
+{: codeblock}
 
 **Pattern 2 - Analytics:**
-```
+```text
 User: "Show me trends for premium customers in Q1"
 Agent: [analyze_customer_trends tool] → Federated query across SAP + CRM
 ```
+{: codeblock}
 
 **Pattern 3 - Predictive:**
-```
+```text
 User: "Is customer ABC123 at risk of churning?"
 Agent: [predict_customer_churn tool] → ML prediction from enriched data
 ```
+{: codeblock}
 
 ### Multi-Pattern Agents
 {: #solution-data-integration-ai-integration-multi-pattern-agents}

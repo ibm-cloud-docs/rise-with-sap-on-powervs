@@ -314,16 +314,16 @@ SAP events trigger real-time agent actions for reactive automation.
   - **High**: Significant custom development, complex architecture design
 
 - **Response Time**
-  - **Very Low (ms)**: < 100ms - Event-driven triggers, direct API calls
-  - **Low (ms)**: 100ms - 1s - Simple operations without LLM reasoning
-  - **Low-Medium**: 1-3s - API operations with light processing
-  - **Medium (seconds)**: 2-10s - Single agent with LLM reasoning
-  - **Medium-High (seconds)**: 5-15s - Multi-agent coordination, complex workflows
-  - **Low-High***: Variable - Depends on data source (API: low, federation: high)
+    - **Very Low (ms)**: < 100ms - Event-driven triggers, direct API calls
+    - **Low (ms)**: 100ms - 1s - Simple operations without LLM reasoning
+    - **Low-Medium**: 1-3s - API operations with light processing
+    - **Medium (seconds)**: 2-10s - Single agent with LLM reasoning
+    - **Medium-High (seconds)**: 5-15s - Multi-agent coordination, complex workflows
+    - **Low-High***: Variable - Depends on data source (API: low, federation: high)
 
 - **Scalability**
-  - **High**: Supports 100s-1,000s of concurrent operations
-  - **Very High**: Supports 10,000+ concurrent operations with horizontal scaling
+    - **High**: Supports 100s-1,000s of concurrent operations
+    - **Very High**: Supports 10,000+ concurrent operations with horizontal scaling
 
 **Selection Guidance:** Choose based on requirements; patterns can be combined (e.g., Event-Driven + Agent-MCP)
 
@@ -395,6 +395,7 @@ SAP events trigger real-time agent actions for reactive automation.
 
 ### IBM Cloud-Based Deployment
 {: #solution-agentic-ai-deployment-patterns-ibmcloud}
+
 Applications, agents, and MCP servers deployed on IBM Cloud infrastructure using managed services (Code Engine/OpenShift, watsonx.orchestrate, watsonx.data) for unified data access.
 
 ### Hybrid with External Agents
@@ -403,6 +404,7 @@ IBM Cloud agents communicate with external/partner agents via A2A protocol for m
 
 ### Edge-to-Cloud
 {: #solution-agentic-ai-deployment-patterns-edge}
+
 Local agents at edge/on-premises for low-latency processing, with cloud agents for complex tasks and scalability.
 
 > **Reference**: For detailed workflow patterns, see [IBM Cloud Agentic AI Workflow Documentation](https://cloud.ibm.com/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow).
@@ -444,6 +446,8 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 {: #solution-agentic-ai-implementation-best-practices}
 
 ### Development Workflow
+{: #solution-agentic-ai-implementation-best-practices-development-workflow}
+
 1. **Design**: Define agent capabilities, map SAP integration points, design MCP tools
 2. **Develop**: Implement MCP servers, develop agent logic, create applications
 3. **Test**: Integration, load, security, and UAT with SAP sandbox
@@ -494,6 +498,7 @@ By following the patterns and guidelines in this document, organizations can bui
 
 ### IBM Cloud Documentation
 {: #solution-agentic-ai-additional-resources-ibm-cloud-documentation}
+
 - [IBM Cloud Agentic AI Workflow Pattern](https://cloud.ibm.com/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow) - **Primary Reference**
 - [Accelerate Gen AI on IBM Cloud with Deployable Architectures](https://developer.ibm.com/tutorials/awb-maximize-gen-ai-on-ibm-cloud-deployable-architectures/)
 - [IBM watsonx.orchestrate Documentation](https://www.ibm.com/docs/en/watsonx/orchestrate)
@@ -503,6 +508,7 @@ By following the patterns and guidelines in this document, organizations can bui
 
 ### External Resources
 {: #solution-agentic-ai-additional-resources-external-resources}
+
 - [SAP API Business Hub](https://api.sap.com/)
 - [Model Context Protocol (MCP) Specification](https://modelcontextprotocol.io/)
 - [Agent-to-Agent (A2A) Protocol](https://a2a.ai/)
