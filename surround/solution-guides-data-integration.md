@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-22"
+lastupdated: "2026-05-05"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -16,10 +16,12 @@ subcollection: rise-with-sap-on-powervs
 {: #solution-data-integration}
 
 ## Overview
+{: #solution-data-integration-overview}
 
 This guide presents three integration patterns for consuming SAP data in IBM Cloud environments while maintaining compliance with SAP's usage terms and conditions. Each pattern is optimized for specific use cases—from real-time queries to complex analytics and ML workloads.
 
 ### Key Principles
+{: #solution-data-integration-overview-key-principles}
 
 All patterns follow these core principles:
 
@@ -31,6 +33,7 @@ All patterns follow these core principles:
 * **Flexible Architecture**: Support diverse use cases from agentic AI to business intelligence while maintaining SAP compliance
 
 ## SAP Data Integration Patterns
+{: #solution-data-integration-patterns}
 
 This guide presents three complementary patterns for SAP data integration:
 
@@ -86,8 +89,10 @@ Many organizations use multiple patterns simultaneously—for example, Pattern 1
 ---
 
 ## Pattern 1: API-Based Integration (OData)
+{: #solution-data-integration-pattern1}
 
 ### Overview
+{: #solution-data-integration-pattern1-overview}
 
 Direct API access to SAP data for real-time queries. Data is consumed on-demand without storage, making it ideal for agentic AI and low-volume access scenarios.
 
@@ -99,6 +104,7 @@ Direct API access to SAP data for real-time queries. Data is consumed on-demand 
 - ❌ Avoid for high-volume analytics or complex joins
 
 ### Use Cases
+{: #solution-data-integration-pattern1-usecases}
 
 **Real-World Examples:**
 - **Customer Service Chatbots**: Query order status, delivery information, or customer details in real-time
@@ -107,10 +113,11 @@ Direct API access to SAP data for real-time queries. Data is consumed on-demand 
 - **On-Demand Reports**: Generate financial or operational reports with current data
 
 ### Architecture
+{: #solution-data-integration-pattern1-architecture}
 
 **Architecture Diagram:**
 
-![SAP Data Integration Pattern 1](../images/data/SAP-data-integration-pattern-1.svg)
+![SAP Data Integration Pattern 1](../images/data/SAP-data-integration-pattern-1.svg){: caption="SAP Data Integration Pattern 1" caption-side="bottom"}
 
 **Architecture Components:**
 
@@ -136,6 +143,7 @@ For detailed network connectivity options, see [Integration Overview](../integra
 - **Certificate-based**: Mutual TLS authentication for highest security requirements
 
 ### Considerations
+{: #solution-data-integration-pattern1-considerations}
 
 **Advantages:**
 - ✅ **SAP Compliant**: No data storage, fully compliant with SAP usage terms
@@ -159,8 +167,10 @@ For detailed network connectivity options, see [Integration Overview](../integra
 ---
 
 ## Pattern 2: Zero-Copy Data Access via watsonx.data
+{: #solution-data-integration-pattern2}
 
 ### Overview
+{: #solution-data-integration-pattern2-overview}
 
 Access SAP data without physical movement using watsonx.data and open standards (Iceberg, Delta Sharing). Data stays in SAP while enabling federated queries, making it ideal for large-scale analytics and multi-source integration.
 
@@ -177,6 +187,7 @@ Access SAP data without physical movement using watsonx.data and open standards 
 - **2C - Delta Sharing**: True zero-copy access using SAP Datasphere and Delta Sharing protocol
 
 ### Use Cases
+{: #solution-data-integration-pattern2-usecases}
 
 **Real-World Examples:**
 - **Cross-System Financial Consolidation**: Combine financial data from multiple SAP instances and external systems for enterprise-wide reporting
@@ -185,10 +196,11 @@ Access SAP data without physical movement using watsonx.data and open standards 
 - **Multi-Cloud Analytics**: Federate queries across SAP on IBM Cloud and data in other cloud platforms
 
 ### Architecture
+{: #solution-data-integration-pattern2-architecture}
 
 **Architecture Diagram:**
 
-![SAP Data Integration Pattern 1](../images/data/SAP-data-integration-pattern-2.svg)
+![SAP Data Integration Pattern 2](../images/data/SAP-data-integration-pattern-2.svg){: caption="SAP Data Integration Pattern 2" caption-side="bottom"}
 
 
 
@@ -215,6 +227,7 @@ For detailed network connectivity options, see [Integration Overview](../integra
 - **RBAC**: Role-based access control in watsonx.data
 
 ### Considerations
+{: #solution-data-integration-pattern2-considerations}
 
 **Advantages:**
 - ✅ **Zero-Copy Access**: Especially with Delta Sharing, no data duplication
@@ -237,8 +250,10 @@ For detailed network connectivity options, see [Integration Overview](../integra
 ---
 
 ## Pattern 3: Data Enrichment in watsonx.data Fabric
+{: #solution-data-integration-pattern3}
 
 ### Overview
+{: #solution-data-integration-pattern3-overview}
 
 Selective data movement from SAP to watsonx.data for enrichment with ML predictions, external data, and derived metrics. Data is temporarily materialized for processing, making it ideal for AI/ML workloads and complex transformations.
 
@@ -255,6 +270,7 @@ Selective data movement from SAP to watsonx.data for enrichment with ML predicti
 - Enriched/transformed data can be stored indefinitely per SAP usage terms
 
 ### Use Cases
+{: #solution-data-integration-pattern3-usecases}
 
 **Real-World Examples:**
 - **Customer Churn Prediction**: Extract customer data, enrich with usage patterns, social sentiment, and support interactions; train ML models to predict churn risk
@@ -263,11 +279,11 @@ Selective data movement from SAP to watsonx.data for enrichment with ML predicti
 - **Product Recommendation Engines**: Enrich SAP sales and customer data with browsing behavior, social media activity, and demographic data for personalized recommendations
 
 ### Architecture
+{: #solution-data-integration-pattern3-architecture}
 
 **Architecture Diagram:**
 
-![SAP Data Integration Pattern 1](../images/data/SAP-data-integration-pattern-3.svg)
-
+![SAP Data Integration Pattern 3](../images/data/SAP-data-integration-pattern-3.svg){: caption="SAP Data Integration Pattern 3" caption-side="bottom"}
 
 
 **Architecture Components:**
@@ -294,6 +310,7 @@ For detailed network connectivity options, see [Integration Overview](../integra
 - **Certificate-based**: Mutual TLS for secure data extraction
 
 ### Considerations
+{: #solution-data-integration-pattern3-considerations}
 
 **Advantages:**
 - ✅ **Rich Enrichment**: Combine SAP data with ML predictions, external data, and derived metrics
@@ -318,6 +335,7 @@ For detailed network connectivity options, see [Integration Overview](../integra
 ---
 
 ## Pattern Comparison
+{: #solution-data-integration-pattern-comparison}
 
 This table provides a side-by-side comparison of the three integration patterns to help you select the right approach for your requirements:
 
@@ -332,6 +350,7 @@ This table provides a side-by-side comparison of the three integration patterns 
 | **Scalability** | Limited - constrained by API limits | High - scales with query engine | Very High - scales with data platform |
 | **Data Freshness** | Real-time - always current | Near real-time - depends on sub-pattern | Batch/streaming - scheduled or continuous |
 | **Setup Time** | Quick - hours to days | Medium - days to weeks | Long - weeks to months |
+{: caption="Pattern comparison" caption-side="top"}
 
 **Key Takeaways:**
 - **Pattern 1** is best for simplicity and real-time access with low volume
@@ -341,6 +360,7 @@ This table provides a side-by-side comparison of the three integration patterns 
 ---
 
 ## Agentic AI Integration
+{: #solution-data-integration-ai-integration}
 
 These patterns enable MCP (Model Context Protocol) tools and AI agents to access SAP data. Each pattern supports different agent use cases:
 
@@ -349,8 +369,10 @@ These patterns enable MCP (Model Context Protocol) tools and AI agents to access
 | **1: API-Based** | Real-time conversational agents | MCP server with OData tools | Immediate SAP data access |
 | **2: Zero-Copy** | Analytics agents | MCP server with watsonx.data | Federated queries across sources |
 | **3: Enrichment** | ML-powered agents | MCP server with enriched data | Pre-computed features and predictions |
+{: caption="Pattern use cases" caption-side="top"}
 
 ### Agent Examples
+{: #solution-data-integration-ai-integration-examples}
 
 **Pattern 1 - Conversational:**
 ```
@@ -371,6 +393,7 @@ Agent: [predict_customer_churn tool] → ML prediction from enriched data
 ```
 
 ### Multi-Pattern Agents
+{: #solution-data-integration-ai-integration-multi-pattern-agents}
 
 Complex agents combine patterns:
 - Pattern 1: Real-time order status
@@ -378,6 +401,7 @@ Complex agents combine patterns:
 - Pattern 3: Delivery issue predictions
 
 ### Best Practices
+{: #solution-data-integration-ai-integration-best-practices}
 
 **Pattern Selection:**
 - Pattern 1: Real-time, transactional queries
@@ -401,6 +425,7 @@ For complete agentic AI patterns, see [Building Agentic AI Solutions in IBM Clou
 ---
 
 ## Additional Resources
+{: #solution-data-integration-additional-resources}
 
 **IBM Cloud:**
 - [watsonx.data](https://cloud.ibm.com/docs/watsonxdata)

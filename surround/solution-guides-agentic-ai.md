@@ -16,6 +16,7 @@ subcollection: rise-with-sap-on-powervs
 {: #solution-agentic-ai}
 
 ## Introduction
+{: #solution-agentic-ai-introduction}
 
 This guide covers building Agentic AI solutions on IBM Cloud that integrate with SAP data and resources as surround workloads. These solutions leverage autonomous agents that can reason, plan, and execute tasks using tools and data sources. By connecting to RISE with SAP environments, Agentic AI enables automation of complex SAP business processes and provides intelligent enterprise assistance.
 
@@ -26,7 +27,7 @@ This guide covers building Agentic AI solutions on IBM Cloud that integrate with
 
 Agentic AI solutions are built on multiple interconnected layers, each serving a specific purpose in the overall architecture:
 
-![IBM Cloud Agentic AI Architecture Layers](../images/ai/Agentic_AI_layers.svg)
+![IBM Cloud Agentic AI Architecture Layers](../images/ai/Agentic_AI_layers.svg){: caption="IBM Cloud Agentic AI Architecture Layers" caption-side="bottom"}
 
 ### 1. Resource Layer
 {: #solution-agentic-ai-architecture-layers-resource}
@@ -103,7 +104,7 @@ The Application Layer represents user-facing interfaces and backend services tha
 
 Four primary patterns connect Agentic AI solutions with RISE with SAP. Each addresses different integration needs and can be combined for comprehensive solutions.
 
-![IBM Cloud Agentic AI Architecture Layers](../images/ai/SAP_Surround_agent_integration_patterns.svg)
+![Agent integration patterns](../images/ai/SAP_Surround_agent_integration_patterns.svg){: caption="Agent integration patterns" caption-side="bottom"}
 
 ### Pattern 1: MCP Server Integration with SAP
 {: #solution-agentic-ai-sap-integration-patterns-1}
@@ -253,6 +254,7 @@ Applications interact with SAP-enabled agents through an API Gateway that provid
 The four primary patterns can be enhanced with advanced data and event integration capabilities.
 
 #### Data-Centric Integration via watsonx.data
+{: #solution-agentic-ai-sap-integration-patterns-enhanced-data-centric}
 
 **Overview:**
 watsonx.data provides unified data access for SAP and enterprise data sources, essential for data-intensive MCP tools.
@@ -272,10 +274,12 @@ For detailed guidance, see **[SAP Data Integration Patterns for IBM Cloud](solut
 | Real-time queries (chatbots) | API-Based | Low latency, always current |
 | Analytics (cross-system reports) | Zero-Copy | Federated queries, no duplication |
 | ML predictions | Enrichment | Feature engineering, model training |
+{: caption="Pattern selection" caption-side="top"}
 
 **Supporting IBM Cloud Services:** watsonx.data, Object Storage, Cloud Databases, Event Streams
 
 #### Event-Driven Integration
+{: #solution-agentic-ai-sap-integration-patterns-enhanced-event-driven-integration}
 
 **Overview:**
 SAP events trigger real-time agent actions for reactive automation.
@@ -287,6 +291,7 @@ SAP events trigger real-time agent actions for reactive automation.
 ---
 
 ## Integration Pattern Comparison
+{: #solution-agentic-ai-integration-pattern-comparison}
 
 | Pattern | Design Effort | Response Time | Scalability | Best For |
 |---------|--------------|---------------|-------------|----------|
@@ -296,6 +301,7 @@ SAP events trigger real-time agent actions for reactive automation.
 | **App-Agent** | Medium | Low-Medium | High | End-user applications |
 | **Data-Centric** | Low-Medium | Low-High* | Very High | Analytics, ML |
 | **Event-Driven** | Low | Very Low (ms) | Very High | Real-time automation |
+{: caption="Integration pattern comparison" caption-side="top"}
 
 *Response time varies: Lakehouse (pre-loaded data) is faster than virtualization (real-time federation)
 
@@ -324,9 +330,10 @@ SAP events trigger real-time agent actions for reactive automation.
 ---
 
 ## Deployment & Decision Factors
-{: #solution-agentic-ai-sap-integration-decision-factors}
+{: #solution-agentic-ai-deployment-decision-factors}
 
 ### Key Decision Areas
+{: #solution-agentic-ai-deployment-decision-factors-decision-areas}
 
 | Factor | Key Considerations | Recommendation |
 |--------|-------------------|----------------|
@@ -337,8 +344,11 @@ SAP events trigger real-time agent actions for reactive automation.
 | **Cost** | Serverless for variable, reserved for predictable | Monitor and right-size resources |
 | **Security** | Encryption, least-privilege, audit logging | Use Secrets Manager, enable compliance monitoring |
 | **Performance** | Multi-zone deployment, load balancing | Design for HA with disaster recovery |
+{: caption="Key decision areas" caption-side="top"}
+
 
 ### Deployment Comparison
+{: #solution-agentic-ai-deployment-decision-factors-deployment-comparison}
 
 | Requirement | Code Engine | OpenShift | Hybrid |
 |------------|-------------|-----------|--------|
@@ -347,47 +357,52 @@ SAP events trigger real-time agent actions for reactive automation.
 | Complex networking | ⚠️ Limited | ✅ Best | ✅ Flexible |
 | Rapid dev/test | ✅ Best | ⚠️ More setup | ⚠️ More setup |
 | Enterprise governance | ⚠️ Basic | ✅ Best | ✅ Comprehensive |
+{: caption="Deployment comparison" caption-side="top"}
 
 **Legend:** ✅ Best | ⚠️ Works with caveats | 💰 Works but costly
 
 **Detailed Comparison:**
 
 - **Variable Load**
-  - **Code Engine (✅)**: Auto-scales to zero, pay only for actual usage, ideal for unpredictable traffic
-  - **OpenShift (💰)**: Always-on infrastructure incurs costs even during low usage periods
-  - **Hybrid (⚠️)**: Over-engineered for simple variable load scenarios
+    - **Code Engine (✅)**: Auto-scales to zero, pay only for actual usage, ideal for unpredictable traffic
+    - **OpenShift (💰)**: Always-on infrastructure incurs costs even during low usage periods
+    - **Hybrid (⚠️)**: Over-engineered for simple variable load scenarios
 
 - **Consistent Load**
-  - **Code Engine (💰)**: Continuous usage makes serverless pricing expensive vs reserved capacity
-  - **OpenShift (✅)**: Reserved capacity provides better economics for predictable workloads
-  - **Hybrid (✅)**: Optimal cost balance using OpenShift for baseline, Code Engine for peaks
+    - **Code Engine (💰)**: Continuous usage makes serverless pricing expensive vs reserved capacity
+    - **OpenShift (✅)**: Reserved capacity provides better economics for predictable workloads
+    - **Hybrid (✅)**: Optimal cost balance using OpenShift for baseline, Code Engine for peaks
 
 - **Complex Networking**
-  - **Code Engine (⚠️)**: Limited VPC integration, basic networking features
-  - **OpenShift (✅)**: Full Kubernetes networking, service mesh, advanced routing
-  - **Hybrid (✅)**: Leverage OpenShift networking while using Code Engine where appropriate
+    - **Code Engine (⚠️)**: Limited VPC integration, basic networking features
+    - **OpenShift (✅)**: Full Kubernetes networking, service mesh, advanced routing
+    - **Hybrid (✅)**: Leverage OpenShift networking while using Code Engine where appropriate
 
 - **Rapid Dev/Test**
-  - **Code Engine (✅)**: Zero infrastructure setup, deploy in minutes, instant scaling
-  - **OpenShift (⚠️)**: Requires cluster setup, configuration, more initial overhead
-  - **Hybrid (⚠️)**: Additional complexity managing two platforms
+    - **Code Engine (✅)**: Zero infrastructure setup, deploy in minutes, instant scaling
+    - **OpenShift (⚠️)**: Requires cluster setup, configuration, more initial overhead
+    - **Hybrid (⚠️)**: Additional complexity managing two platforms
 
 - **Enterprise Governance**
-  - **Code Engine (⚠️)**: Basic RBAC, limited policy controls, simpler compliance features
-  - **OpenShift (✅)**: Advanced RBAC, network policies, compliance operators, audit logging
-  - **Hybrid (✅)**: Comprehensive governance across both platforms with unified policies
+    - **Code Engine (⚠️)**: Basic RBAC, limited policy controls, simpler compliance features
+    - **OpenShift (✅)**: Advanced RBAC, network policies, compliance operators, audit logging
+    - **Hybrid (✅)**: Comprehensive governance across both platforms with unified policies
 
 ---
 
 ## Deployment Patterns
+{: #solution-agentic-ai-deployment-patterns}
 
 ### IBM Cloud-Based Deployment
+{: #solution-agentic-ai-deployment-patterns-ibmcloud}
 Applications, agents, and MCP servers deployed on IBM Cloud infrastructure using managed services (Code Engine/OpenShift, watsonx.orchestrate, watsonx.data) for unified data access.
 
 ### Hybrid with External Agents
+{: #solution-agentic-ai-deployment-patterns-hybrid}
 IBM Cloud agents communicate with external/partner agents via A2A protocol for multi-organization workflows.
 
 ### Edge-to-Cloud
+{: #solution-agentic-ai-deployment-patterns-edge}
 Local agents at edge/on-premises for low-latency processing, with cloud agents for complex tasks and scalability.
 
 > **Reference**: For detailed workflow patterns, see [IBM Cloud Agentic AI Workflow Documentation](https://cloud.ibm.com/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow).
@@ -395,9 +410,10 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 ---
 
 ## IBM Cloud Services for Agentic AI
-{: #solution-agentic-ai-sap-integration-ibmcloud-services}
+{: #solution-agentic-ai-ibmcloud-services}
 
 ### Core Services
+{: #solution-agentic-ai-ibmcloud-services-core-services}
 
 | Service | Purpose | Key Capabilities |
 |---------|---------|------------------|
@@ -419,12 +435,13 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 | **IBM Cloud Monitoring** | Infrastructure monitoring | Metrics, dashboards, alerts, performance monitoring |
 | **IBM Cloud Log Analysis** | Log management | Centralized logging, search, filtering, real-time analysis |
 | **Security and Compliance Center** | Security posture | Compliance monitoring, threat detection, audit logging |
+{: caption="Core services" caption-side="top"}
 
 ---
 
 
 ## Implementation Best Practices
-{: #solution-agentic-ai-sap-integration-implementation-considerations}
+{: #solution-agentic-ai-implementation-best-practices}
 
 ### Development Workflow
 1. **Design**: Define agent capabilities, map SAP integration points, design MCP tools
@@ -435,6 +452,7 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 > **Reference**: [IBM Cloud Agentic AI Workflow Documentation](https://cloud.ibm.com/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow)
 
 ### Key Best Practices
+{: #solution-agentic-ai-implementation-best-practices-key-best-practices}
 
 | Area | Best Practices |
 |------|---------------|
@@ -442,8 +460,10 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 | **MCP Servers** | RESTful APIs, idempotency, rate limiting, versioning |
 | **SAP Integration** | Connection pooling, batch operations, event-driven updates, retry logic |
 | **Security** | Zero trust, least privilege, secrets rotation, audit trails |
+{: caption="Key best practices" caption-side="top"}
 
 ### Monitoring & Troubleshooting
+{: #solution-agentic-ai-implementation-best-practices-monitoring-troubleshooting}
 
 **Key Metrics**: Agent response time, tool execution success rate, SAP API latency, error rates, resource utilization, cost per transaction
 
@@ -454,7 +474,7 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 ---
 
 ## Conclusion
-{: #solution-agentic-ai-sap-integration-conclusion}
+{: #solution-agentic-ai-conclusion}
 
 Building Agentic AI solutions in IBM Cloud with RISE with SAP integration requires careful consideration of architecture, deployment patterns, and service selection. The flexibility of IBM Cloud services allows organizations to choose the right balance of performance, cost, and complexity for their specific needs.
 
@@ -470,9 +490,10 @@ By following the patterns and guidelines in this document, organizations can bui
 ---
 
 ## Additional Resources
-{: #solution-agentic-ai-sap-integration-additional-resources}
+{: #solution-agentic-ai-additional-resources}
 
 ### IBM Cloud Documentation
+{: #solution-agentic-ai-additional-resources-ibm-cloud-documentation}
 - [IBM Cloud Agentic AI Workflow Pattern](https://cloud.ibm.com/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow) - **Primary Reference**
 - [Accelerate Gen AI on IBM Cloud with Deployable Architectures](https://developer.ibm.com/tutorials/awb-maximize-gen-ai-on-ibm-cloud-deployable-architectures/)
 - [IBM watsonx.orchestrate Documentation](https://www.ibm.com/docs/en/watsonx/orchestrate)
@@ -481,6 +502,7 @@ By following the patterns and guidelines in this document, organizations can bui
 - [watsonx.data Documentation](https://www.ibm.com/docs/en/watsonx/watsonxdata)
 
 ### External Resources
+{: #solution-agentic-ai-additional-resources-external-resources}
 - [SAP API Business Hub](https://api.sap.com/)
 - [Model Context Protocol (MCP) Specification](https://modelcontextprotocol.io/)
 - [Agent-to-Agent (A2A) Protocol](https://a2a.ai/)
