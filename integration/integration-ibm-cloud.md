@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-05-06"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -19,7 +19,7 @@ subcollection: rise-with-sap-on-powervs
 This use case illustrates a setup, where your RISE with SAP on {{site.data.keyword.powerSysFull}} workloads are running in the SAP® {{site.data.keyword.cloud_notm}} account, and your {{site.data.keyword.cloud_notm}} surround workloads run in your own {{site.data.keyword.cloud_notm}} account. This is a typical scenario for hybrid cloud designs.
 {: shortdesc}
 
-There are two types of connectivity patterns for peering your {{site.data.keyword.cloud_notm}} surround workloads to your RISE with SAP on {{site.data.keyword.powerSys_notm}} workloads:
+There are two types of connectivity patterns for interconnecting your {{site.data.keyword.cloud_notm}} surround workloads to your RISE with SAP on {{site.data.keyword.powerSys_notm}} workloads:
 
 * {{site.data.keyword.cloud_notm}} Transit Gateway
 * {{site.data.keyword.cloud_notm}} Site-to-Site VPN

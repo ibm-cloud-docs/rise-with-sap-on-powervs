@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-17"
+lastupdated: "2026-05-06"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -15,7 +15,7 @@ subcollection: rise-with-sap-on-powervs
 # Overview
 {: #integration-overview}
 
-With RISE with SAP on {{site.data.keyword.powerSysFull}}, the SAP&reg; Enterprise Cloud Services (ECS) team manages the SAP systems, however, it is your responsibility to establish network connectivity and domain name server (DNS) resolution to RISE with SAP on {{site.data.keyword.powerSysFull}}. IBM recommends that you consult with your SAP representative to understand the available options on how to connect your on-premises networks and your IBM Cloud account networks to the RISE with SAP on {{site.data.keyword.powerSysFull}} networks.
+With RISE with SAP on {{site.data.keyword.powerSysFull}}, the SAP&reg; team manages the SAP systems, however, it is your responsibility to establish network connectivity and domain name server (DNS) resolution to RISE with SAP on {{site.data.keyword.powerSysFull}}. IBM recommends that you consult with your SAP representative to understand the available options on how to connect your on-premises networks and your IBM Cloud account networks to the RISE with SAP on {{site.data.keyword.powerSysFull}} networks.
 {: shortdesc}
 
 This document explains the concepts and best practices to follow for a performant and secure solution to connect your networks with the RISE with SAP on {{site.data.keyword.powerSysFull}}.
