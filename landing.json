@@ -11,16 +11,20 @@
         "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-get-started"
       },
       {
-        "title": "Surround Workloads",
-        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-overview"
+        "title": "IBM Offerings and Products",
+        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-ibm-offerings-and-products"
       },
       {
-        "title": "Surround Workloads by Use-case",
-        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-use-case"
+        "title": "Reference Architecture",
+        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-reference-architecture"
       },
       {
-        "title": "Surround Workloads by Platform",
-        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-platform"
+        "title": "Connectivity",
+        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-integration-overview"
+      },
+      {
+        "title": "Agentic AI",
+        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-solution-agentic-ai"
       }
     ]
   },
@@ -64,6 +68,10 @@
   "section_updates": {
     "view_more": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-overview",
     "tiles": [
+      {
+        "date": "11 May 2026",
+        "title": "Documentation refresh"
+      },
       {
         "date": "15 April 2025",
         "title": "Initial documentation"
