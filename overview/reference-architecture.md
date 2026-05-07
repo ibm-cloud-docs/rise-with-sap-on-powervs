@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-04-27"
+lastupdated: "2026-05-07"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, {{site.data.keyword.ibm_cloud_sap}}, Architecture diagram of RISE with SAP on IBM Power Virtual Server, IBM {{site.data.keyword.powerSys_notm}}, SAP modernization
 
@@ -12,7 +12,7 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Reference Architecture
+# Reference architecture
 {: #reference-architecture}
 
 ## Overview

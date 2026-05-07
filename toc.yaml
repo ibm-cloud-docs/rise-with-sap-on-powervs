@@ -31,7 +31,7 @@ toc:
           - integration/integration-ibm-cloud.md
           - integration/integration-internet.md
       - topicgroup:
-          label: Solution Guides
+          label: Solution guides
           topics:
           - surround/solution-guides-agentic-ai.md
           - surround/solution-guides-data-integration.md
