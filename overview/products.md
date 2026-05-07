@@ -56,7 +56,7 @@ Premium Suppliers are SAP partners who have demonstrated expertise in RISE with 
 
 [Learn more](https://www.ibm.com/consulting/rise-with-sap){: external}
 
-![Diagram comparing the SAP RISE IBM Premium Supplier Technical Stack (with IBM-managed services and {{site.data.keyword.cloud_notm}}, available since 2021) and RISE with SAP on IBM {{site.data.keyword.powerSys_notm}} Hyperscaler (with SAP-managed services, introduced in 2025).](images/sap-rise-on-power-virtual-server.svg "Solutions sold and delivered by SAP"){: caption="Comparison of SAP RISE IBM Premium Supplier and RISE with SAP on IBM {{site.data.keyword.powerSys_notm}} Hyperscaler technical stacks" caption-side="bottom"}
+![Diagram comparing the SAP RISE IBM Premium Supplier Technical Stack (with IBM-managed services and {{site.data.keyword.cloud_notm}}, available since 2021) and RISE with SAP on IBM {{site.data.keyword.powerSys_notm}} Hyperscaler (with SAP-managed services, introduced in 2025).](../images/sap-rise-on-power-virtual-server.svg "Solutions sold and delivered by SAP"){: caption="Comparison of SAP RISE IBM Premium Supplier and RISE with SAP on IBM {{site.data.keyword.powerSys_notm}} Hyperscaler technical stacks" caption-side="bottom"}
 
 
 ## IBM ManagePlus
