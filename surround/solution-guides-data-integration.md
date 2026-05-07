@@ -61,8 +61,15 @@ This guide presents three complementary patterns for SAP data integration:
     - **2B - Streaming Integration**: Near-real-time analytics with event-driven architectures using Kafka/Confluent Cloud streaming SAP CDC events to Iceberg tables (e.g., TableFlow, custom Kafka consumers)
     - **2C - Delta Sharing**: True zero-copy access using SAP Datasphere and Delta Sharing protocol
   
-- For streaming integration (Pattern 2B), SAP systems require partner add-ons to be able to send events to Kafka brokers like Confluent or IBM Event Streams.
-- The Delta Sharing protocol integration is currently under development by the watsonx.data team. Please refer to [watsonx.data documentation](https://cloud.ibm.com/docs/watsonxdata) for the latest availability information.
+For streaming integration (Pattern 2B), SAP systems require partner add-ons to be able to send events to Kafka brokers like Confluent or IBM Event Streams.
+{: note}
+
+The Delta Sharing protocol integration is currently under development by the watsonx.data team. Please refer to [watsonx.data documentation](https://cloud.ibm.com/docs/watsonxdata) for the latest availability information.
+{: note}
+
+Here is test:
+- item1
+- item2
 {: note}
 
 ### Pattern 3: Data Enrichment in watsonx.data Fabric
