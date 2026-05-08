@@ -1,7 +1,7 @@
 {
   "version": 2,
   "title": "RISE with SAP on Power Virtual Server",
-  "introduction": "This documentation provides considerations and guidance for RISE with SAP on IBM Power Virtual Server. For over half a century, enterprises have used IBM's infrastructure to host their mission-critical SAP systems for round-the-clock operations and safeguarding sensitive business data. As the next step to help accelerate their move to Cloud Enterprise Resource Planning (ERP), SAP will offer IBM Power Virtual Server as the hyperscaler cloud infrastructure for RISE with SAP.",
+  "introduction": "This documentation provides considerations and guidance for RISE with SAP on IBM Power Virtual Server. For over half a century, enterprises have used IBM's infrastructure to host their mission-critical SAP systems for round-the-clock operations and safeguarding sensitive business data. As the next step to help accelerate their move to SAP Cloud EPR Private, SAP now offers IBM Power Virtual Server as the hyperscaler cloud infrastructure for RISE with SAP.",
   "product_page": "https://www.ibm.com/cloud/rise-with-sap",
   "deployment_url": "https://cloud.ibm.com/catalog#deployable_architecture_tab",
   "section_topics": {
@@ -11,16 +11,20 @@
         "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-get-started"
       },
       {
-        "title": "Surround Workloads",
-        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-overview"
+        "title": "IBM Offerings and Products",
+        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-ibm-offerings-and-products"
       },
       {
-        "title": "Surround Workloads by Use-case",
-        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-use-case"
+        "title": "Reference Architecture",
+        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-reference-architecture"
       },
       {
-        "title": "Surround Workloads by Platform",
-        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-surround-workloads-by-platform"
+        "title": "Connectivity",
+        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-integration-overview"
+      },
+      {
+        "title": "Agentic AI",
+        "href": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-solution-agentic-ai"
       }
     ]
   },
@@ -64,6 +68,10 @@
   "section_updates": {
     "view_more": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-overview",
     "tiles": [
+      {
+        "date": "11 May 2026",
+        "title": "Documentation refresh"
+      },
       {
         "date": "15 April 2025",
         "title": "Initial documentation"
