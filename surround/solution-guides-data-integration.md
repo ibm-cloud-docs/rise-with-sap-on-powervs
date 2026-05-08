@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-05-07"
+lastupdated: "2026-05-08"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -156,7 +156,6 @@ For detailed network connectivity options, see [Integration Overview](../integra
 {: #solution-data-integration-pattern1-considerations}
 
 **Advantages:**
-- ✅ **SAP Compliant**: No data storage, fully compliant with SAP usage terms
 - ✅ **Real-Time Access**: Always queries live data from SAP
 - ✅ **Low Cost**: Minimal infrastructure and storage costs
 - ✅ **Simple Architecture**: Easy to implement and maintain
@@ -356,7 +355,6 @@ This table provides a side-by-side comparison of the three integration patterns 
 | **Complexity** | Low - simple API integration | Medium-High - requires watsonx.data setup | High - full data pipeline with enrichment |
 | **Cost** | Low - minimal infrastructure | Medium - watsonx.data platform costs | High - storage + compute + enrichment |
 | **Use Cases** | Ad-hoc queries, agentic AI, real-time lookups | Large-scale analytics, multi-source queries | ML/AI training, complex transformations |
-| **SAP Compliance** | ✅ Excellent - no data storage | ✅ Excellent - zero-copy access | ✅ Good - temporary materialization allowed |
 | **Scalability** | Limited - constrained by API limits | High - scales with query engine | Very High - scales with data platform |
 | **Data Freshness** | Real-time - always current | Near real-time - depends on sub-pattern | Batch/streaming - scheduled or continuous |
 | **Setup Time** | Quick - hours to days | Medium - days to weeks | Long - weeks to months |
