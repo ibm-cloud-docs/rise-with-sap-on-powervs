@@ -37,7 +37,7 @@
     },
     {
       "title": "Overview of IBM Cloud for SAP",
-      "description": "IBM Cloud for SAP provides a secure, resilient, and SAP‑certified cloud platform to run mission‑critical SAP.",
+      "description": "IBM Cloud for SAP provides a secure, resilient, and SAP-certified cloud platform to run mission-critical SAP.",
       "href": "/docs/sap?topic=sap-get-started",
       "type": "article",
       "recommended": true
