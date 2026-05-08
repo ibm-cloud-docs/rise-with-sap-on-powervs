@@ -36,10 +36,10 @@
       "type": "blog"
     },
     {
-      "title": "IBM Power Virtual Server Guide for IBM AIX and Linux",
-      "description": "This IBM Redbooks publication describes deployment, networking, and data management tasks on the IBM Power&reg; Virtual Server by using sample scenarios.",
-      "href": "https://www.redbooks.ibm.com/abstracts/sg248512.html#",
-      "type": "redbook",
+      "title": "Overview of IBM Cloud for SAP",
+      "description": "IBM Cloud for SAP provides a secure, resilient, and SAP-certified cloud platform to run mission-critical SAP.",
+      "href": "https://cloud.ibm.com/docs/sap?topic=sap-get-started",
+      "type": "article",
       "recommended": true
     }
   ],
