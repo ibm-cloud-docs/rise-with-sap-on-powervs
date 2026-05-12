@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-05-05"
+lastupdated: "2026-05-12"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -408,7 +408,7 @@ IBM Cloud agents communicate with external/partner agents via A2A protocol for m
 
 Local agents at edge/on-premises for low-latency processing, with cloud agents for complex tasks and scalability.
 
-> **Reference**: For detailed workflow patterns, see [IBM Cloud Agentic AI Workflow Documentation](https://cloud.ibm.com/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow).
+> **Reference**: For detailed workflow patterns, see [IBM Cloud Agentic AI Workflow Documentation](/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow).
 
 ---
 
@@ -454,7 +454,7 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 3. **Test**: Integration, load, security, and UAT with SAP sandbox
 4. **Deploy**: Deploy to Code Engine/OpenShift, configure agents, monitor
 
-> **Reference**: [IBM Cloud Agentic AI Workflow Documentation](https://cloud.ibm.com/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow)
+> **Reference**: [IBM Cloud Agentic AI Workflow Documentation](/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow)
 
 ### Key Best Practices
 {: #solution-agentic-ai-implementation-best-practices-key-best-practices}
@@ -500,16 +500,16 @@ By following the patterns and guidelines in this document, organizations can bui
 ### IBM Cloud Documentation
 {: #solution-agentic-ai-additional-resources-ibm-cloud-documentation}
 
-- [IBM Cloud Agentic AI Workflow Pattern](https://cloud.ibm.com/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow) - **Primary Reference**
+- [IBM Cloud Agentic AI Workflow Pattern](/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow) - **Primary Reference**
 - [Accelerate Gen AI on IBM Cloud with Deployable Architectures](https://developer.ibm.com/tutorials/awb-maximize-gen-ai-on-ibm-cloud-deployable-architectures/)
 - [IBM watsonx.orchestrate Documentation](https://www.ibm.com/docs/en/watsonx/orchestrate)
-- [IBM Cloud Code Engine](https://cloud.ibm.com/docs/codeengine)
-- [Red Hat OpenShift on IBM Cloud](https://cloud.ibm.com/docs/openshift)
-- [watsonx.data Documentation](https://www.ibm.com/docs/en/watsonx/watsonxdata)
+- [IBM Cloud Code Engine](/docs/codeengine)
+- [Red Hat OpenShift on IBM Cloud](/docs/openshift)
+- [watsonx.data Documentation](https://www.ibm.com/docs/en/watsonxdata/standard)
 
 ### External Resources
 {: #solution-agentic-ai-additional-resources-external-resources}
 
 - [SAP API Business Hub](https://api.sap.com/)
-- [Model Context Protocol (MCP) Specification](https://modelcontextprotocol.io/)
+- [Model Context Protocol (MCP) Specification](https://modelcontextprotocol.io/docs/getting-started/intro)
 - [Agent-to-Agent (A2A) Protocol](https://a2a.ai/)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-05-08"
+lastupdated: "2026-05-12"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -64,7 +64,7 @@ This guide presents three complementary patterns for SAP data integration:
 For streaming integration (Pattern 2B), SAP systems require partner add-ons to be able to send events to Kafka brokers like Confluent or IBM Event Streams.
 {: note}
 
-The Delta Sharing protocol integration is currently under development by the watsonx.data team. Please refer to [watsonx.data documentation](https://cloud.ibm.com/docs/watsonxdata) for the latest availability information.
+The Delta Sharing protocol integration is currently under development by the watsonx.data team. Please refer to [watsonx.data documentation](/docs/watsonxdata) for the latest availability information.
 {: note}
 
 
@@ -439,11 +439,11 @@ For complete agentic AI patterns, see [Building Agentic AI Solutions in IBM Clou
 {: #solution-data-integration-additional-resources}
 
 **IBM Cloud:**
-- [watsonx.data](https://cloud.ibm.com/docs/watsonxdata)
-- [watsonx.ai](https://cloud.ibm.com/docs/watsonx-ai)
-- [Code Engine](https://cloud.ibm.com/docs/codeengine)
-- [Event Streams](https://cloud.ibm.com/docs/EventStreams)
-- [IBM Cloud Compliance](https://www.ibm.com/cloud/compliance)
+- [watsonx.data](/docs/watsonxdata)
+- [watsonx.ai](/docs/watsonx-ai)
+- [Code Engine](/docs/codeengine)
+- [Event Streams](/docs/EventStreams)
+- [IBM Cloud Compliance](https://www.ibm.com/products/cloud/compliance)
 
 **SAP:**
 - [SAP API Business Hub](https://api.sap.com/)
@@ -452,7 +452,7 @@ For complete agentic AI patterns, see [Building Agentic AI Solutions in IBM Clou
 **Integration Technologies:**
 - [Apache Iceberg](https://iceberg.apache.org/)
 - [Delta Sharing](https://delta.io/sharing/)
-- [Confluent TableFlow](https://docs.confluent.io/cloud/current/connectors/cc-iceberg-sink.html)
+- [Confluent TableFlow](https://docs.confluent.io/index.html)
 
 **Tutorials and Articles:**
 - [Building an Event-Driven Agentic AI System with Apache Kafka on Confluent Cloud and watsonx Orchestrate](https://developer.ibm.com/tutorials/event-driven-agentic-ai-system-confluent-watsonx-orchestrate/)

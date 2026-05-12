@@ -38,7 +38,7 @@
     {
       "title": "Overview of IBM Cloud for SAP",
       "description": "IBM Cloud for SAP provides a secure, resilient, and SAP-certified cloud platform to run mission-critical SAP.",
-      "href": "https://cloud.ibm.com/docs/sap?topic=sap-get-started",
+      "href": "/docs/sap?topic=sap-get-started",
       "type": "article",
       "recommended": true
     }
@@ -66,7 +66,7 @@
     }
   ],
   "section_updates": {
-    "view_more": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-overview",
+    "view_more": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-get-started",
     "tiles": [
       {
         "date": "11 May 2026",
