@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-05-07"
+lastupdated: "2026-05-12"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, {{site.data.keyword.ibm_cloud_sap}}, Benefits of RISE with SAP on {{site.data.keyword.cloud_notm}}, IBM {{site.data.keyword.powerSys_notm}}, SAP modernization
 
@@ -39,7 +39,7 @@ The solution is provided as a **single tenant managed private environment**. For
 - **SAP-managed operations with clear KPIs**: Reduced operational burden with SAP accountable for service delivery and defined SLA-based outcomes.
 - **Secure-by-design architecture**: End to end security across platform, infrastructure, and operations.
 
-For more information, including an overview, benefits, customer references, the IBM investment program, Intelligent SAP Cloud ERP Private workflow automation with IBM watsonx, IBM’s own SAP RISE Transformation see [RISE with SAP on IBM {{site.data.keyword.powerSys_notm}}](https://www.ibm.com/cloud/rise-with-sap){: external}. [Schedule a meeting with IBM](https://www.ibm.com/account/reg/us-en/signup?formid=urx-53520){: external}.
+For more information, including an overview, benefits, customer references, the IBM investment program, Intelligent SAP Cloud ERP Private workflow automation with IBM watsonx, IBM’s own SAP RISE Transformation see [RISE with SAP on IBM {{site.data.keyword.powerSys_notm}}](https://www.ibm.com/products/rise-with-sap){: external}. [Schedule a meeting with IBM](https://www.ibm.com/account/reg/us-en/signup?formid=urx-53520){: external}.
 
 
 
@@ -81,4 +81,4 @@ IBM ManagePlus increases client value, due to the following:
 * IBM built control plane that allows organizations to adopt IT operational management best practices based on AI and automation.
 * Ability to address customer unique requirements such as tailored security standards.
 
-Review the IBM blog [ManagePlus-your journey before, with and beyond RISE with SAP](https://www.ibm.com/products/blog/manageplus-your-journey-before-with-and-beyond-rise-with-sap){: external}. For more information [Contact your IBM representative](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-consult){: external}.
+Review the IBM blog [ManagePlus-your journey before, with and beyond RISE with SAP](https://www.ibm.com/new/product-blog/manageplus-your-journey-before-with-and-beyond-rise-with-sap){: external}. For more information [Contact your IBM representative](https://www.ibm.com/forms/mkt-mail-consult){: external}.
