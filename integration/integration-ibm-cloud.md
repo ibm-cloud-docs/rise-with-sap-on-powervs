@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-05-06"
+lastupdated: "2026-06-01"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -21,26 +21,31 @@ This use case illustrates a setup, where your RISE with SAP on {{site.data.keywo
 
 There are two types of connectivity patterns for interconnecting your {{site.data.keyword.cloud_notm}} surround workloads to your RISE with SAP on {{site.data.keyword.powerSys_notm}} workloads:
 
-* {{site.data.keyword.cloud_notm}} Transit Gateway
+* {{site.data.keyword.cloud_notm}} Transit Gateway through SAP RISE VPC interconnection
 * {{site.data.keyword.cloud_notm}} Site-to-Site VPN
+
 
 ## The {{site.data.keyword.cloud}} Transit Gateway pattern
 {: #integration-ibm-cloud-tgw}
 
 With {{site.data.keyword.cloud_notm}} Transit Gateway, you can define and control communication between resources hosted in the {{site.data.keyword.cloud_notm}} infrastructure environments or on-premises networks. See [Getting started with {{site.data.keyword.cloud}} Transit Gateway](/docs/transit-gateway?topic=transit-gateway-getting-started).
 
-This pattern uses the {{site.data.keyword.cloud_notm}} Transit Gateway in the RISE with SAP on {{site.data.keyword.powerSys_notm}} {{site.data.keyword.cloud_notm}} account. The pattern only supports your VPC in the same region as the RISE with SAP on {{site.data.keyword.powerSys_notm}}. In this pattern, you will provision the private connectivity (e.g. Direct Link) to on-premises though youw own IBM Cloud account.  
+This pattern uses the {{site.data.keyword.cloud_notm}} Transit Gateway in the RISE with SAP on {{site.data.keyword.powerSys_notm}} {{site.data.keyword.cloud_notm}} account. The pattern only supports your VPC in the same region as the RISE with SAP on {{site.data.keyword.powerSys_notm}}. In this pattern, you will provision the private connectivity (e.g. Direct Link) to on-premises though your own {{site.data.keyword.cloud_notm}} account. You must use a [Transit VPC pattern](/docs/pattern-transit-vpc?topic=pattern-transit-vpc-transit-vpc) and deploy a [Virtual Network Function (VNF)](/docs/vpc?topic=vpc-deploy-vnf) or a [{{site.data.keyword.nlb_full}} in route mode](/docs/vpc?topic=vpc-deploy-nlb) in your {{site.data.keyword.vpc_short}}.
 
 ![Figure 1. {{site.data.keyword.cloud}} Transit Gateway with Transit VPC](../images/sap-tgw-transit.svg "{{site.data.keyword.cloud}} Transit Gateway with Transit VPC"){: caption="{{site.data.keyword.cloud}} Transit Gateway with Transit VPC" caption-side="bottom"}
 
+If you need to connect to your own {{site.data.keyword.cloud_notm}} account using {{site.data.keyword.cloud_notm}} private network, you must use the this connectivity pattern and deploy the Direct Link in to your own account. You cannot use the Direct Link managed by SAP.
+{:note}
+
+Before establishing the connection request, you must have a valid {{site.data.keyword.cloud_notm}} account and provision a VPC in the same region as your SAP system.  
+{:note}
+
 The process to request these connectivity options is as follows:
 
-1. Request the service from SAP and supply:
-   1. VPC: your VPC CRN
-   2. Classic: Account ID
-   3. {{site.data.keyword.powerSys_notm}}: {{site.data.keyword.powerSys_notm}} CRN
-2. SAP adds a new connection to their existing gateway to your designated VPC, Classic or PowerVS environment.
-3. You review and approve the connection request.
+1. Request the service from SAP and supply your VPC CRN.
+2. SAP adds a new connection to their existing Transit Gateway to your designated VPC, Classic or PowerVS environment.
+3. You review and approve the Transit Gateway connection request.
+
 
 ## {{site.data.keyword.cloud}} Site-to-Site VPN pattern
 {: #integration-ibm-cloud-vpn}
