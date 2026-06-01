@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-05-06"
+lastupdated: "2026-06-01"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -38,11 +38,12 @@ The diagram below shows the inter-connectivity options provided by RISE with SAP
 
 ![Figure 1. Inter-connectivity](../images/interconnectivity.svg "Inter-connectivity"){: caption="Inter-connectivity" caption-side="bottom"}
 
-The connections to RISE with SAP on IBM {{site.data.keyword.powerSysFull}} are defined as follows:
+The key connection types to RISE with SAP on IBM {{site.data.keyword.powerSysFull}} are defined as follows:
 
-* **Internet to RISE with SAP on IBM {{site.data.keyword.powerSysFull}}** - This connectivity option provides application access through the Internet. For example, this would allow connectivity to the SAP Cloud Connector.
-* **On-premises to RISE with SAP on IBM {{site.data.keyword.powerSysFull}}** - This connection option connects your user/workloads on-premises or other non-IBM Cloud locations to the RISE with SAP on IBM {{site.data.keyword.powerSysFull}} service. This connectivity is defined by you and SAP, and can be one of the following types:
+1. **On-premises to RISE with SAP on IBM {{site.data.keyword.powerSysFull}}** - This connection option connects your user/workloads on-premises or other non-IBM Cloud locations to the RISE with SAP on IBM {{site.data.keyword.powerSysFull}} service. This connectivity is defined by you and SAP, and can be one of the following types:
     * Site-to-site IPsec VPN
     * Direct Link
-* **Peering - IBM Cloud to RISE with SAP on IBM {{site.data.keyword.powerSysFull}}** - This connectivity option provides low latency and high throughput access between resources in your IBM Cloud account and your resources in RISE with SAP on IBM {{site.data.keyword.powerSysFull}}. There is also a variant of this connectivity type where your IBM Cloud account is a hub that connects to your on-premises or external locations and your IBM Cloud resources, including your surround workloads, to RISE with SAP on IBM {{site.data.keyword.powerSysFull}}.
-* **Multi-cloud with RISE with SAP on IBM {{site.data.keyword.powerSysFull}}** - This connectivity option allows you to connect to other cloud providers, such as AWS or Azure. From the technical perspective, this option is built on top of previous options, but the use case is slightly different.
+2. **Peering - IBM Cloud to RISE with SAP on IBM {{site.data.keyword.powerSysFull}}** - This connectivity option provides low latency and high throughput access between resources in your IBM Cloud account and your resources in RISE with SAP on IBM {{site.data.keyword.powerSysFull}}.
+3. **Internet to RISE with SAP on IBM {{site.data.keyword.powerSysFull}}** - This connectivity option provides application access through the Internet. For example, this would allow connectivity to the SAP Cloud Connector.
+
+**Multi-cloud with RISE with SAP on IBM {{site.data.keyword.powerSysFull}}** connectivity is built using on top of previous options, but the use case is slightly different. This option allows you to connect to surround workloads running in other cloud providers of, such as AWS or Azure, or to other SAP solutions hosted in other clouds.
