@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-06-01"
+lastupdated: "2026-06-05"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -35,10 +35,10 @@ This pattern uses the {{site.data.keyword.cloud_notm}} Transit Gateway in the RI
 ![Figure 1. {{site.data.keyword.cloud}} Transit Gateway with Transit VPC](../images/sap-tgw-transit.svg "{{site.data.keyword.cloud}} Transit Gateway with Transit VPC"){: caption="{{site.data.keyword.cloud}} Transit Gateway with Transit VPC" caption-side="bottom"}
 
 If you need to connect to your own {{site.data.keyword.cloud_notm}} account using {{site.data.keyword.cloud_notm}} private network, you must use the this connectivity pattern and deploy the Direct Link in to your own account. You cannot use the Direct Link managed by SAP.
-{:note}
+{: note}
 
 Before establishing the connection request, you must have a valid {{site.data.keyword.cloud_notm}} account and provision a VPC in the same region as your SAP system.  
-{:note}
+{: note}
 
 The process to request these connectivity options is as follows:
 
