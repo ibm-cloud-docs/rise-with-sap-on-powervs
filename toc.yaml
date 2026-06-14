@@ -33,5 +33,6 @@ toc:
       - topicgroup:
           label: Solution guides
           topics:
-          - surround/solution-guides-agentic-ai.md
+          - topic: surround/solution-guides-agentic-ai.md
+            navtitle: Agentic AI
           - surround/solution-guides-data-integration.md

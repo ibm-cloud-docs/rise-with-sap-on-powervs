@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-06-10"
+lastupdated: "2026-06-14"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -12,7 +12,7 @@ subcollection: rise-with-sap-on-powervs
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Agentic AI for SAP Application with IBM PoweVS
+# Agentic AI for SAP Applications with IBM {{site.data.keyword.powerSys_notm}}
 {: #solution-agentic-ai}
 
 ## Introduction
@@ -46,10 +46,10 @@ The Resource Layer represents all enterprise resources including data, APIs, and
 - Enables real-time and batch data access patterns
 - Maintains data sovereignty and compliance requirements
 
-### 2. Tools Layer
+### 2. Tool Layer
 {: #solution-agentic-ai-architecture-layers-tool}
 
-The Tools Layer provides the interface that exposes enterprise capabilities and services to agents through standardized protocols. Tools abstract complex operations into simple, reusable functions that agents can invoke.
+The Tool Layer provides the interface that exposes enterprise capabilities and services to agents through standardized protocols. Tools abstract complex operations into simple, reusable functions that agents can invoke.
 
 **Integration Capabilities:**
 - **Data Source Integration**: Connect to databases, data lakes, and data warehouses
@@ -90,10 +90,8 @@ The Agent Layer consists of intelligent orchestrators powered by Large Language 
 The Application Layer represents user-facing interfaces and backend services that interact with agents to deliver AI-powered experiences. This layer enables various integration patterns to connect applications with agent capabilities.
 
 **Integration Patterns:**
-- **Direct Integration**: Applications embed agents directly or invoke tightly coupled agent services
-- **API-based Integration**: Applications communicate with agents through exposed APIs such as REST APIs or WebSocket
-  - **Remote agent access**: Applications call agents running in a separate environment or organizational boundary through APIs
-  - **API Gateway-mediated access**: Applications access agent APIs through a gateway that provides authentication, routing, rate limiting, and observability
+- **Direct Integration**: Applications embed agents using platform SDKs (e.g., watsonx.orchestrate SDK) or invoke tightly coupled agent services
+- **API-based Integration**: Applications communicate with agents through exposed REST APIs and streaming protocols
 
 **Application Types:**
 - Web applications (React, Angular, Vue.js)
@@ -117,7 +115,8 @@ Four primary patterns connect Agentic AI solutions with RISE with SAP. Each addr
 MCP (Model Context Protocol) servers provide the integration layer between agents and SAP systems, exposing tools that abstract SAP operations for agent consumption.
 
 **Key Characteristics:**
-- Direct SAP API connections (OData, REST, BAPI, RFC)
+- Direct SAP API connections (OData, REST, BAPI, RFC) for real-time operations
+- Access to SAP data via {{site.data.keyword.lakehouse_short}} for analytics and ML workloads
 - Tool-based abstraction of SAP operations
 - Reusable across multiple agents
 - Centralized SAP connectivity
@@ -138,10 +137,13 @@ MCP (Model Context Protocol) servers provide the integration layer between agent
 
 ![MCP Server Integration with SAP](../images/ai/SAP_Surround_agent_ai_p1.svg){: caption="MCP Server Integration with SAP" caption-side="bottom"}
 
-Agents invoke tools on the MCP server, which translates requests into SAP API calls to access SAP systems. This pattern centralizes SAP connectivity through MCP servers deployed on IBM Cloud, providing reusable tools for multiple agents.
+Agents invoke tools on the MCP server, which translates requests into SAP API calls or accesses SAP data via watsonx.data Lakehouse for analytics workloads. This pattern centralizes SAP connectivity through MCP servers deployed on IBM Cloud, providing reusable tools for multiple agents.
+
+MCP servers can access SAP data using multiple integration patterns optimized for different use cases—from real-time API queries (via SAP API) to analytics via watsonx.data (via Data Integration) to ML-powered enrichment. The diagram illustrates these two primary data integration paths. For detailed guidance on implementing these data integration approaches, see [SAP Data Integration Patterns for IBM Cloud](solution-guides-data-integration.md).
 
 **Supporting IBM Cloud Services:**
-- **{{site.data.keyword.codeenginefull_notm}} / OpenShift**: Host MCP servers with auto-scaling and container orchestration
+- **{{site.data.keyword.codeenginefull_notm}} / {{site.data.keyword.openshiftshort}}**: Host MCP servers with auto-scaling and container orchestration
+- **{{site.data.keyword.lakehouse_short}}**: Unified data access for SAP and enterprise data sources (for analytics-focused tools)
 - **{{site.data.keyword.vpc_short}}**: Provide isolated network environment for secure SAP connectivity
 - **{{site.data.keyword.secrets-manager_full_notm}}**: Store and manage SAP credentials and API keys securely
 - **{{site.data.keyword.dlc_full_notm}}**: Enable low-latency, dedicated connection to on-premises SAP systems
@@ -168,14 +170,14 @@ Agents on {{site.data.keyword.wxorchestrate_short}} consume MCP server tools to 
 **Architecture:**
 ![Agent Integration with SAP MCP Servers](../images/ai/SAP_Surround_agent_ai_p2.svg){: caption="Agent Integration with SAP MCP Servers" caption-side="bottom"}
 
-Agents on {{site.data.keyword.wxorchestrate_short}} discover and invoke tools through the MCP Server Registry, which routes requests to appropriate SAP MCP Servers. These servers translate agent requests into SAP API calls, enabling intelligent reasoning and multi-step operations across SAP systems.
+Agents on {{site.data.keyword.wxorchestrate_short}} discover and invoke tools through the MCP Server Registry, which routes requests to appropriate SAP MCP Servers, if available. These MCP servers provide tools that enable agents to interact with SAP systems, with the implementation details (such as whether they use SAP APIs, direct database access, or other integration methods) determined by how SAP or third-party providers implement their MCP servers. This enables intelligent reasoning and multi-step operations across SAP systems.
 
 **Supporting IBM Cloud Services:**
 - **{{site.data.keyword.wxorchestrate_short}}**: Provide agent platform with pre-built templates and workflow automation
 - **watsonx.ai**: Supply foundation models for agent reasoning and natural language understanding
 - **{{site.data.keyword.vpc_short}}**: Ensure secure, isolated network for agent and MCP server communication
 - **App ID**: Manage user authentication and authorization for agent access
-- **Secrets Manager**: Securely store SAP credentials used by MCP servers
+- **{{site.data.keyword.secrets-manager_full_notm}}**: Securely store SAP credentials used by MCP servers
 
 ---
 
@@ -183,10 +185,12 @@ Agents on {{site.data.keyword.wxorchestrate_short}} discover and invoke tools th
 {: #solution-agentic-ai-sap-integration-patterns-3}
 
 **Overview:**
-Agents use A2A protocol to collaborate on complex multi-domain tasks, enabling task delegation and result aggregation across specialized agents.
+Agents collaborate on complex multi-domain tasks, enabling task delegation and result aggregation across specialized agents. The A2A (Agent-to-Agent) protocol is the recommended standardized approach for inter-agent communication, though alternative methods such as REST APIs, message queues, or event streams may be used based on specific requirements.
 
 **Key Characteristics:**
 - Distributed architecture with specialized agents
+- A2A protocol recommended for standardized communication
+- Alternative methods available (REST APIs, message queues, event streams)
 - Asynchronous communication
 - Task decomposition and delegation
 
@@ -205,7 +209,7 @@ Agents use A2A protocol to collaborate on complex multi-domain tasks, enabling t
 **Architecture:**
 ![Agent-to-Agent Communication (A2A)](../images/ai/SAP_Surround_agent_ai_p3.svg){: caption="Agent-to-Agent Communication (A2A)" caption-side="bottom"}
 
-An orchestrator agent coordinates specialized agents using the A2A protocol for task delegation and result aggregation. Internal agents communicate with each other and external partner agents to execute complex multi-domain workflows across multiple domains and systems.
+An orchestrator agent coordinates specialized agents for task delegation and result aggregation, with internal agents communicating with each other and external partner agents to execute complex multi-domain workflows. The A2A protocol is recommended for this communication, with alternative methods available based on implementation needs.
 
 **Supporting IBM Cloud Services:**
 - **{{site.data.keyword.codeengineshort}} / {{site.data.keyword.openshiftshort}}**: Deploy and scale multiple specialized agents with container orchestration
@@ -218,11 +222,11 @@ An orchestrator agent coordinates specialized agents using the A2A protocol for 
 
 ---
 
-### Pattern 4: Application Integration with SAP Agents
+### Pattern 4: Application Integration with SAP Agents and MCP Servers
 {: #solution-agentic-ai-sap-integration-patterns-4}
 
 **Overview:**
-Applications (web, mobile, enterprise) integrate with SAP-enabled agents for intelligent, conversational SAP interfaces.
+Applications (web, mobile, enterprise) can integrate with SAP systems through two approaches: SAP-enabled agents for intelligent, conversational interfaces with reasoning capabilities, or direct MCP server integration for straightforward SAP operations without agent reasoning.
 
 **Key Use Case Examples:**
 
@@ -273,62 +277,16 @@ In many deployments, an API Gateway sits in front of the application backend, ag
 
 ---
 
-### Enhanced Integration Capabilities
-{: #solution-agentic-ai-sap-integration-patterns-enhanced}
-
-The four primary patterns can be enhanced with advanced data and event integration capabilities.
-
-#### Data-Centric Integration via {{site.data.keyword.lakehouse_short}}
-{: #solution-agentic-ai-sap-integration-patterns-enhanced-data-centric}
-
-**Overview:**
-{{site.data.keyword.lakehouse_short}} provides unified data access for SAP and enterprise data sources, essential for data-intensive MCP tools.
-
-**Three Data Integration Patterns:**
-
-For detailed guidance, see **[SAP Data Integration Patterns for IBM Cloud](solution-guides-data-integration.md)**:
-
-1. **API-Based Integration (OData)** - Real-time queries, low latency
-2. **Zero-Copy Data Access** - Federated queries without data movement
-3. **Data Enrichment** - Selective data movement for ML and analytics
-
-**Pattern Selection:**
-
-| Scenario | Pattern | Rationale |
-|----------|---------|-----------|
-| Real-time queries (chatbots) | API-Based | Low latency, always current |
-| Analytics (cross-system reports) | Zero-Copy | Federated queries, no duplication |
-| ML predictions | Enrichment | Feature engineering, model training |
-{: caption="Pattern selection" caption-side="top"}
-
-**Supporting IBM Cloud Services:** {{site.data.keyword.lakehouse_short}}, {{site.data.keyword.cos_short}}, {{site.data.keyword.databases-for}}, {{site.data.keyword.messagehub}}
-
-#### Event-Driven Integration
-{: #solution-agentic-ai-sap-integration-patterns-enhanced-event-driven-integration}
-
-**Overview:**
-SAP events trigger real-time agent actions for reactive automation.
-
-**Use Case Examples:** Order processing, inventory alerts, customer service automation, transaction monitoring
-
-**Supporting IBM Cloud Services:** {{site.data.keyword.messagehub}}, {{site.data.keyword.codeengineshort}}, Cloud Functions
-
----
-
 ## Integration Pattern Comparison
 {: #solution-agentic-ai-integration-pattern-comparison}
 
 | Pattern | Design Effort | Response Time | Scalability | Best For |
 |---------|--------------|---------------|-------------|----------|
-| **MCP-SAP** | Low | Low (ms) | High | Direct SAP operations, CRUD |
-| **Agent-MCP** | Medium | Medium (seconds) | High | Conversational interfaces |
-| **A2A** | Medium | Medium-High (seconds) | Very High | Complex workflows |
-| **App-Agent** | Medium | Low-Medium | High | End-user applications |
-| **Data-Centric** | Low-Medium | Low-High* | Very High | Analytics, ML |
-| **Event-Driven** | Low | Very Low (ms) | Very High | Real-time automation |
+| **MCP-SAP** | Medium - Design MCP server, implement SAP API integration | Variable (typically Low-Medium) - Depends on SAP system and network latency | High - Stateless operations | Direct SAP operations, CRUD |
+| **Agent-MCP** | Medium-High - Agent logic plus MCP server | Variable (typically Medium) - SAP latency plus LLM reasoning time | High - Parallel agent instances | Conversational interfaces |
+| **A2A** | High - Multi-agent coordination, protocol implementation | Variable (typically Medium-High) - Multiple agent hops, coordination overhead | Very High - Distributed architecture | Complex workflows |
+| **App-Agent** | Low-Medium to Medium - Depends on integration approach (SDK vs custom) | Variable (Low-Medium to Medium) - Depends on integration path (direct MCP vs agent-mediated) | High - Application scaling | End-user applications |
 {: caption="Integration pattern comparison" caption-side="top"}
-
-*Response time varies: Lakehouse (pre-loaded data) is faster than virtualization (real-time federation)
 
 **Metric Definitions:**
 
@@ -339,18 +297,16 @@ SAP events trigger real-time agent actions for reactive automation.
     - **High**: Significant custom development, complex architecture design
 
 - **Response Time**
-    - **Very Low (ms)**: < 100ms - Event-driven triggers, direct API calls
-    - **Low (ms)**: 100ms - 1s - Simple operations without LLM reasoning
-    - **Low-Medium**: 1-3s - API operations with light processing
-    - **Medium (seconds)**: 2-10s - Single agent with LLM reasoning
-    - **Medium-High (seconds)**: 5-15s - Multi-agent coordination, complex workflows
-    - **Low-High***: Variable - Depends on data source (API: low, federation: high)
+    - **Low (ms)**: Sub-second response - Simple operations without LLM reasoning
+    - **Low-Medium**: Few seconds - API operations with light processing
+    - **Medium (seconds)**: Several seconds - Single agent with LLM reasoning
+    - **Medium-High (seconds)**: Multiple seconds - Multi-agent coordination, complex workflows
 
 - **Scalability**
-    - **High**: Supports 100s-1,000s of concurrent operations
-    - **Very High**: Supports 10,000+ concurrent operations with horizontal scaling
+    - **High**: Supports hundreds to thousands of concurrent operations
+    - **Very High**: Supports thousands to tens of thousands of concurrent operations with horizontal scaling
 
-**Selection Guidance:** Choose based on requirements; patterns can be combined (e.g., Event-Driven + Agent-MCP)
+**Selection Guidance:** Choose based on requirements; patterns can be combined for comprehensive solutions (e.g., MCP-SAP for data access + Agent-MCP for reasoning + A2A for complex workflows)
 
 ---
 
@@ -365,53 +321,13 @@ SAP events trigger real-time agent actions for reactive automation.
 | **Data Location** | Regulatory requirements, latency, bandwidth | Use Direct Link for on-premises; {{site.data.keyword.lakehouse_short}} for multi-cloud federation |
 | **Agent Scale** | 1-5 agents: {{site.data.keyword.codeengineshort}}; 20+: OpenShift | Start serverless, scale to containers as complexity grows |
 | **MCP Deployment** | Variable load: {{site.data.keyword.codeengineshort}}; Consistent: OpenShift | Hybrid approach for mixed workloads |
-| **Integration Pattern** | Real-time: Event-driven; Analytics: Data-centric | Combine patterns based on use case |
+| **Integration Pattern** | Choose based on complexity: MCP-SAP for direct operations, Agent-MCP for reasoning, A2A for workflows, App-Agent for user interfaces | Combine patterns based on use case; see [Data Integration guide](solution-guides-data-integration.md) for data-centric patterns |
 | **Cost** | Serverless for variable, reserved for predictable | Monitor and right-size resources |
 | **Security** | Encryption, least-privilege, audit logging | Use Secrets Manager, enable compliance monitoring |
 | **Performance** | Multi-zone deployment, load balancing | Design for HA with disaster recovery |
 {: caption="Key decision areas" caption-side="top"}
 
 
-### Deployment Comparison
-{: #solution-agentic-ai-deployment-decision-factors-deployment-comparison}
-
-| Requirement | Code Engine | OpenShift | Hybrid |
-|------------|-------------|-----------|--------|
-| Variable load | ✅ Best | 💰 Costly | ⚠️ Overkill |
-| Consistent load | 💰 Expensive | ✅ Best | ✅ Optimal |
-| Complex networking | ⚠️ Limited | ✅ Best | ✅ Flexible |
-| Rapid dev/test | ✅ Best | ⚠️ More setup | ⚠️ More setup |
-| Enterprise governance | ⚠️ Basic | ✅ Best | ✅ Comprehensive |
-{: caption="Deployment comparison" caption-side="top"}
-
-**Legend:** ✅ Best | ⚠️ Works with caveats | 💰 Works but costly
-
-**Detailed Comparison:**
-
-- **Variable Load**
-    - **Code Engine (✅)**: Auto-scales to zero, pay only for actual usage, ideal for unpredictable traffic
-    - **OpenShift (💰)**: Always-on infrastructure incurs costs even during low usage periods
-    - **Hybrid (⚠️)**: Over-engineered for simple variable load scenarios
-
-- **Consistent Load**
-    - **Code Engine (💰)**: Continuous usage makes serverless pricing expensive vs reserved capacity
-    - **OpenShift (✅)**: Reserved capacity provides better economics for predictable workloads
-    - **Hybrid (✅)**: Optimal cost balance using OpenShift for baseline, {{site.data.keyword.codeengineshort}} for peaks
-
-- **Complex Networking**
-    - **Code Engine (⚠️)**: Limited VPC integration, basic networking features
-    - **OpenShift (✅)**: Full Kubernetes networking, service mesh, advanced routing
-    - **Hybrid (✅)**: Leverage OpenShift networking while using {{site.data.keyword.codeengineshort}} where appropriate
-
-- **Rapid Dev/Test**
-    - **{{site.data.keyword.codeengineshort}} (✅)**: Zero infrastructure setup, deploy in minutes, instant scaling
-    - **OpenShift (⚠️)**: Requires cluster setup, configuration, more initial overhead
-    - **Hybrid (⚠️)**: Additional complexity managing two platforms
-
-- **Enterprise Governance**
-    - **{{site.data.keyword.codeengineshort}} (⚠️)**: Basic RBAC, limited policy controls, simpler compliance features
-    - **OpenShift (✅)**: Advanced RBAC, network policies, compliance operators, audit logging
-    - **Hybrid (✅)**: Comprehensive governance across both platforms with unified policies
 
 ---
 
@@ -468,54 +384,20 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 ---
 
 
-## Implementation Best Practices
-{: #solution-agentic-ai-implementation-best-practices}
-
-### Development Workflow
-{: #solution-agentic-ai-implementation-best-practices-development-workflow}
-
-1. **Design**: Define agent capabilities, map SAP integration points, design MCP tools
-2. **Develop**: Implement MCP servers, develop agent logic, create applications
-3. **Test**: Integration, load, security, and UAT with SAP sandbox
-4. **Deploy**: Deploy to {{site.data.keyword.codeengineshort}}/OpenShift, configure agents, monitor
-
-> **Reference**: [IBM Cloud Agentic AI Workflow Documentation](/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow)
-
-### Key Best Practices
-{: #solution-agentic-ai-implementation-best-practices-key-best-practices}
-
-| Area | Best Practices |
-|------|---------------|
-| **Agent Design** | Single responsibility, stateless design, robust error handling, comprehensive logging |
-| **MCP Servers** | RESTful APIs, idempotency, rate limiting, versioning |
-| **SAP Integration** | Connection pooling, batch operations, event-driven updates, retry logic |
-| **Security** | Zero trust, least privilege, secrets rotation, audit trails |
-{: caption="Key best practices" caption-side="top"}
-
-### Monitoring & Troubleshooting
-{: #solution-agentic-ai-implementation-best-practices-monitoring-troubleshooting}
-
-**Key Metrics**: Agent response time, tool execution success rate, SAP API latency, error rates, resource utilization, cost per transaction
-
-**Tools**: IBM Cloud Monitoring (Sysdig), Log Analysis (LogDNA), {{site.data.keyword.wxorchestrate_short}} analytics
-
-**Common Issues**: Agent not responding (check status, connectivity, logs), MCP errors (validate configs, SAP connectivity), performance issues (analyze metrics, caching), integration failures (verify SAP availability, credentials)
-
 ---
 
 ## Conclusion
 {: #solution-agentic-ai-conclusion}
 
-Building Agentic AI solutions in IBM Cloud with RISE with SAP integration requires careful consideration of architecture, deployment patterns, and service selection. The flexibility of IBM Cloud services allows organizations to choose the right balance of performance, cost, and complexity for their specific needs.
+Building Agentic AI solutions on IBM Cloud with RISE with SAP integration requires careful consideration of architecture patterns and integration approaches. This guide provides four primary integration patterns—MCP Server Integration, Agent-MCP Integration, Agent-to-Agent Communication, and Application Integration—each addressing different use cases and complexity levels.
 
 Key takeaways:
-- **Layered Architecture**: Separate concerns across data, tools, agents, and applications
-- **Flexible Deployment**: Choose between serverless, containerized, or hybrid approaches
-- **Service Selection**: Match IBM Cloud services to specific requirements
-- **Decision Framework**: Use decision factors to guide architecture choices
-- **Best Practices**: Follow established patterns for security, performance, and reliability
+- **Layered Architecture**: Understand the four layers (Resource, Tool, Agent, Application) and how they interact
+- **Integration Patterns**: Select appropriate patterns based on your use case—from direct SAP operations to complex multi-agent workflows
+- **Flexible Deployment**: Leverage IBM Cloud services ({{site.data.keyword.codeengineshort}}, OpenShift, {{site.data.keyword.wxorchestrate_short}}, {{site.data.keyword.lakehouse_short}}) based on your requirements
+- **Pattern Combination**: Combine multiple patterns for comprehensive solutions that address diverse business needs
 
-By following the patterns and guidelines in this document, organizations can build robust, scalable, and secure Agentic AI solutions that unlock the full potential of their SAP investments.
+For detailed implementation guidance, refer to the [IBM Cloud Agentic AI Workflow Pattern](/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow) and [SAP Data Integration Patterns](solution-guides-data-integration.md).
 
 ---
 
