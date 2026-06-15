@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-06-14"
+lastupdated: "2026-06-15"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -83,16 +83,16 @@ Direct API access to SAP data for real-time queries using SAP-approved protocols
 
 The API integration layer mediates between SAP systems and consuming applications. It includes both the compute infrastructure and the integration applications running on it.
 
-*Compute Infrastructure:*
+**Compute Infrastructure:**
 - **{{site.data.keyword.codeengineshort}}** (recommended): Serverless compute with automatic scaling and pay-per-use pricing
 - **{{site.data.keyword.openshiftshort}}** (alternative): Enterprise Kubernetes for complex microservices and existing OpenShift investments
 
-*Integration Applications:*
+**Integration Applications:**
 - **MCP Servers**: Expose SAP data access as tools for AI agents (e.g., `get_order_status`, `check_inventory`)
 - **Custom Integration Services**: Handle SAP API calls, implement business logic, data transformation, and orchestration
 - **Authentication Handlers**: Manage OAuth tokens, certificates, and credential rotation using methods such as OAuth 2.1 (recommended), certificate-based authentication, or basic auth (development only)
 
-*API Protocols:*
+**API Protocols:**
 
 SAP systems expose data through multiple API protocols, each suited for different use cases:
 - **OData (Recommended)**: SAP's standard RESTful protocol for data access. Provides standardized query capabilities, filtering, and pagination. Best for modern integrations, analytics, and AI/ML workloads.
