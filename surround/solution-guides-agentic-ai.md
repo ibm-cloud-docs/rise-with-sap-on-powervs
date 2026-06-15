@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-06-14"
+lastupdated: "2026-06-15"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -397,7 +397,7 @@ Key takeaways:
 - **Flexible Deployment**: Leverage IBM Cloud services ({{site.data.keyword.codeengineshort}}, OpenShift, {{site.data.keyword.wxorchestrate_short}}, {{site.data.keyword.lakehouse_short}}) based on your requirements
 - **Pattern Combination**: Combine multiple patterns for comprehensive solutions that address diverse business needs
 
-For detailed implementation guidance, refer to the [IBM Cloud Agentic AI Workflow Pattern](/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow) and [SAP Data Integration Patterns](solution-guides-data-integration.md).
+For detailed implementation guidance, refer to the [IBM Cloud Agentic AI Workflow Pattern](/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow) and [SAP Data Integration Patterns](./solution-guides-data-integration.md).
 
 ---
 

@@ -202,6 +202,11 @@ Access SAP data for large-scale analytics using watsonx.data. This pattern offer
 ![SAP Data Integration Pattern 2](../images/data/SAP-data-integration-pattern-2.svg){: caption="SAP Data Integration Pattern 2" caption-side="bottom"}
 
 
+For streaming integration (Pattern 2B), SAP systems require partner add-ons to be able to send events to Kafka brokers like Confluent or IBM Event Streams.
+{: note}
+
+The Delta Sharing protocol integration is currently under development by the watsonx.data team. Please refer to watsonx.data documentation for the latest availability information.
+{: note}
 
 **Architecture Components:**
 
@@ -451,7 +456,7 @@ Complex agents combine patterns:
 - Use OAuth 2.1 for SAP authentication
 - Encrypt data in transit and at rest
 
-For complete agentic AI patterns, see [Building Agentic AI Solutions in IBM Cloud: Integration with RISE with SAP](solution-guides-agentic-ai.md)
+For complete agentic AI patterns, see [Building Agentic AI Solutions in IBM Cloud: Integration with RISE with SAP](./solution-guides-agentic-ai.md)
 {: note}
 
 ---
