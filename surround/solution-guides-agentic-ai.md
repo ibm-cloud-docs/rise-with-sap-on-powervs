@@ -397,7 +397,7 @@ Key takeaways:
 - **Flexible Deployment**: Leverage IBM Cloud services ({{site.data.keyword.codeengineshort}}, OpenShift, {{site.data.keyword.wxorchestrate_short}}, {{site.data.keyword.lakehouse_short}}) based on your requirements
 - **Pattern Combination**: Combine multiple patterns for comprehensive solutions that address diverse business needs
 
-For detailed implementation guidance, refer to the [IBM Cloud Agentic AI Workflow Pattern](/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow) and [SAP Data Integration Patterns](./solution-guides-data-integration.md).
+For detailed implementation guidance, refer to the [IBM Cloud Agentic AI Workflow Pattern](/docs/pattern-agentic-platform?topic=pattern-agentic-platform-agentic-ai-workflow) and [SAP Data Integration Patterns](/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-solution-data-integration).
 
 ---
 
