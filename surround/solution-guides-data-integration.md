@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-06-15"
+lastupdated: "2026-06-23"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -95,12 +95,12 @@ The API integration layer mediates between SAP systems and consuming application
 **API Protocols:**
 
 SAP systems expose data through multiple API protocols, each suited for different use cases:
-- **OData (Recommended)**: SAP's standard RESTful protocol for data access. Provides standardized query capabilities, filtering, and pagination. Best for modern integrations, analytics, and AI/ML workloads.
-- **REST APIs**: Direct HTTP/REST endpoints via SAP Gateway and SAP Cloud Platform. Flexible for custom integrations and microservices architectures.
+- **OData (Recommended)**: SAP's standard RESTful protocol for data access. Provides standardized query capabilities, filtering, and pagination. Best for modern integrations, analytics, and AI/ML workloads. SAP Gateway provides OData services, which is a specialized REST dialect rather than generic REST APIs.
 - **SOAP/Web Services**: XML-based protocol for enterprise integrations. Legacy but still widely used in existing SAP landscapes and enterprise service buses.
 - **RFC (Remote Function Call)**: SAP's proprietary protocol for direct function calls. Typically used for high-volume batch processing and system-to-system integrations.
-- **GraphQL**: Emerging protocol in SAP BTP and cloud solutions. Enables flexible, client-driven queries with precise data fetching in cloud environments.
 - **SAP Business API**: Modern API framework in S/4HANA Cloud with pre-built business logic and standardized interfaces.
+
+For a comprehensive catalog of available SAP APIs and integration packages, see the [SAP API Business Hub - S/4HANA Cloud Private Edition](https://api.sap.com/products/SAPS4HANACloudPrivateEdition/apis/packages).
 
 **Supporting Services:**
 - **watsonx.ai / {{site.data.keyword.wxorchestrate_short}}**: AI runtime for agentic workflows and LLM processing

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-06-15"
+lastupdated: "2026-06-23"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -63,7 +63,7 @@ The Tool Layer provides the interface that exposes enterprise capabilities and s
 
 **Tool Characteristics:**
 - Tools abstract complex operations into simple, reusable functions
-- Can be local (embedded) or remote (via MCP servers)
+- Can be invoked through various mechanisms: direct invocation (Skills, function calling), protocol-based (MCP servers), or API-based
 - Support synchronous and asynchronous operations
 - Enable secure access to enterprise resources
 
@@ -73,14 +73,14 @@ The Tool Layer provides the interface that exposes enterprise capabilities and s
 The Agent Layer consists of intelligent orchestrators powered by Large Language Models (LLMs) that use tools to accomplish tasks autonomously. Agents can reason, maintain context, and coordinate with other agents to solve complex business problems.
 
 **Agent Capabilities:**
-- **Tool Utilization**: Agents use tools from local or remote MCP (Model Context Protocol) servers
+- **Tool Utilization**: Agents invoke tools through various mechanisms including direct invocation (Skills, function calling), protocol-based approaches (MCP - Model Context Protocol), or API-based integration
 - **Reasoning**: LLM-powered decision making and planning
 - **Memory**: Maintain context and conversation history
 - **Orchestration**: Coordinate multiple tools and sub-agents
 
 **Agent Communication:**
-- **Local MCP Servers**: Direct integration with tools in the same environment
-- **Remote MCP Servers**: Distributed tool access across network boundaries
+- **Direct Tool Invocation**: Embedded tools accessed through Skills or native function calling
+- **Protocol-Based Integration**: Standardized protocols like MCP for local or remote tool access
 - **Agent-to-Agent (A2A) Protocol**: Inter-agent communication for complex workflows
 - **Multi-Agent Systems**: Collaborative problem-solving with specialized agents
 
@@ -108,11 +108,11 @@ Four primary patterns connect Agentic AI solutions with RISE with SAP. Each addr
 
 ![Agent integration patterns](../images/ai/SAP_Surround_agent_integration_patterns.svg){: caption="Agent integration patterns" caption-side="bottom"}
 
-### Pattern 1: MCP Server Integration with SAP
+### Pattern 1: Tool Server Integration with SAP
 {: #solution-agentic-ai-sap-integration-patterns-1}
 
 **Overview:**
-MCP (Model Context Protocol) servers provide the integration layer between agents and SAP systems, exposing tools that abstract SAP operations for agent consumption.
+Tool servers provide the integration layer between agents and SAP systems, exposing tools that abstract SAP operations for agent consumption. While various approaches exist for tool invocation (direct Skills, function calling, custom APIs), the Model Context Protocol (MCP) has emerged as a popular standardized approach for this integration pattern.
 
 **Key Characteristics:**
 - Direct SAP API connections (OData, REST, BAPI, RFC) for real-time operations
@@ -125,24 +125,24 @@ MCP (Model Context Protocol) servers provide the integration layer between agent
 
 1. **Real-time Inventory Management**
    - E-commerce platforms checking product availability across SAP warehouses
-   - MCP server exposes tool to query SAP S/4HANA for inventory status
-   - Example: Customer adds item → Agent calls MCP tool → Returns SAP inventory status
+   - Tool server exposes tool to query SAP S/4HANA for inventory status
+   - Example: Customer adds item → Agent invokes tool → Returns SAP inventory status
 
 2. **Automated Purchase Order Processing**
    - Procurement automation based on inventory thresholds
-   - MCP server provides tool to invoke SAP BAPI for purchase order creation
-   - Example: Low inventory detected → Agent creates PO via MCP tool → Routes for approval
+   - Tool server provides tool to invoke SAP BAPI for purchase order creation
+   - Example: Low inventory detected → Agent creates PO via tool → Routes for approval
 
 **Architecture:**
 
-![MCP Server Integration with SAP](../images/ai/SAP_Surround_agent_ai_p1.svg){: caption="MCP Server Integration with SAP" caption-side="bottom"}
+![Tool Server Integration with SAP](../images/ai/SAP_Surround_agent_ai_p1.svg){: caption="Tool Server Integration with SAP" caption-side="bottom"}
 
-Agents invoke tools on the MCP server, which translates requests into SAP API calls or accesses SAP data via watsonx.data Lakehouse for analytics workloads. This pattern centralizes SAP connectivity through MCP servers deployed on IBM Cloud, providing reusable tools for multiple agents.
+Agents invoke tools on the tool server, which translates requests into SAP API calls or accesses SAP data via watsonx.data Lakehouse for analytics workloads. This pattern centralizes SAP connectivity through tool servers deployed on IBM Cloud, providing reusable tools for multiple agents.
 
-MCP servers can access SAP data using multiple integration patterns optimized for different use cases—from real-time API queries (via SAP API) to analytics via watsonx.data (via Data Integration) to ML-powered enrichment. The diagram illustrates these two primary data integration paths. For detailed guidance on implementing these data integration approaches, see [SAP Data Integration Patterns for IBM Cloud](solution-guides-data-integration.md).
+Tool servers can be implemented using various approaches including direct function invocation, Skills frameworks, or standardized protocols like MCP (Model Context Protocol). MCP has gained popularity as a standardized approach for tool server implementation. Tool servers can access SAP data using multiple integration patterns optimized for different use cases—from real-time API queries (via SAP API) to analytics via watsonx.data (via Data Integration) to ML-powered enrichment. The diagram illustrates these two primary data integration paths. For detailed guidance on implementing these data integration approaches, see [SAP Data Integration Patterns for IBM Cloud](solution-guides-data-integration.md).
 
 **Supporting IBM Cloud Services:**
-- **{{site.data.keyword.codeenginefull_notm}} / {{site.data.keyword.openshiftshort}}**: Host MCP servers with auto-scaling and container orchestration
+- **{{site.data.keyword.codeenginefull_notm}} / {{site.data.keyword.openshiftshort}}**: Host tool servers with auto-scaling and container orchestration
 - **{{site.data.keyword.lakehouse_short}}**: Unified data access for SAP and enterprise data sources (for analytics-focused tools)
 - **{{site.data.keyword.vpc_short}}**: Provide isolated network environment for secure SAP connectivity
 - **{{site.data.keyword.secrets-manager_full_notm}}**: Store and manage SAP credentials and API keys securely
@@ -150,11 +150,11 @@ MCP servers can access SAP data using multiple integration patterns optimized fo
 
 ---
 
-### Pattern 2: Agent Integration with SAP MCP Servers
+### Pattern 2: Agent Integration with SAP Tool Servers
 {: #solution-agentic-ai-sap-integration-patterns-2}
 
 **Overview:**
-Agents on {{site.data.keyword.wxorchestrate_short}} consume MCP server tools to interact with SAP, enabling reasoning about SAP data and executing operations.
+Agents on {{site.data.keyword.wxorchestrate_short}} consume tools from tool servers to interact with SAP, enabling reasoning about SAP data and executing operations. Tool servers may implement various invocation mechanisms, with MCP (Model Context Protocol) being a popular standardized approach.
 
 **Key Use Case Examples:**
 
@@ -168,16 +168,16 @@ Agents on {{site.data.keyword.wxorchestrate_short}} consume MCP server tools to 
    - Example: Payment received → Matches invoices → Identifies discrepancies → Creates follow-up tasks
 
 **Architecture:**
-![Agent Integration with SAP MCP Servers](../images/ai/SAP_Surround_agent_ai_p2.svg){: caption="Agent Integration with SAP MCP Servers" caption-side="bottom"}
+![Agent Integration with SAP Tool Servers](../images/ai/SAP_Surround_agent_ai_p2.svg){: caption="Agent Integration with SAP Tool Servers" caption-side="bottom"}
 
-Agents on {{site.data.keyword.wxorchestrate_short}} discover and invoke tools through the MCP Server Registry, which routes requests to appropriate SAP MCP Servers, if available. These MCP servers provide tools that enable agents to interact with SAP systems, with the implementation details (such as whether they use SAP APIs, direct database access, or other integration methods) determined by how SAP or third-party providers implement their MCP servers. This enables intelligent reasoning and multi-step operations across SAP systems.
+Agents on {{site.data.keyword.wxorchestrate_short}} discover and invoke tools through various mechanisms. When using MCP-based tool servers, agents access the MCP Server Registry, which routes requests to appropriate SAP tool servers. These tool servers provide tools that enable agents to interact with SAP systems, with the implementation details (such as whether they use SAP APIs, direct database access, or other integration methods) determined by how SAP or third-party providers implement their tool servers. This enables intelligent reasoning and multi-step operations across SAP systems.
 
 **Supporting IBM Cloud Services:**
 - **{{site.data.keyword.wxorchestrate_short}}**: Provide agent platform with pre-built templates and workflow automation
 - **watsonx.ai**: Supply foundation models for agent reasoning and natural language understanding
 - **{{site.data.keyword.vpc_short}}**: Ensure secure, isolated network for agent and MCP server communication
 - **App ID**: Manage user authentication and authorization for agent access
-- **{{site.data.keyword.secrets-manager_full_notm}}**: Securely store SAP credentials used by MCP servers
+- **{{site.data.keyword.secrets-manager_full_notm}}**: Securely store SAP credentials used by tool servers
 
 ---
 
@@ -222,11 +222,11 @@ An orchestrator agent coordinates specialized agents for task delegation and res
 
 ---
 
-### Pattern 4: Application Integration with SAP Agents and MCP Servers
+### Pattern 4: Application Integration with SAP Agents and Tool Servers
 {: #solution-agentic-ai-sap-integration-patterns-4}
 
 **Overview:**
-Applications (web, mobile, enterprise) can integrate with SAP systems through two approaches: SAP-enabled agents for intelligent, conversational interfaces with reasoning capabilities, or direct MCP server integration for straightforward SAP operations without agent reasoning.
+Applications (web, mobile, enterprise) can integrate with SAP systems through two approaches: SAP-enabled agents for intelligent, conversational interfaces with reasoning capabilities, or direct tool server integration for straightforward SAP operations without agent reasoning.
 
 **Key Use Case Examples:**
 
@@ -247,10 +247,10 @@ Applications (web, mobile, enterprise) can integrate with SAP systems through tw
 
 Applications can integrate with SAP systems through two primary paths:
 
-1. **Agent-mediated integration**: Applications invoke SAP-enabled agents that use MCP servers for intelligent, conversational interfaces with reasoning capabilities
-2. **Direct MCP integration**: Applications directly access MCP server tools for straightforward SAP operations without agent reasoning
+1. **Agent-mediated integration**: Applications invoke SAP-enabled agents that use tool servers for intelligent, conversational interfaces with reasoning capabilities
+2. **Direct tool server integration**: Applications directly access tool server capabilities for straightforward SAP operations without agent reasoning
 
-While applications can also integrate directly with SAP data sources (databases, APIs) without agents or MCP servers, this traditional integration approach is not the focus of Agentic AI patterns and is not covered in this guide.
+While applications can also integrate directly with SAP data sources (databases, APIs) without agents or tool servers, this traditional integration approach is not the focus of Agentic AI patterns and is not covered in this guide.
 {: note}
 
 **Integration Methods:**
@@ -260,12 +260,12 @@ While applications can also integrate directly with SAP data sources (databases,
 - **REST APIs**: HTTP/REST endpoints for invoking agent conversations and workflows
 - **Streaming Protocols**: WebSocket for bidirectional communication or Server-Sent Events (SSE) for server-to-client streaming of agent responses
 
-*For Direct MCP Integration:*
-- **MCP Client SDKs**: MCP client libraries (TypeScript, Python) for direct protocol-level integration with stdio or SSE transports
-- **REST APIs**: HTTP/REST endpoints exposed by MCP servers for language-agnostic tool invocation
+*For Direct Tool Server Integration:*
+- **Protocol-Specific SDKs**: Client libraries for specific protocols (e.g., MCP client libraries in TypeScript/Python for MCP-based tool servers)
+- **REST APIs**: HTTP/REST endpoints exposed by tool servers for language-agnostic tool invocation
 - **Streaming Protocols**: WebSocket for interactive sessions or SSE for streaming tool execution results
 
-In many deployments, an API Gateway sits in front of the application backend, agent APIs, or MCP servers to provide authentication, routing, rate limiting, and observability. The application backend manages business logic and coordinates requests to either agents or MCP servers based on the use case requirements. Remote agents remain an API-based integration variant from the application's perspective, while agent-to-agent collaboration is handled separately through A2A patterns.
+In many deployments, an API Gateway sits in front of the application backend, agent APIs, or tool servers to provide authentication, routing, rate limiting, and observability. The application backend manages business logic and coordinates requests to either agents or tool servers based on the use case requirements. Remote agents remain an API-based integration variant from the application's perspective, while agent-to-agent collaboration is handled separately through A2A patterns.
 
 **Supporting IBM Cloud Services:**
 - **{{site.data.keyword.codeengineshort}} / {{site.data.keyword.openshiftshort}}**: Host application backends and agent services with scalability
@@ -282,10 +282,10 @@ In many deployments, an API Gateway sits in front of the application backend, ag
 
 | Pattern | Design Effort | Response Time | Scalability | Best For |
 |---------|--------------|---------------|-------------|----------|
-| **MCP-SAP** | Medium - Design MCP server, implement SAP API integration | Variable (typically Low-Medium) - Depends on SAP system and network latency | High - Stateless operations | Direct SAP operations, CRUD |
-| **Agent-MCP** | Medium-High - Agent logic plus MCP server | Variable (typically Medium) - SAP latency plus LLM reasoning time | High - Parallel agent instances | Conversational interfaces |
+| **Tool-SAP** | Medium - Design tool server, implement SAP API integration | Variable (typically Low-Medium) - Depends on SAP system and network latency | High - Stateless operations | Direct SAP operations, CRUD |
+| **Agent-Tool** | Medium-High - Agent logic plus tool server | Variable (typically Medium) - SAP latency plus LLM reasoning time | High - Parallel agent instances | Conversational interfaces |
 | **A2A** | High - Multi-agent coordination, protocol implementation | Variable (typically Medium-High) - Multiple agent hops, coordination overhead | Very High - Distributed architecture | Complex workflows |
-| **App-Agent** | Low-Medium to Medium - Depends on integration approach (SDK vs custom) | Variable (Low-Medium to Medium) - Depends on integration path (direct MCP vs agent-mediated) | High - Application scaling | End-user applications |
+| **App-Agent** | Low-Medium to Medium - Depends on integration approach (SDK vs custom) | Variable (Low-Medium to Medium) - Depends on integration path (direct tool server vs agent-mediated) | High - Application scaling | End-user applications |
 {: caption="Integration pattern comparison" caption-side="top"}
 
 **Metric Definitions:**
@@ -306,7 +306,7 @@ In many deployments, an API Gateway sits in front of the application backend, ag
     - **High**: Supports hundreds to thousands of concurrent operations
     - **Very High**: Supports thousands to tens of thousands of concurrent operations with horizontal scaling
 
-**Selection Guidance:** Choose based on requirements; patterns can be combined for comprehensive solutions (e.g., MCP-SAP for data access + Agent-MCP for reasoning + A2A for complex workflows)
+**Selection Guidance:** Choose based on requirements; patterns can be combined for comprehensive solutions (e.g., Tool-SAP for data access + Agent-Tool for reasoning + A2A for complex workflows)
 
 ---
 
@@ -320,8 +320,8 @@ In many deployments, an API Gateway sits in front of the application backend, ag
 |--------|-------------------|----------------|
 | **Data Location** | Regulatory requirements, latency, bandwidth | Use Direct Link for on-premises; {{site.data.keyword.lakehouse_short}} for multi-cloud federation |
 | **Agent Scale** | 1-5 agents: {{site.data.keyword.codeengineshort}}; 20+: OpenShift | Start serverless, scale to containers as complexity grows |
-| **MCP Deployment** | Variable load: {{site.data.keyword.codeengineshort}}; Consistent: OpenShift | Hybrid approach for mixed workloads |
-| **Integration Pattern** | Choose based on complexity: MCP-SAP for direct operations, Agent-MCP for reasoning, A2A for workflows, App-Agent for user interfaces | Combine patterns based on use case; see [Data Integration guide](solution-guides-data-integration.md) for data-centric patterns |
+| **Tool Server Deployment** | Variable load: {{site.data.keyword.codeengineshort}}; Consistent: OpenShift | Hybrid approach for mixed workloads |
+| **Integration Pattern** | Choose based on complexity: Tool-SAP for direct operations, Agent-Tool for reasoning, A2A for workflows, App-Agent for user interfaces | Combine patterns based on use case; see [Data Integration guide](solution-guides-data-integration.md) for data-centric patterns |
 | **Cost** | Serverless for variable, reserved for predictable | Monitor and right-size resources |
 | **Security** | Encryption, least-privilege, audit logging | Use Secrets Manager, enable compliance monitoring |
 | **Performance** | Multi-zone deployment, load balancing | Design for HA with disaster recovery |
@@ -337,7 +337,7 @@ In many deployments, an API Gateway sits in front of the application backend, ag
 ### IBM Cloud-Based Deployment
 {: #solution-agentic-ai-deployment-patterns-ibmcloud}
 
-Applications, agents, and MCP servers deployed on IBM Cloud infrastructure using managed services ({{site.data.keyword.codeengineshort}}/OpenShift, {{site.data.keyword.wxorchestrate_short}}, {{site.data.keyword.lakehouse_short}}) for unified data access.
+Applications, agents, and tool servers deployed on IBM Cloud infrastructure using managed services ({{site.data.keyword.codeengineshort}}/OpenShift, {{site.data.keyword.wxorchestrate_short}}, {{site.data.keyword.lakehouse_short}}) for unified data access.
 
 ### Hybrid with External Agents
 {: #solution-agentic-ai-deployment-patterns-hybrid}
@@ -365,7 +365,7 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 | **watsonx.ai** | Foundation models | LLM access, fine-tuning, prompt engineering, model governance |
 | **{{site.data.keyword.lakehouse_short}}** | Data lakehouse | Multi-source integration, query federation, SAP connectivity |
 | **watsonx.governance** | AI governance | Model lifecycle management, risk assessment, compliance monitoring, audit trails |
-| **{{site.data.keyword.codeengineshort}}** | Serverless compute | MCP servers, auto-scaling, pay-per-use, zero infrastructure |
+| **{{site.data.keyword.codeengineshort}}** | Serverless compute | Tool servers, auto-scaling, pay-per-use, zero infrastructure |
 | **OpenShift** | Enterprise Kubernetes | Production deployments, service mesh, multi-zone HA |
 | **{{site.data.keyword.objectstorageshort}}** | Scalable storage | Unstructured data, data lake, backups, AI training data |
 | **{{site.data.keyword.databases-for}}** | Managed databases | PostgreSQL, MongoDB, Redis, Elasticsearch |
@@ -389,7 +389,7 @@ Local agents at edge/on-premises for low-latency processing, with cloud agents f
 ## Conclusion
 {: #solution-agentic-ai-conclusion}
 
-Building Agentic AI solutions on IBM Cloud with RISE with SAP integration requires careful consideration of architecture patterns and integration approaches. This guide provides four primary integration patterns—MCP Server Integration, Agent-MCP Integration, Agent-to-Agent Communication, and Application Integration—each addressing different use cases and complexity levels.
+Building Agentic AI solutions on IBM Cloud with RISE with SAP integration requires careful consideration of architecture patterns and integration approaches. This guide provides four primary integration patterns—Tool Server Integration, Agent-Tool Integration, Agent-to-Agent Communication, and Application Integration—each addressing different use cases and complexity levels.
 
 Key takeaways:
 - **Layered Architecture**: Understand the four layers (Resource, Tool, Agent, Application) and how they interact
