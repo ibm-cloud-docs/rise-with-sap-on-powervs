@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2026-06-23"
+lastupdated: "2026-06-24"
 
 keywords: SAP, RISE, PowerVS, RISE with SAP on PowerVS, SAP on IBM Cloud, Benefits of RISE with SAP on IBM Cloud, IBM Power Virtual Server, SAP modernization
 
@@ -184,9 +184,9 @@ Access SAP data for large-scale analytics using watsonx.data. This pattern offer
 - **Use cases**: Order processing automation, inventory alerts, real-time customer analytics
 
 **2C - Delta Sharing:**
-- Access via SAP Datasphere using Delta Sharing protocol
-- SAP-native governance and access controls
-- Best for: Organizations with SAP Datasphere, strict data residency requirements
+- Access via SAP Databricks using Delta Sharing protocol
+- Enables secure data sharing between watsonx.data and SAP Databricks
+- Best for: Organizations with SAP Databricks, strict data residency requirements
 
 **Pattern Characteristics:**
 - **Data Movement**: Minimal/None (2A, 2C) or Selective event streaming (2B)
@@ -366,7 +366,7 @@ Choose your pattern based on your primary use case and requirements:
 - **Pattern 2 (Federated/Streaming)** is best for large-scale analytics. Choose the sub-pattern based on your specific needs:
     - Use **2A (Native Connectors)** for federated queries leveraging watsonx.data capabilities for analytics, reporting, and AI/ML workloads
     - Use **2B (Streaming)** for near-real-time or event-driven analytics with persistent event history
-    - Use **2C (Delta Sharing)** when you have SAP Datasphere with SAP-native governance
+    - Use **2C (Delta Sharing)** when you have SAP Databricks and need secure data sharing with watsonx.data
 
 - **Pattern 3 (Enrichment)** is the right choice when you need to combine SAP data with ML predictions, external data sources, or complex transformations that justify temporary data materialization and storage.
 
