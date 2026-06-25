@@ -69,6 +69,10 @@
     "view_more": "/docs/rise-with-sap-on-powervs?topic=rise-with-sap-on-powervs-get-started",
     "tiles": [
       {
+        "date": "24 June 2026",
+        "title": "Documentation refresh"
+      },
+      {
         "date": "11 May 2026",
         "title": "Documentation refresh"
       },
